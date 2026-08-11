@@ -8,6 +8,12 @@ describe("equipment factories", () => {
     const sword = createSword();
     const grip = sword.getObjectByName("grip");
     expect(grip?.position.toArray()).toEqual([0, 0, 0]);
+    expect(sword.userData.equipmentContract).toEqual({
+      gripOrigin: [0, 0, 0],
+      bladeAxis: "+Y",
+      frontAxis: "+Z",
+      dispose: "deep-geometry-and-materials",
+    });
 
     const size = new Box3().setFromObject(sword).getSize(new Vector3());
     expect(size.y).toBeGreaterThan(2.2);

@@ -180,6 +180,7 @@ body::before {
 .ready-card .phase-notice { margin: 0 0 20px; border: 1px solid rgb(201 170 102 / 20%); border-radius: 12px; padding: 12px; color: #a89b7d; background: rgb(92 72 40 / 12%); font-size: 11px; }
 
 .field-shell { position: fixed; inset: 0; overflow: hidden; background: #91bdc5; }
+.field-shell::after { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 48%, transparent 45%, rgb(7 18 25 / 18%) 100%); }
 .field-viewport,
 .field-canvas { width: 100%; height: 100%; }
 .field-viewport { position: absolute; inset: 0; }
@@ -462,6 +463,7 @@ body:not(.field-mode)::before { background: radial-gradient(circle at 50% 38%, r
 .field-location strong { color: #e6edef; font: 400 14px/1.2 "Georgia", "Malgun Gothic", serif; }
 .field-location > span { color: #78909d; font-size: 7px; }
 .field-locomotion { color: #b9cfca; font-size: inherit; letter-spacing: .08em; }
+.field-shell[data-animation="attack_1"] .field-locomotion { color: #d9f4ff; text-shadow: 0 0 9px rgb(125 218 255 / 72%); }
 .field-hotbar { position: absolute; z-index: 3; bottom: 19px; left: 50%; display: flex; gap: 4px; transform: translateX(-50%); border: 1px solid rgb(190 169 116 / 24%); padding: 5px; background: rgb(5 15 23 / 76%); box-shadow: 0 12px 35px rgb(0 0 0 / 35%); backdrop-filter: blur(9px); }
 .hotbar-slot,
 .inventory-toggle.hotbar-slot { position: relative; inset: auto; display: grid; width: 54px; height: 54px; place-items: center; border: 1px solid rgb(139 163 176 / 21%); border-radius: 1px; padding: 0; color: #b9c8ce; background: linear-gradient(145deg, #152b3a, #0b1b27); cursor: default; backdrop-filter: none; }

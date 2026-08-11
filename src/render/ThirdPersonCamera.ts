@@ -2,15 +2,16 @@ import * as THREE from "three";
 
 const MIN_PITCH = 0.16;
 const MAX_PITCH = 0.92;
-const MIN_DISTANCE = 6;
-const MAX_DISTANCE = 16;
+export const DEFAULT_CAMERA_DISTANCE = 9.5;
+export const MIN_CAMERA_DISTANCE = 4.5;
+export const MAX_CAMERA_DISTANCE = 18;
 
 export class ThirdPersonCamera {
   private readonly desiredPosition = new THREE.Vector3();
   private readonly lookAtPosition = new THREE.Vector3();
   private yaw = Math.PI * 0.82;
   private pitch = 0.42;
-  private distance = 10.5;
+  private distance = DEFAULT_CAMERA_DISTANCE;
   private initialized = false;
   private inputElement: HTMLElement | null = null;
   private pointerId: number | null = null;
@@ -52,7 +53,11 @@ export class ThirdPersonCamera {
   }
 
   public zoom(delta: number): void {
-    this.distance = THREE.MathUtils.clamp(this.distance + delta, MIN_DISTANCE, MAX_DISTANCE);
+    this.distance = THREE.MathUtils.clamp(
+      this.distance + delta,
+      MIN_CAMERA_DISTANCE,
+      MAX_CAMERA_DISTANCE,
+    );
   }
 
   public resize(width: number, height: number): void {

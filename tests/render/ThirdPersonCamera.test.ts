@@ -1,6 +1,11 @@
 import * as THREE from "three";
 import { describe, expect, it } from "vitest";
-import { ThirdPersonCamera } from "../../src/render/ThirdPersonCamera";
+import {
+  DEFAULT_CAMERA_DISTANCE,
+  MAX_CAMERA_DISTANCE,
+  MIN_CAMERA_DISTANCE,
+  ThirdPersonCamera,
+} from "../../src/render/ThirdPersonCamera";
 
 describe("ThirdPersonCamera", () => {
   it("keeps a stable orbit distance and looks at the target", () => {
@@ -11,7 +16,7 @@ describe("ThirdPersonCamera", () => {
     controller.update(0);
 
     const lookAt = new THREE.Vector3(0, 1.35, 0);
-    expect(camera.position.distanceTo(lookAt)).toBeCloseTo(10.5, 5);
+    expect(camera.position.distanceTo(lookAt)).toBeCloseTo(DEFAULT_CAMERA_DISTANCE, 5);
 
     const forward = new THREE.Vector3();
     camera.getWorldDirection(forward);
@@ -43,5 +48,19 @@ describe("ThirdPersonCamera", () => {
     const controller = new ThirdPersonCamera(camera, new THREE.Object3D());
     controller.resize(1600, 900);
     expect(camera.aspect).toBeCloseTo(16 / 9, 5);
+  });
+
+  it("clamps MMO-style zoom to the documented near and far distances", () => {
+    const target = new THREE.Object3D();
+    const camera = new THREE.PerspectiveCamera();
+    const controller = new ThirdPersonCamera(camera, target);
+
+    controller.zoom(-100);
+    controller.update(0);
+    expect(camera.position.distanceTo(new THREE.Vector3(0, 1.35, 0))).toBeCloseTo(MIN_CAMERA_DISTANCE, 5);
+
+    controller.zoom(100);
+    controller.update(2);
+    expect(camera.position.distanceTo(new THREE.Vector3(0, 1.35, 0))).toBeCloseTo(MAX_CAMERA_DISTANCE, 5);
   });
 });

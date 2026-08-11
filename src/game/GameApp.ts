@@ -2,10 +2,17 @@ import * as THREE from "three";
 import { CLASS_CATALOG, getItemDefinition } from "../domain/catalog";
 import type { CharacterProfile } from "../domain/character";
 import { equipOwnedItem } from "../domain/equipment";
-import { selectLocomotionState } from "./animationState";
-import type { LocomotionState } from "./animationState";
+import {
+  advanceAttack,
+  createAttackTimeline,
+  getAttackProgress,
+  isAttackMovementLocked,
+  selectAnimationState,
+  startAttack,
+} from "./animationState";
+import type { AnimationState, AttackTimeline } from "./animationState";
 import { resolvePlayerMovement } from "./collision";
-import { MovementInput } from "./input";
+import { AttackInput, MovementInput } from "./input";
 import { getCameraRelativeMovement, getMovementSpeed } from "./movement";
 import { AvatarRenderer } from "../render/AvatarRenderer";
 import { FIELD_SIZE, createField } from "../render/createField";
@@ -14,6 +21,11 @@ import { createRenderer } from "../render/createRenderer";
 import { EquipmentRenderer } from "../render/EquipmentRenderer";
 import { ThirdPersonCamera } from "../render/ThirdPersonCamera";
 import { InventoryPanel } from "../ui/InventoryPanel";
+
+export const FIELD_AVATAR_SCALE = 0.36;
+export const FIELD_CAMERA_FOV = 52;
+export const FIELD_CAMERA_TARGET_HEIGHT = 1.25;
+export const FIELD_CAMERA_FAR = 360;
 
 export interface GameAppOptions {
   readonly root: HTMLElement;
@@ -33,6 +45,7 @@ export class GameApp {
   private avatarRenderer: AvatarRenderer | null = null;
   private equipmentRenderer: EquipmentRenderer | null = null;
   private readonly movementInput = new MovementInput();
+  private readonly attackInput = new AttackInput();
   private readonly cameraForward = new THREE.Vector3();
   private readonly movementDirection = new THREE.Vector3();
   private readonly actualMovement = new THREE.Vector3();
@@ -45,7 +58,9 @@ export class GameApp {
   private fieldShell: HTMLElement | null = null;
   private locomotionElement: HTMLElement | null = null;
   private weaponElement: HTMLElement | null = null;
-  private locomotionState: LocomotionState = "idle";
+  private animationState: AnimationState = "idle";
+  private attackTimeline: AttackTimeline = createAttackTimeline();
+  private attackCount = 0;
   private inventoryPanel: InventoryPanel | null = null;
   private inventoryOpen = false;
 
@@ -78,7 +93,7 @@ export class GameApp {
           <div class="field-minimap" aria-hidden="true"><i></i><span>◆</span></div>
           <div class="field-location"><small>CURRENT AREA</small><strong>별빛 초원</strong><span>LOCAL EXPEDITION · <b class="field-locomotion">IDLE</b></span></div>
         </aside>
-        <div class="field-hint">WASD 이동 · Shift 달리기 · 마우스 드래그 카메라</div>
+        <div class="field-hint">WASD 이동 · Shift 달리기 · 좌클릭/F 공격 · 마우스 드래그 카메라</div>
         <div class="field-hotbar" aria-label="게임 단축키 바">
           <span class="hotbar-slot is-active"><kbd>1</kbd><b>⚔</b><small>검</small></span>
           <span class="hotbar-slot"><kbd>2</kbd><b>✦</b><small>기술</small></span>
@@ -102,14 +117,21 @@ export class GameApp {
     this.fieldShell.dataset.playerX = "0.00";
     this.fieldShell.dataset.playerZ = "0.00";
     this.fieldShell.dataset.locomotion = "idle";
+    this.fieldShell.dataset.animation = "idle";
+    this.fieldShell.dataset.attackCount = "0";
     this.fieldShell.dataset.inventoryOpen = "false";
+    this.fieldShell.dataset.fieldSize = String(FIELD_SIZE);
+    this.fieldShell.dataset.avatarScale = String(FIELD_AVATAR_SCALE);
+    this.fieldShell.dataset.cameraFov = String(FIELD_CAMERA_FOV);
     this.viewport = this.requiredElement<HTMLElement>(".field-viewport");
     this.locomotionElement = this.requiredElement<HTMLElement>(".field-locomotion");
     this.requiredElement<HTMLButtonElement>(".field-exit").addEventListener("click", this.onExit);
 
     this.renderer = createRenderer(canvas);
     this.field = createField();
-    this.avatarRenderer = new AvatarRenderer(this.field.playerTarget, this.profile);
+    this.avatarRenderer = new AvatarRenderer(this.field.playerTarget, this.profile, {
+      visualScale: FIELD_AVATAR_SCALE,
+    });
     this.equipmentRenderer = new EquipmentRenderer(this.avatarRenderer.avatar);
     this.equipmentRenderer.sync(this.profile);
     this.inventoryPanel = new InventoryPanel({
@@ -120,10 +142,15 @@ export class GameApp {
       onOpenChange: this.handleInventoryOpenChange,
     });
     this.inventoryPanel.start();
-    const camera = new THREE.PerspectiveCamera(48, 1, 0.1, 120);
-    this.cameraController = new ThirdPersonCamera(camera, this.field.playerTarget, 2.55);
+    const camera = new THREE.PerspectiveCamera(FIELD_CAMERA_FOV, 1, 0.1, FIELD_CAMERA_FAR);
+    this.cameraController = new ThirdPersonCamera(
+      camera,
+      this.field.playerTarget,
+      FIELD_CAMERA_TARGET_HEIGHT,
+    );
     this.cameraController.connect(canvas);
     this.movementInput.connect();
+    this.attackInput.connect(canvas);
     this.clock = new THREE.Clock();
 
     this.resizeObserver = new ResizeObserver(this.handleResize);
@@ -152,6 +179,9 @@ export class GameApp {
     this.inventoryPanel = null;
     this.inventoryOpen = false;
     this.movementInput.disconnect();
+    this.attackInput.disconnect();
+    this.attackTimeline = createAttackTimeline();
+    this.attackCount = 0;
     this.equipmentRenderer?.dispose();
     this.equipmentRenderer = null;
     this.avatarRenderer?.dispose();
@@ -175,6 +205,16 @@ export class GameApp {
 
   private updatePlayer(deltaSeconds: number): void {
     if (!this.field || !this.cameraController || !this.avatarRenderer || !this.clock) return;
+    if (this.attackInput.consumeRequest() && !this.inventoryOpen) {
+      const result = startAttack(this.attackTimeline);
+      this.attackTimeline = result.timeline;
+      if (result.started) {
+        this.attackCount += 1;
+        if (this.fieldShell) this.fieldShell.dataset.attackCount = String(this.attackCount);
+      }
+    }
+    this.attackTimeline = advanceAttack(this.attackTimeline, deltaSeconds);
+
     const input = this.inventoryOpen
       ? { forward: 0, right: 0, sprint: false }
       : this.movementInput.read();
@@ -183,9 +223,10 @@ export class GameApp {
 
     const current = this.field.playerTarget.position;
     const speed = getMovementSpeed(input.sprint);
+    const movementScale = isAttackMovementLocked(this.attackTimeline) ? 0 : 1;
     const desired = {
-      x: current.x + this.movementDirection.x * speed * deltaSeconds,
-      z: current.z + this.movementDirection.z * speed * deltaSeconds,
+      x: current.x + this.movementDirection.x * speed * deltaSeconds * movementScale,
+      z: current.z + this.movementDirection.z * speed * deltaSeconds * movementScale,
     };
     const resolved = resolvePlayerMovement(current, desired, 0.48, FIELD_SIZE / 2, this.field.colliders);
     this.actualMovement.set(resolved.x - current.x, 0, resolved.z - current.z);
@@ -195,14 +236,26 @@ export class GameApp {
       this.fieldShell.dataset.playerZ = resolved.z.toFixed(2);
     }
 
-    this.avatarRenderer.face(this.movementDirection, deltaSeconds);
-    const state = selectLocomotionState(this.actualMovement.lengthSq() > 0.000001, input.sprint);
-    if (state !== this.locomotionState) {
-      this.locomotionState = state;
+    if (!this.attackTimeline.active) this.avatarRenderer.face(this.movementDirection, deltaSeconds);
+    const state = selectAnimationState(
+      this.attackTimeline.active,
+      this.actualMovement.lengthSq() > 0.000001,
+      input.sprint,
+    );
+    if (state !== this.animationState) {
+      this.animationState = state;
       if (this.locomotionElement) this.locomotionElement.textContent = state.toUpperCase();
-      if (this.fieldShell) this.fieldShell.dataset.locomotion = state;
+      if (this.fieldShell) {
+        this.fieldShell.dataset.locomotion = state === "attack_1" ? "attack" : state;
+        this.fieldShell.dataset.animation = state;
+      }
     }
-    this.avatarRenderer.update(deltaSeconds, this.clock.elapsedTime, state);
+    this.avatarRenderer.update(
+      deltaSeconds,
+      this.clock.elapsedTime,
+      state,
+      getAttackProgress(this.attackTimeline),
+    );
   }
 
   private readonly handleEquip = (itemId: string): boolean => {
@@ -218,6 +271,7 @@ export class GameApp {
   private readonly handleInventoryOpenChange = (open: boolean): void => {
     this.inventoryOpen = open;
     this.movementInput.setEnabled(!open);
+    this.attackInput.setEnabled(!open);
     this.fieldShell?.classList.toggle("is-inventory-open", open);
     if (this.fieldShell) this.fieldShell.dataset.inventoryOpen = String(open);
   };

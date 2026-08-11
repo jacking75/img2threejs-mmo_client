@@ -77,3 +77,85 @@ export class MovementInput {
     this.reset();
   };
 }
+
+const CLICK_DRAG_THRESHOLD_SQ = 36;
+
+export class AttackInput {
+  private inputElement: HTMLElement | null = null;
+  private enabled = true;
+  private requested = false;
+  private pointerId: number | null = null;
+  private pointerStartX = 0;
+  private pointerStartY = 0;
+  private pointerTravelSq = 0;
+
+  public connect(element: HTMLElement): void {
+    this.disconnect();
+    this.inputElement = element;
+    window.addEventListener("keydown", this.handleKeyDown);
+    element.addEventListener("pointerdown", this.handlePointerDown);
+    element.addEventListener("pointermove", this.handlePointerMove);
+    element.addEventListener("pointerup", this.handlePointerUp);
+    element.addEventListener("pointercancel", this.handlePointerCancel);
+  }
+
+  public disconnect(): void {
+    window.removeEventListener("keydown", this.handleKeyDown);
+    if (this.inputElement) {
+      this.inputElement.removeEventListener("pointerdown", this.handlePointerDown);
+      this.inputElement.removeEventListener("pointermove", this.handlePointerMove);
+      this.inputElement.removeEventListener("pointerup", this.handlePointerUp);
+      this.inputElement.removeEventListener("pointercancel", this.handlePointerCancel);
+    }
+    this.inputElement = null;
+    this.reset();
+  }
+
+  public consumeRequest(): boolean {
+    const requested = this.requested;
+    this.requested = false;
+    return requested;
+  }
+
+  public setEnabled(enabled: boolean): void {
+    this.enabled = enabled;
+    if (!enabled) this.reset();
+  }
+
+  private reset(): void {
+    this.requested = false;
+    this.pointerId = null;
+    this.pointerTravelSq = 0;
+  }
+
+  private readonly handleKeyDown = (event: KeyboardEvent): void => {
+    if (event.code !== "KeyF") return;
+    event.preventDefault();
+    if (this.enabled && !event.repeat) this.requested = true;
+  };
+
+  private readonly handlePointerDown = (event: PointerEvent): void => {
+    if (!this.enabled || event.button !== 0) return;
+    this.pointerId = event.pointerId;
+    this.pointerStartX = event.clientX;
+    this.pointerStartY = event.clientY;
+    this.pointerTravelSq = 0;
+  };
+
+  private readonly handlePointerMove = (event: PointerEvent): void => {
+    if (event.pointerId !== this.pointerId) return;
+    const x = event.clientX - this.pointerStartX;
+    const y = event.clientY - this.pointerStartY;
+    this.pointerTravelSq = Math.max(this.pointerTravelSq, x * x + y * y);
+  };
+
+  private readonly handlePointerUp = (event: PointerEvent): void => {
+    if (event.pointerId !== this.pointerId) return;
+    if (this.enabled && this.pointerTravelSq <= CLICK_DRAG_THRESHOLD_SQ) this.requested = true;
+    this.pointerId = null;
+  };
+
+  private readonly handlePointerCancel = (event: PointerEvent): void => {
+    if (event.pointerId === this.pointerId) this.pointerId = null;
+  };
+}

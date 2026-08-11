@@ -11,6 +11,12 @@ export type SwordStyle = "training" | "moon";
 export function createSword(style: SwordStyle): THREE.Group {
   const group = new THREE.Group();
   group.name = style === "training" ? "weapon.training-sword" : "weapon.moon-sword";
+  group.userData.equipmentContract = {
+    gripOrigin: [0, 0, 0],
+    bladeAxis: "+Y",
+    frontAxis: "+Z",
+    dispose: "deep-geometry-and-materials",
+  };
 
   const isMoon = style === "moon";
   const bladeMaterial = metal(isMoon ? 0xa9bfd7 : COMMON_COLORS.metal);
