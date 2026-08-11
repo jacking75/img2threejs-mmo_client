@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "sourcePolicy": "Exact 520x1024 left-panel crops from the original turnaround sheets; no resampling or generative alteration.",
+  "initialSheetVerdict": {
+    "admitted": false,
+    "reason": "The automatic connected-component gate treats the three intentional turnaround panels as a fragmented subject."
+  },
+  "admittedViews": [
+    {"id":"female-mage","path":"docs_working/img2threejs/avatar-suite/admitted/front-female-mage-turnaround-v1.png","dimensions":[520,1024],"foregroundCoverage":0.3957,"largestComponentFraction":0.9857,"pHash":18286002126993965901,"admitted":true},
+    {"id":"female-ranger","path":"docs_working/img2threejs/avatar-suite/admitted/front-female-ranger-turnaround-v1.png","dimensions":[520,1024],"foregroundCoverage":0.2916,"largestComponentFraction":1.0,"pHash":17561774249977749511,"admitted":true},
+    {"id":"female-warrior","path":"docs_working/img2threejs/avatar-suite/admitted/front-female-warrior-turnaround-v1.png","dimensions":[520,1024],"foregroundCoverage":0.2996,"largestComponentFraction":1.0,"pHash":17995716329955176208,"admitted":true},
+    {"id":"male-mage","path":"docs_working/img2threejs/avatar-suite/admitted/front-male-mage-turnaround-v1.png","dimensions":[520,1024],"foregroundCoverage":0.3908,"largestComponentFraction":1.0,"pHash":18345127812564075567,"admitted":true},
+    {"id":"male-ranger","path":"docs_working/img2threejs/avatar-suite/admitted/front-male-ranger-turnaround-v1.png","dimensions":[520,1024],"foregroundCoverage":0.3197,"largestComponentFraction":1.0,"pHash":17516742668930453639,"admitted":true},
+    {"id":"male-warrior","path":"docs_working/img2threejs/avatar-suite/admitted/front-male-warrior-turnaround-v1.png","dimensions":[520,1024],"foregroundCoverage":0.3198,"largestComponentFraction":1.0,"pHash":18248480830576172193,"admitted":true}
+  ],
+  "failedCount": 0
+}

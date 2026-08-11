@@ -1,0 +1,25 @@
+import { Box3, Vector3 } from "three";
+import { describe, expect, it } from "vitest";
+import { assetCatalog, avatarAssets, equipmentAssets, fieldAssets } from "../../src/assets/catalog";
+import { createMoonSword, createTrainingSword } from "../../src/assets/equipment/createSword";
+
+describe("equipment factories", () => {
+  it.each([createTrainingSword, createMoonSword])("keeps the grip centered at the local origin", (createSword) => {
+    const sword = createSword();
+    const grip = sword.getObjectByName("grip");
+    expect(grip?.position.toArray()).toEqual([0, 0, 0]);
+
+    const size = new Box3().setFromObject(sword).getSize(new Vector3());
+    expect(size.y).toBeGreaterThan(2.2);
+    expect(size.z).toBeGreaterThan(0.06);
+  });
+});
+
+describe("asset catalog", () => {
+  it("contains every planned preview resource without duplicate ids", () => {
+    expect(avatarAssets).toHaveLength(6);
+    expect(equipmentAssets).toHaveLength(5);
+    expect(fieldAssets).toHaveLength(4);
+    expect(new Set(assetCatalog.map(({ id }) => id)).size).toBe(assetCatalog.length);
+  });
+});

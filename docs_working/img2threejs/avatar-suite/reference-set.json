@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "target": "anime-field-rpg-avatar-suite",
+  "intendedUse": "playable real-time browser character suite",
+  "coordinateSystem": "right-handed-y-up-character-faces-positive-z",
+  "fidelityRoute": "procedural-stylized",
+  "views": [
+    {
+      "id": "female-mage",
+      "path": "docs_working/reference/concepts/female-mage-turnaround-v1.png",
+      "sha256": "9cdd1be2d92e67564f4b71a94152571f2b66659cbeac4c10a519f03e66989565",
+      "dimensions": [1536, 1024],
+      "roles": ["front", "near-profile", "rear", "class-prop", "palette"],
+      "admitted": true,
+      "hiddenRegionConfidence": 0.82
+    },
+    {
+      "id": "female-ranger",
+      "path": "docs_working/reference/concepts/female-ranger-turnaround-v1.png",
+      "sha256": "b55c9cc35e5504c43ff17e54fe25ae6da886b59ea23d3d584ab2f097b8b3707a",
+      "dimensions": [1536, 1024],
+      "roles": ["front", "near-profile", "rear", "class-prop", "palette"],
+      "admitted": true,
+      "hiddenRegionConfidence": 0.84
+    },
+    {
+      "id": "female-warrior",
+      "path": "docs_working/reference/concepts/female-warrior-turnaround-v1.png",
+      "sha256": "7debd3d0da97a985451ca0aa759c85de35a1966e499f24b25a120c6dba346b0e",
+      "dimensions": [1536, 1024],
+      "roles": ["front", "near-profile", "rear", "class-prop", "palette", "primary-proportion-reference"],
+      "admitted": true,
+      "hiddenRegionConfidence": 0.86
+    },
+    {
+      "id": "male-mage",
+      "path": "docs_working/reference/concepts/male-mage-turnaround-v1.png",
+      "sha256": "ba1888d48c3e6d6b23bc38574444a27d7ec7a7ce90ff0ee2ae18fdd9a255171e",
+      "dimensions": [1536, 1024],
+      "roles": ["front", "near-profile", "rear", "class-prop", "palette"],
+      "admitted": true,
+      "hiddenRegionConfidence": 0.84
+    },
+    {
+      "id": "male-ranger",
+      "path": "docs_working/reference/concepts/male-ranger-turnaround-v1.png",
+      "sha256": "3d566ca430fc1869118178bffe02a3b336a703e86616c5987583e5b3e6516051",
+      "dimensions": [1536, 1024],
+      "roles": ["front", "near-profile", "rear", "class-prop", "palette"],
+      "admitted": true,
+      "hiddenRegionConfidence": 0.85
+    },
+    {
+      "id": "male-warrior",
+      "path": "docs_working/reference/concepts/male-warrior-turnaround-v1.png",
+      "sha256": "c173a13c6d5ced7d1686ad46564440c08f9aa776c90970139774750269badde0",
+      "dimensions": [1536, 1024],
+      "roles": ["front", "near-profile", "rear", "class-prop", "palette"],
+      "admitted": true,
+      "hiddenRegionConfidence": 0.86
+    }
+  ],
+  "runtimeTextureUse": false,
+  "admissionEvidence": "docs_working/img2threejs/avatar-suite/reference-admission.json",
+  "notes": [
+    "Reference pixels are not copied into runtime textures.",
+    "Perspective illustration sheets are treated as silhouette and palette evidence, not manufacturing measurements."
+  ]
+}

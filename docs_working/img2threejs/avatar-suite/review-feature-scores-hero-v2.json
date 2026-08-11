@@ -1,0 +1,7 @@
+[
+  { "id": "human-anatomy", "score": 0.52, "critical": true, "note": "연속 몸통과 굵어진 팔다리로 개선됐으나 관절 분절과 직선적인 하체가 남는다." },
+  { "id": "anime-face", "score": 0.5, "critical": true, "note": "턱선과 아몬드형 눈은 생겼지만 레퍼런스의 부드러운 표정과 곡면 해부에는 미달한다." },
+  { "id": "high-ponytail", "score": 0.74, "critical": true, "note": "허리까지 내려오는 다발형 포니테일과 측면 실루엣이 구현됐다." },
+  { "id": "warrior-tunic", "score": 0.74, "critical": true, "note": "청색 분할 튜닉, 흰색 테두리, 대각선 가죽끈과 벨트가 읽힌다." },
+  { "id": "warrior-accessories", "score": 0.76, "critical": false, "note": "단일 견갑, 장갑, 부츠 커프, 파우치, 검이 분리 부품으로 유지된다." }
+]

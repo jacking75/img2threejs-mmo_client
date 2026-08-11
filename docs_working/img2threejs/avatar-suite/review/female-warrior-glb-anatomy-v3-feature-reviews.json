@@ -1,0 +1,37 @@
+[
+  {
+    "id": "human-hand-silhouette",
+    "score": 0.68,
+    "threshold": 0.70,
+    "status": "below-threshold",
+    "notes": "손바닥, 네 손가락, 엄지가 분리되어 이전 장갑형 덩어리보다 사람 손으로 읽히지만 손가락 길이와 관절 굴곡은 아직 단순하다."
+  },
+  {
+    "id": "limb-anatomy-continuity",
+    "score": 0.71,
+    "threshold": 0.70,
+    "status": "pass",
+    "notes": "위팔·아래팔과 허벅지·종아리에 서로 다른 굵기와 완만한 관절 전이를 적용해 원통형 팔다리 인상을 줄였다."
+  },
+  {
+    "id": "body-proportion",
+    "score": 0.69,
+    "threshold": 0.70,
+    "status": "below-threshold",
+    "notes": "5등신 실루엣은 유지되지만 골반과 무릎 주변의 연결 및 어깨 폭이 컨셉보다 여전히 경직되어 있다."
+  },
+  {
+    "id": "warrior-outfit-identity",
+    "score": 0.72,
+    "threshold": 0.70,
+    "status": "pass",
+    "notes": "파란 튜닉, 흰 테두리, 갈색 벨트·파우치, 한쪽 견갑과 검으로 여성 전사 정체성이 유지된다."
+  },
+  {
+    "id": "animation-ready-rig",
+    "score": 0.80,
+    "threshold": 0.70,
+    "status": "pass",
+    "notes": "18관절 단일 스킨과 명시적 장비 소켓을 유지하고 새 손 메시도 각 손 관절에 스키닝되어 런타임 장착과 동작을 보존한다."
+  }
+]

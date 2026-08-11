@@ -1,0 +1,520 @@
+:root {
+  font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  color: #edf3f6;
+  background: #0b101d;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; overflow-x: hidden; }
+body.field-mode { overflow: hidden; }
+button { font: inherit; }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 17% 18%, rgb(70 108 133 / 22%), transparent 30%),
+    radial-gradient(circle at 86% 82%, rgb(104 73 133 / 18%), transparent 32%),
+    linear-gradient(135deg, #0b101d, #111a2c 48%, #0c1220);
+}
+
+.atelier {
+  position: relative;
+  display: grid;
+  grid-template: auto minmax(560px, calc(100vh - 190px)) / minmax(0, 1fr) 360px;
+  gap: 22px;
+  width: min(1440px, calc(100% - 48px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.brand { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 20px; padding: 0 4px; }
+.brand h1 { margin: 0; font: 700 clamp(28px, 3vw, 46px)/1 "Trebuchet MS", "Malgun Gothic", sans-serif; letter-spacing: -.04em; }
+.brand > p:last-child { margin: 0; color: #91a4b5; font-size: 14px; }
+.eyebrow { color: #7fc3d0 !important; font: 600 11px/1 "Trebuchet MS", sans-serif; letter-spacing: .18em; }
+
+.viewport-wrap,
+.catalog-panel {
+  border: 1px solid rgb(141 174 194 / 16%);
+  background: rgb(14 23 39 / 76%);
+  box-shadow: 0 26px 90px rgb(0 0 0 / 28%);
+  backdrop-filter: blur(18px);
+}
+
+.viewport-wrap { position: relative; overflow: hidden; border-radius: 28px; min-height: 560px; }
+.viewport-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 120px rgb(0 0 0 / 35%);
+}
+.viewport { display: block; width: 100%; height: 100%; }
+.view-hint { position: absolute; right: 22px; top: 18px; z-index: 2; color: #8fa1ad; font-size: 11px; letter-spacing: .08em; }
+.asset-badge { position: absolute; left: 28px; bottom: 25px; z-index: 2; display: grid; gap: 5px; }
+.asset-badge span { color: #78bdc8; font: 600 10px/1 "Trebuchet MS", sans-serif; letter-spacing: .2em; }
+.asset-badge strong { font-size: clamp(22px, 3vw, 34px); letter-spacing: -.04em; }
+
+.catalog-panel { display: flex; flex-direction: column; border-radius: 24px; padding: 16px; }
+.tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 5px; border-radius: 14px; background: #0b1322; }
+.tab { border: 0; border-radius: 10px; padding: 11px 6px; color: #718394; background: transparent; cursor: pointer; font-size: 12px; }
+.tab small { color: #566677; font: 500 9px/1 "Trebuchet MS", sans-serif; }
+.tab.is-active { color: #f4f8f9; background: #243248; box-shadow: 0 5px 16px rgb(0 0 0 / 22%); }
+
+.asset-list { display: grid; align-content: start; gap: 7px; padding: 18px 0; overflow: auto; }
+.asset-list button { display: grid; grid-template-columns: 32px 1fr auto; align-items: center; gap: 10px; width: 100%; border: 1px solid transparent; border-radius: 13px; padding: 14px 13px; color: #9dafbd; background: transparent; text-align: left; cursor: pointer; transition: .18s ease; }
+.asset-list button:hover { color: #dce8ee; background: rgb(62 82 106 / 25%); }
+.asset-list button.is-active { color: #f5f9fa; border-color: rgb(119 185 200 / 28%); background: linear-gradient(90deg, rgb(47 80 99 / 65%), rgb(38 52 73 / 58%)); }
+.asset-list span { color: #627585; font: 600 10px/1 "Trebuchet MS", sans-serif; }
+.asset-list strong { font-size: 13px; }
+.asset-list em { color: #6f9fa9; font: normal 600 9px/1 "Trebuchet MS", sans-serif; letter-spacing: .12em; }
+
+.catalog-panel footer { display: flex; gap: 14px; margin-top: auto; padding: 15px 8px 3px; border-top: 1px solid rgb(131 160 178 / 12%); color: #667989; font: 600 9px/1 "Trebuchet MS", sans-serif; letter-spacing: .1em; }
+.dot { display: inline-block; width: 6px; height: 6px; margin-right: 3px; border-radius: 50%; }
+.dot-blue { background: #78bdc8; box-shadow: 0 0 8px #78bdc8; }
+.dot-gold { background: #c9aa66; box-shadow: 0 0 8px #c9aa66; }
+
+.creation-shell {
+  position: relative;
+  width: min(1180px, calc(100% - 48px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 52px 0;
+}
+
+.creation-hero { max-width: 720px; margin-bottom: 32px; }
+.creation-hero--compact { margin: 8vh auto 30px; text-align: center; }
+.creation-eyebrow,
+.section-kicker { margin: 0; color: #7fc3d0; font: 700 10px/1.2 "Trebuchet MS", sans-serif; letter-spacing: .18em; }
+.creation-hero h1,
+.ready-card h1 { margin: 10px 0 12px; font: 700 clamp(38px, 6vw, 68px)/1 "Trebuchet MS", "Malgun Gothic", sans-serif; letter-spacing: -.055em; }
+.creation-hero > p:last-child,
+.ready-card > p { margin: 0; color: #91a4b5; line-height: 1.7; }
+
+.creation-layout { display: grid; grid-template-columns: 1.05fr 1.2fr .82fr; gap: 18px; align-items: stretch; }
+.creation-panel,
+.saved-profile-card,
+.ready-card {
+  border: 1px solid rgb(141 174 194 / 17%);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgb(19 31 50 / 92%), rgb(12 20 35 / 90%));
+  box-shadow: 0 28px 90px rgb(0 0 0 / 25%);
+  backdrop-filter: blur(18px);
+}
+.creation-panel { min-height: 470px; padding: 24px; }
+.section-heading { display: flex; align-items: center; gap: 13px; padding-bottom: 20px; border-bottom: 1px solid rgb(141 174 194 / 13%); }
+.section-heading > span { display: grid; width: 35px; height: 35px; place-items: center; border-radius: 10px; color: #89c9d3; background: rgb(82 137 153 / 18%); font: 700 10px/1 "Trebuchet MS", sans-serif; }
+.section-heading h2 { margin: 4px 0 0; font-size: 18px; letter-spacing: -.025em; }
+
+.name-field { display: grid; gap: 9px; margin-top: 26px; color: #b7c6d0; font-size: 12px; }
+.name-field input { width: 100%; border: 1px solid rgb(127 195 208 / 24%); border-radius: 13px; outline: none; padding: 15px 16px; color: #f2f7f8; background: #0b1424; transition: border-color .18s ease, box-shadow .18s ease; }
+.name-field input:focus { border-color: #6eb6c5; box-shadow: 0 0 0 3px rgb(110 182 197 / 12%); }
+.name-field input[aria-invalid="true"] { border-color: rgb(212 115 108 / 70%); }
+.field-message,
+.form-message { min-height: 18px; margin: 8px 2px 0; color: #c88984; font-size: 11px; line-height: 1.5; }
+.field-message.is-valid { color: #77c6a0; }
+
+.choice-group { margin: 22px 0 0; padding: 0; border: 0; }
+.choice-group legend { margin-bottom: 11px; color: #b7c6d0; font-size: 12px; }
+.body-options { display: grid; gap: 9px; }
+.choice-card,
+.class-card { border: 1px solid transparent; color: #98aab8; background: rgb(9 17 30 / 60%); cursor: pointer; transition: .18s ease; }
+.choice-card { display: grid; gap: 4px; width: 100%; border-radius: 13px; padding: 14px 15px; text-align: left; }
+.choice-card strong { color: #dce7eb; font-size: 13px; }
+.choice-card span { font-size: 11px; line-height: 1.45; }
+.choice-card:hover,
+.class-card:hover { background: rgb(38 58 78 / 72%); }
+.choice-card.is-selected,
+.class-card.is-selected { border-color: rgb(127 195 208 / 50%); color: #f5f9fa; background: linear-gradient(135deg, rgb(45 81 99 / 78%), rgb(41 53 83 / 78%)); box-shadow: inset 0 0 24px rgb(100 168 184 / 7%); }
+
+.class-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-top: 26px; }
+.class-card { display: grid; place-items: center; gap: 8px; border-radius: 15px; padding: 17px 8px 14px; }
+.class-card > span { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; color: #cbdce2; background: rgb(111 159 172 / 18%); font-weight: 800; }
+.class-card strong { font-size: 12px; }
+.class-detail { margin-top: 18px; border-radius: 16px; padding: 19px; background: rgb(8 15 27 / 52%); }
+.class-detail h3 { margin: 7px 0; font-size: 22px; }
+.class-detail > p:last-child { margin: 0; color: #93a6b5; font-size: 12px; line-height: 1.7; }
+
+.loadout-panel { display: flex; flex-direction: column; }
+.loadout-list { display: grid; gap: 9px; margin-top: 26px; }
+.loadout-row { display: flex; justify-content: space-between; gap: 15px; border-bottom: 1px solid rgb(141 174 194 / 11%); padding: 10px 2px 13px; }
+.loadout-row span { color: #718596; font-size: 11px; }
+.loadout-row strong { color: #dce8eb; font-size: 12px; text-align: right; }
+.creation-actions { display: grid; gap: 9px; margin-top: auto; padding-top: 25px; }
+.creation-actions .form-message { margin: 0; }
+
+.primary-action,
+.secondary-action,
+.text-action { border: 0; cursor: pointer; transition: transform .16s ease, opacity .16s ease, background .16s ease; }
+.primary-action,
+.secondary-action { border-radius: 13px; padding: 14px 18px; font-weight: 700; }
+.primary-action { color: #07131d; background: linear-gradient(135deg, #8bd0d9, #d3b976); box-shadow: 0 10px 28px rgb(68 142 157 / 20%); }
+.primary-action:disabled { cursor: not-allowed; opacity: .32; filter: saturate(.5); }
+.primary-action:not(:disabled):hover,
+.secondary-action:hover { transform: translateY(-1px); }
+.secondary-action { color: #eaf2f4; background: #26374d; }
+.text-action { padding: 7px; color: #7f94a4; background: transparent; font-size: 11px; }
+.text-action:hover { color: #c8d5db; }
+.text-action--danger { color: #b77f7b; }
+
+.saved-profile-card { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; max-width: 820px; margin: 0 auto; padding: 28px; }
+.saved-profile-mark { display: grid; width: 72px; height: 72px; place-items: center; border: 1px solid rgb(127 195 208 / 32%); border-radius: 22px; color: #c5e3e8; background: rgb(54 101 119 / 30%); font-size: 26px; font-weight: 800; }
+.saved-profile-card h2 { margin: 7px 0 4px; font-size: 27px; }
+.saved-profile-meta { margin: 0; color: #8fa3b3; font-size: 12px; }
+.saved-profile-actions { display: grid; min-width: 190px; gap: 8px; }
+.saved-profile-card > .form-message { grid-column: 2 / -1; margin: 0; }
+
+.ready-shell { display: grid; place-items: center; }
+.ready-card { width: min(620px, 100%); padding: 46px; text-align: center; }
+.ready-emblem { display: grid; width: 72px; height: 72px; margin: 24px auto 18px; place-items: center; border: 1px solid rgb(119 198 160 / 42%); border-radius: 50%; color: #9ce0bb; background: rgb(67 142 106 / 16%); font-size: 28px; }
+.ready-card h1 { font-size: clamp(34px, 5vw, 54px); }
+.ready-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin: 30px 0; }
+.ready-summary div { border-radius: 13px; padding: 14px 8px; background: rgb(7 14 25 / 54%); }
+.ready-summary dt { color: #718596; font-size: 10px; }
+.ready-summary dd { margin: 6px 0 0; color: #e3ecef; font-size: 12px; font-weight: 700; }
+.ready-card .phase-notice { margin: 0 0 20px; border: 1px solid rgb(201 170 102 / 20%); border-radius: 12px; padding: 12px; color: #a89b7d; background: rgb(92 72 40 / 12%); font-size: 11px; }
+
+.field-shell { position: fixed; inset: 0; overflow: hidden; background: #91bdc5; }
+.field-viewport,
+.field-canvas { width: 100%; height: 100%; }
+.field-viewport { position: absolute; inset: 0; }
+.field-canvas { display: block; cursor: grab; touch-action: none; }
+.field-canvas.is-dragging { cursor: grabbing; }
+
+.field-hud,
+.field-hint,
+.field-exit,
+.inventory-toggle { position: absolute; z-index: 2; }
+.field-hud { border: 1px solid rgb(223 244 244 / 25%); background: rgb(10 24 33 / 66%); box-shadow: 0 16px 42px rgb(16 41 45 / 20%); backdrop-filter: blur(14px); }
+.field-hud--identity { top: 24px; left: 24px; display: grid; min-width: 220px; border-radius: 18px; padding: 16px 19px; }
+.field-hud--identity p { margin: 0 0 8px; color: #89d3df; font: 700 9px/1 "Trebuchet MS", sans-serif; letter-spacing: .18em; }
+.field-hud--identity strong { color: #f5fbfb; font-size: 18px; }
+.field-hud--identity span { margin-top: 4px; color: #a8bdc2; font-size: 11px; }
+.field-hud--identity .field-weapon-label { color: #d9c58d; }
+.field-hud--status { top: 24px; right: 24px; display: flex; align-items: center; gap: 11px; border-radius: 18px; padding: 14px 18px; }
+.field-hud--status div { display: grid; gap: 4px; }
+.field-hud--status small { color: #85abb0; font: 700 8px/1 "Trebuchet MS", sans-serif; letter-spacing: .16em; }
+.field-hud--status strong { color: #eef8f8; font-size: 13px; }
+.field-locomotion { color: #a9d9dd; font: 700 9px/1 "Trebuchet MS", sans-serif; letter-spacing: .12em; }
+.field-status-light { width: 9px; height: 9px; border-radius: 50%; background: #9ee0b4; box-shadow: 0 0 12px #83d4a0; }
+.field-hint { left: 50%; bottom: 23px; transform: translateX(-50%); border-radius: 999px; padding: 10px 16px; color: rgb(232 246 246 / 82%); background: rgb(12 27 36 / 54%); backdrop-filter: blur(10px); font-size: 10px; letter-spacing: .04em; white-space: nowrap; pointer-events: none; }
+.field-exit { right: 24px; bottom: 22px; border: 1px solid rgb(230 246 246 / 22%); border-radius: 12px; padding: 10px 14px; color: #dceced; background: rgb(12 27 36 / 62%); cursor: pointer; backdrop-filter: blur(10px); transition: background .16s ease, transform .16s ease; }
+.inventory-toggle { left: 24px; bottom: 22px; border: 1px solid rgb(230 246 246 / 22%); border-radius: 12px; padding: 10px 14px; color: #f1e6c8; background: rgb(12 27 36 / 66%); cursor: pointer; backdrop-filter: blur(10px); }
+.inventory-toggle kbd { display: inline-grid; min-width: 20px; margin-left: 7px; place-items: center; border: 1px solid rgb(230 246 246 / 22%); border-radius: 5px; padding: 2px 5px; color: #9ed6dc; background: rgb(7 17 23 / 56%); font: 700 9px/1 "Trebuchet MS", sans-serif; }
+.field-exit:hover,
+.inventory-toggle:hover { transform: translateY(-1px); background: rgb(22 48 58 / 76%); }
+
+.inventory-overlay { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; padding: 28px; }
+.inventory-overlay[hidden] { display: none; }
+.inventory-backdrop { position: absolute; inset: 0; background: rgb(4 10 16 / 66%); backdrop-filter: blur(5px); }
+.inventory-panel { position: relative; display: grid; width: min(820px, 100%); max-height: min(760px, calc(100vh - 56px)); overflow: hidden; border: 1px solid rgb(142 203 211 / 25%); border-radius: 25px; background: linear-gradient(145deg, rgb(19 32 47 / 97%), rgb(8 17 29 / 97%)); box-shadow: 0 34px 110px rgb(0 0 0 / 48%); }
+.inventory-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgb(142 203 211 / 13%); padding: 22px 24px 18px; }
+.inventory-header p { margin: 0; color: #7fc3d0; font: 700 9px/1 "Trebuchet MS", sans-serif; letter-spacing: .18em; }
+.inventory-header h2 { margin: 7px 0 0; font-size: 25px; }
+.inventory-close { display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid rgb(225 241 242 / 16%); border-radius: 11px; color: #c7d7dc; background: rgb(30 48 65 / 72%); cursor: pointer; font-size: 22px; }
+.inventory-groups { display: grid; gap: 22px; overflow: auto; padding: 22px 24px; }
+.inventory-group h3 { margin: 0 0 11px; color: #a9bdc6; font-size: 12px; }
+.inventory-items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.inventory-item { display: grid; grid-template: auto auto / 35px 1fr; align-items: center; gap: 4px 10px; min-height: 72px; border: 1px solid rgb(142 203 211 / 12%); border-radius: 14px; padding: 12px; color: #dce9ed; background: rgb(19 34 50 / 78%); text-align: left; cursor: pointer; transition: border-color .16s ease, background .16s ease, transform .16s ease; }
+.inventory-item:not(:disabled):hover { transform: translateY(-1px); border-color: rgb(142 203 211 / 38%); background: rgb(37 62 79 / 88%); }
+.inventory-item:disabled { cursor: default; opacity: .38; }
+.inventory-item.is-equipped { border-color: rgb(214 187 119 / 52%); color: #fff4d5; background: linear-gradient(135deg, rgb(73 77 69 / 88%), rgb(47 61 76 / 88%)); opacity: 1; }
+.inventory-item-mark { grid-row: 1 / 3; display: grid; width: 35px; height: 35px; place-items: center; border-radius: 10px; color: #a7dce2; background: rgb(91 148 160 / 17%); font-size: 17px; }
+.inventory-item strong { font-size: 12px; }
+.inventory-item small { color: #8399a6; font-size: 9px; }
+.inventory-item.is-equipped small { color: #d8c58d; }
+.inventory-panel footer { border-top: 1px solid rgb(142 203 211 / 10%); padding: 13px 24px 15px; color: #6f8490; font-size: 9px; letter-spacing: .04em; }
+
+@media (max-width: 820px) {
+  .atelier { grid-template: auto 62vh auto / 1fr; width: min(100% - 24px, 680px); padding: 22px 0; }
+  .brand { display: block; }
+  .brand > p:last-child { margin-top: 10px; }
+  .viewport-wrap { min-height: 450px; }
+  .catalog-panel { min-height: 360px; }
+  .creation-shell { width: min(100% - 24px, 680px); padding: 30px 0; }
+  .creation-layout { grid-template-columns: 1fr; }
+  .creation-panel { min-height: auto; }
+  .saved-profile-card { grid-template-columns: auto 1fr; }
+  .saved-profile-actions { grid-column: 1 / -1; }
+  .saved-profile-card > .form-message { grid-column: 1 / -1; }
+  .ready-summary { grid-template-columns: 1fr; }
+  .field-hud--identity { top: 12px; left: 12px; min-width: 190px; }
+  .field-hud--status { top: 12px; right: 12px; }
+  .field-hint { bottom: 16px; }
+  .field-exit { right: 12px; bottom: 12px; }
+  .inventory-toggle { left: 12px; bottom: 12px; }
+  .inventory-overlay { padding: 12px; }
+  .inventory-panel { max-height: calc(100vh - 24px); }
+  .inventory-items { grid-template-columns: 1fr; }
+}
+
+/* MMO client shell */
+#app { position: relative; min-height: 100vh; }
+body:not(.field-mode) { background: #06101b; }
+body:not(.field-mode)::before { background: radial-gradient(circle at 50% 38%, rgb(54 91 117 / 28%), transparent 32%), linear-gradient(145deg, #06101b, #0b1725 48%, #08111d); }
+
+.character-select-shell,
+.character-creation-shell {
+  --gold: #d0b06b;
+  --gold-bright: #f0d99a;
+  --steel: #91a9ba;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, rgb(5 12 21 / 18%), rgb(4 10 17 / 78%)),
+    radial-gradient(ellipse at 50% 36%, #24415a 0, #13283c 28%, #081522 66%, #040b13 100%);
+}
+
+.character-select-shell::before,
+.character-creation-shell::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 24% -8% 0;
+  opacity: .55;
+  background:
+    linear-gradient(145deg, transparent 41%, #1e3546 42% 54%, transparent 55%) 8% 0 / 35% 65% no-repeat,
+    linear-gradient(215deg, transparent 39%, #172d3e 40% 58%, transparent 59%) 88% 10% / 42% 72% no-repeat,
+    linear-gradient(180deg, transparent, #06101a 75%);
+  filter: blur(1px);
+}
+
+.character-select-shell::after,
+.character-creation-shell::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid rgb(214 184 117 / 13%);
+  box-shadow: inset 0 0 160px rgb(0 0 0 / 48%);
+}
+
+.lobby-atmosphere span,
+.creation-atmosphere span {
+  position: absolute;
+  z-index: -1;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #d8c485;
+  box-shadow: 0 0 15px 4px rgb(216 196 133 / 42%);
+  animation: client-star 5s ease-in-out infinite alternate;
+}
+.lobby-atmosphere span:nth-child(1), .creation-atmosphere span:nth-child(1) { top: 24%; left: 25%; }
+.lobby-atmosphere span:nth-child(2), .creation-atmosphere span:nth-child(2) { top: 17%; right: 28%; animation-delay: -2s; }
+.lobby-atmosphere span:nth-child(3), .creation-atmosphere span:nth-child(3) { top: 56%; left: 13%; animation-delay: -3.5s; }
+@keyframes client-star { to { opacity: .25; transform: scale(.55); } }
+
+.game-brand { position: absolute; z-index: 8; top: 42px; left: 52px; display: grid; gap: 3px; }
+.game-brand p,
+.creation-topbar p { margin: 0; color: var(--gold); font: 700 10px/1 "Trebuchet MS", sans-serif; letter-spacing: .3em; }
+.game-brand h1 { margin: 8px 0 2px; font: 400 clamp(29px, 3vw, 44px)/1 "Georgia", "Malgun Gothic", serif; letter-spacing: -.06em; text-shadow: 0 3px 22px #000; }
+.game-brand > span { color: #667d8f; font: 600 9px/1 "Trebuchet MS", sans-serif; letter-spacing: .2em; }
+
+.character-stage { position: absolute; inset: 0 330px 96px 230px; min-height: 520px; }
+.character-stage::before { content: ""; position: absolute; left: 50%; bottom: 9%; width: min(520px, 70%); height: 80px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(ellipse, rgb(87 139 170 / 25%), transparent 70%); filter: blur(8px); }
+.character-preview-canvas { display: block; width: 100%; height: 100%; }
+.character-stage .character-preview-canvas { mask-image: linear-gradient(to bottom, transparent 0, #000 12%, #000 90%, transparent 100%); }
+.stage-nameplate { position: absolute; z-index: 2; left: 50%; bottom: 26px; display: grid; min-width: 330px; transform: translateX(-50%); text-align: center; text-shadow: 0 2px 14px #000; }
+.stage-nameplate::before { content: ""; width: 100%; height: 1px; margin-bottom: 13px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.stage-nameplate span { color: var(--gold); font: 700 9px/1 "Trebuchet MS", sans-serif; letter-spacing: .25em; }
+.stage-nameplate strong { margin-top: 5px; font: 400 34px/1.25 "Georgia", "Malgun Gothic", serif; }
+.stage-nameplate small { color: #9cafbc; font-size: 11px; }
+
+.empty-character-stage { position: absolute; top: 48%; left: 50%; display: grid; justify-items: center; transform: translate(-50%, -50%); color: #738999; text-align: center; }
+.empty-character-stage > span { display: grid; width: 120px; height: 120px; margin-bottom: 20px; place-items: center; border: 1px solid rgb(208 176 107 / 32%); border-radius: 50%; color: var(--gold); background: rgb(9 23 35 / 66%); box-shadow: 0 0 60px rgb(71 121 151 / 18%); font: 200 52px/1 sans-serif; }
+.empty-character-stage strong { color: #c7d1d7; font: 400 20px/1.3 "Georgia", "Malgun Gothic", serif; }
+.empty-character-stage p { margin: 9px 0; font-size: 11px; }
+
+.lobby-command-panel { position: absolute; z-index: 8; top: 50%; right: 46px; width: 310px; padding: 24px; transform: translateY(-50%); border: 1px solid rgb(185 164 112 / 28%); border-radius: 2px; background: linear-gradient(135deg, rgb(8 20 32 / 92%), rgb(12 25 38 / 82%)); box-shadow: 0 25px 70px rgb(0 0 0 / 44%), inset 0 0 30px rgb(82 111 132 / 7%); backdrop-filter: blur(16px); }
+.lobby-command-panel::before,
+.creation-control-panel::before { content: ""; position: absolute; top: -1px; left: 22px; width: 52px; height: 2px; background: var(--gold); box-shadow: 0 0 12px rgb(208 176 107 / 45%); }
+.panel-heading,
+.game-panel-title { display: flex; align-items: center; gap: 11px; padding-bottom: 17px; border-bottom: 1px solid rgb(151 173 187 / 15%); }
+.panel-heading > span,
+.game-panel-title > span { display: grid; width: 31px; height: 31px; place-items: center; border: 1px solid rgb(208 176 107 / 35%); color: var(--gold); font: 700 9px/1 "Trebuchet MS", sans-serif; }
+.panel-heading div,
+.game-panel-title div { display: grid; gap: 4px; }
+.panel-heading small,
+.game-panel-title small { color: #647d90; font: 700 8px/1 "Trebuchet MS", sans-serif; letter-spacing: .2em; }
+.panel-heading strong,
+.game-panel-title h2 { margin: 0; color: #e6edf0; font-size: 15px; }
+
+.character-specs { display: grid; gap: 0; margin: 19px 0 0; }
+.character-specs div { display: flex; justify-content: space-between; gap: 18px; padding: 10px 2px; border-bottom: 1px solid rgb(149 171 186 / 10%); }
+.character-specs dt { color: #708799; font-size: 10px; }
+.character-specs dd { margin: 0; color: #dbe4e8; font-size: 11px; font-weight: 700; }
+.class-flavor,
+.empty-panel-copy { min-height: 54px; margin: 18px 0 0; color: #8297a6; font-size: 10px; line-height: 1.7; }
+.lobby-message { min-height: 34px; margin: 13px 0 0; color: #ce9b8d; font-size: 9px; line-height: 1.5; }
+.lobby-actions { display: grid; gap: 8px; }
+
+.game-button { position: relative; min-height: 43px; border: 1px solid rgb(145 168 184 / 24%); border-radius: 2px; padding: 11px 18px; color: #ced9df; background: linear-gradient(180deg, rgb(40 59 74 / 86%), rgb(22 39 53 / 88%)); cursor: pointer; font-size: 11px; font-weight: 700; letter-spacing: .04em; box-shadow: inset 0 1px rgb(255 255 255 / 5%); transition: .16s ease; }
+.game-button:not(:disabled):hover { color: #fff; border-color: rgb(218 190 124 / 52%); filter: brightness(1.13); }
+.game-button:disabled { cursor: not-allowed; opacity: .3; }
+.game-button--primary { border-color: #b59859; color: #171207; background: linear-gradient(180deg, #efd898, #b58e46); box-shadow: 0 0 24px rgb(204 170 93 / 17%), inset 0 1px rgb(255 255 255 / 42%); }
+.game-button--danger { color: #b98c85; background: rgb(48 33 38 / 62%); }
+
+.character-slots { position: absolute; z-index: 8; bottom: 34px; left: 46px; display: flex; gap: 8px; }
+.character-slot { display: grid; grid-template-columns: 42px 1fr; align-items: center; gap: 11px; width: 190px; min-height: 63px; border: 1px solid rgb(141 165 181 / 18%); border-radius: 2px; padding: 9px 11px; color: #b9c8d0; background: rgb(7 18 29 / 76%); text-align: left; backdrop-filter: blur(10px); }
+.character-slot > span { display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid rgb(132 161 179 / 18%); color: #7d9aad; background: #0d1d2b; font-weight: 800; }
+.character-slot div { display: grid; gap: 4px; }
+.character-slot strong { font-size: 11px; }
+.character-slot small { color: #61788a; font-size: 8px; letter-spacing: .08em; }
+.character-slot.is-selected { border-color: rgb(208 176 107 / 48%); box-shadow: inset 0 -2px var(--gold), 0 0 25px rgb(53 91 115 / 12%); }
+.character-slot.is-selected > span { color: var(--gold-bright); border-color: rgb(208 176 107 / 38%); }
+.character-slot--create { cursor: pointer; }
+.character-slot--create:hover { border-color: rgb(208 176 107 / 42%); }
+.lobby-footer { position: absolute; right: 47px; bottom: 19px; display: flex; gap: 18px; color: #445d6f; font: 600 8px/1 "Trebuchet MS", sans-serif; letter-spacing: .1em; }
+
+/* Character creation scene */
+.creation-topbar { position: relative; z-index: 8; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 92px; border-bottom: 1px solid rgb(183 164 114 / 16%); padding: 0 42px; background: linear-gradient(180deg, rgb(3 10 17 / 78%), transparent); }
+.creation-topbar > div { text-align: center; }
+.creation-topbar h1 { margin: 6px 0 0; font: 400 25px/1 "Georgia", "Malgun Gothic", serif; }
+.back-command { justify-self: start; border: 0; padding: 10px 0; color: #8499a8; background: transparent; cursor: pointer; font-size: 10px; }
+.back-command span { margin-right: 8px; color: var(--gold); font-size: 22px; vertical-align: -2px; }
+.creation-step { justify-self: end; color: #51697a; font: 700 8px/1 "Trebuchet MS", sans-serif; letter-spacing: .16em; }
+
+.character-creation-layout { position: relative; z-index: 2; display: grid; grid-template: minmax(0, 1fr) 78px / minmax(260px, 310px) minmax(400px, 1fr) minmax(260px, 310px); gap: 20px; height: calc(100vh - 92px); padding: 24px 36px 0; }
+.creation-control-panel { position: relative; align-self: center; min-height: 505px; border: 1px solid rgb(166 162 132 / 22%); border-radius: 2px; padding: 22px; background: linear-gradient(145deg, rgb(7 18 30 / 89%), rgb(11 25 38 / 79%)); box-shadow: 0 24px 70px rgb(0 0 0 / 35%); backdrop-filter: blur(14px); }
+.game-panel-title h2 { font-size: 14px; }
+.character-creation-shell .class-options { display: grid; grid-template-columns: 1fr; gap: 7px; margin: 19px 0 0; }
+.character-creation-shell .class-card { display: grid; grid-template-columns: 38px 1fr auto; align-items: center; justify-items: start; gap: 11px; min-height: 60px; border: 1px solid rgb(126 151 168 / 13%); border-radius: 2px; padding: 8px 12px; color: #94a8b5; background: rgb(4 14 23 / 44%); text-align: left; }
+.character-creation-shell .class-card > span { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 0; color: #8da7b7; background: rgb(74 102 120 / 16%); font-size: 18px; }
+.character-creation-shell .class-card div { display: grid; gap: 4px; }
+.character-creation-shell .class-card strong { color: #d8e1e5; font-size: 12px; }
+.character-creation-shell .class-card small { color: #516a7c; font: 700 8px/1 "Trebuchet MS", sans-serif; letter-spacing: .12em; }
+.character-creation-shell .class-card b { justify-self: end; color: #4f6879; font-size: 17px; }
+.character-creation-shell .class-card.is-selected { border-color: rgb(208 176 107 / 52%); background: linear-gradient(90deg, rgb(73 65 44 / 48%), rgb(29 49 64 / 67%)); box-shadow: inset 3px 0 var(--gold); }
+.character-creation-shell .class-card.is-selected > span,
+.character-creation-shell .class-card.is-selected b { color: var(--gold-bright); }
+.character-creation-shell .class-detail { margin-top: 15px; border: 0; border-radius: 0; padding: 15px; background: rgb(3 12 20 / 38%); }
+.character-creation-shell .class-detail small { color: #647c8d; font: 700 8px/1 "Trebuchet MS", sans-serif; letter-spacing: .15em; }
+.character-creation-shell .class-detail h3 { margin: 7px 0; color: var(--gold-bright); font: 400 20px/1.2 "Georgia", "Malgun Gothic", serif; }
+.character-creation-shell .class-detail p { margin: 0; color: #8195a3; font-size: 10px; line-height: 1.65; }
+
+.creation-character-stage { position: relative; min-height: 550px; overflow: hidden; }
+.creation-character-stage::after { content: ""; position: absolute; inset: 7% 12% 15%; z-index: -1; border: 1px solid rgb(208 176 107 / 8%); border-radius: 50%; box-shadow: inset 0 0 80px rgb(95 142 168 / 10%); }
+.creation-character-stage .character-preview-canvas { position: absolute; inset: 0; mask-image: linear-gradient(to bottom, transparent 0, #000 9%, #000 89%, transparent 100%); }
+.preview-caption { position: absolute; left: 50%; bottom: 112px; display: grid; transform: translateX(-50%); text-align: center; text-shadow: 0 2px 12px #000; }
+.preview-caption span { color: var(--gold); font: 700 8px/1 "Trebuchet MS", sans-serif; letter-spacing: .22em; }
+.preview-caption strong { margin: 5px 0 2px; font: 400 25px/1.2 "Georgia", "Malgun Gothic", serif; }
+.preview-caption small { color: #718797; font-size: 9px; }
+
+.creation-name-field { position: absolute; right: 50%; bottom: 15px; left: 50%; display: grid; width: min(390px, 76%); transform: translateX(-50%); text-align: center; }
+.creation-name-field > span { margin-bottom: 8px; color: #91a4b1; font-size: 10px; }
+.creation-name-field input { height: 48px; border: 1px solid rgb(208 176 107 / 34%); border-radius: 2px; outline: none; padding: 0 17px; color: #f1f4f5; background: rgb(3 12 20 / 83%); text-align: center; box-shadow: inset 0 0 20px rgb(0 0 0 / 30%); }
+.creation-name-field input:focus { border-color: var(--gold); box-shadow: 0 0 18px rgb(208 176 107 / 13%); }
+.creation-name-field input[aria-invalid="true"] { border-color: #af6a67; }
+.creation-name-field small { min-height: 15px; margin-top: 6px; color: #b16f69; font-size: 9px; }
+.creation-name-field small.is-valid { color: #78b99a; }
+
+.appearance-panel .body-options { display: grid; gap: 8px; margin-top: 19px; }
+.body-choice { display: grid; grid-template-columns: 38px 1fr; align-items: center; gap: 11px; min-height: 67px; border: 1px solid rgb(126 151 168 / 14%); border-radius: 2px; padding: 10px 12px; color: #8ca0ad; background: rgb(4 14 23 / 44%); text-align: left; cursor: pointer; }
+.body-choice > span { display: grid; width: 37px; height: 37px; place-items: center; color: #7591a3; background: rgb(73 102 120 / 14%); }
+.body-choice div { display: grid; gap: 4px; }
+.body-choice strong { color: #d3dde1; font-size: 12px; }
+.body-choice small { color: #657d8d; font-size: 9px; }
+.body-choice.is-selected { border-color: rgb(208 176 107 / 50%); background: linear-gradient(90deg, rgb(72 64 43 / 46%), rgb(27 47 61 / 60%)); box-shadow: inset 3px 0 var(--gold); }
+.body-choice.is-selected > span { color: var(--gold-bright); }
+.loadout-summary { margin-top: 27px; }
+.game-panel-title--small { padding-bottom: 13px; }
+.game-panel-title--small > span { width: 26px; height: 26px; }
+.character-creation-shell .loadout-list { margin-top: 10px; }
+.character-creation-shell .loadout-row { padding: 9px 2px 10px; }
+
+.creation-command-bar { grid-column: 1 / -1; display: flex; align-items: center; justify-content: flex-end; gap: 22px; border-top: 1px solid rgb(184 164 112 / 16%); padding: 12px 6px; background: linear-gradient(180deg, transparent, rgb(3 10 17 / 76%)); }
+.creation-command-bar .form-message { flex: 1; margin: 0; text-align: right; }
+.creation-command-bar > div { display: flex; gap: 8px; }
+.creation-command-bar .game-button { min-width: 150px; }
+
+/* In-field MMO HUD */
+.field-hud { border-radius: 2px; border-color: rgb(209 183 120 / 27%); background: linear-gradient(145deg, rgb(4 13 20 / 86%), rgb(12 28 38 / 74%)); box-shadow: 0 13px 35px rgb(0 0 0 / 32%), inset 0 0 24px rgb(75 116 134 / 7%); }
+.field-hud--identity { top: 22px; left: 22px; grid-template-columns: 62px 1fr; align-items: center; gap: 13px; width: 300px; min-width: 0; padding: 11px 14px 12px 11px; }
+.field-portrait { display: grid; width: 61px; height: 61px; place-items: center; border: 1px solid rgb(212 181 110 / 46%); color: #f2dc9c; background: radial-gradient(circle, #2d4c5b, #0c1a24 72%); box-shadow: inset 0 0 0 3px #0a1720; font: 700 22px/1 "Georgia", serif; }
+.field-character-copy { display: grid; grid-template-columns: 1fr auto; gap: 3px 8px; }
+.field-character-copy p { grid-column: 1 / -1; margin: 0; color: #9d854e; font: 700 7px/1 "Trebuchet MS", sans-serif; letter-spacing: .18em; }
+.field-character-copy > strong { font: 400 17px/1.2 "Georgia", "Malgun Gothic", serif; }
+.field-character-copy > .field-class-label { justify-self: end; margin: 3px 0 0; color: #9cafba; font-size: 9px; }
+.field-resource-bar { position: relative; grid-column: 1 / -1; height: 7px; overflow: hidden; border: 1px solid rgb(255 255 255 / 10%); background: #071018; }
+.field-resource-bar i { display: block; width: 100%; height: 100%; }
+.field-resource-bar--hp i { background: linear-gradient(90deg, #743639, #bd5d50); }
+.field-resource-bar--sp i { background: linear-gradient(90deg, #2c6073, #5d9eae); }
+.field-resource-bar small { position: absolute; inset: 0 3px; color: rgb(255 255 255 / 72%); font: 600 5px/6px sans-serif; }
+.field-character-copy > .field-weapon-label { grid-column: 1 / -1; margin: 2px 0 0; color: #c7af74; font-size: 8px; }
+.field-hud--status { top: 22px; right: 22px; gap: 12px; padding: 9px 13px 9px 9px; }
+.field-minimap { position: relative; width: 72px; height: 72px; overflow: hidden; border: 2px solid #8a7549; border-radius: 50%; background: radial-gradient(circle at 35% 65%, #6b8b6a 0 11%, transparent 12%), linear-gradient(32deg, transparent 43%, #bfaa7b 44% 49%, transparent 50%), #344f55; box-shadow: inset 0 0 15px #0a171e; }
+.field-minimap::before,
+.field-minimap::after { content: ""; position: absolute; background: rgb(215 204 161 / 38%); }
+.field-minimap::before { top: 50%; left: 0; width: 100%; height: 1px; }
+.field-minimap::after { top: 0; left: 50%; width: 1px; height: 100%; }
+.field-minimap > span { position: absolute; top: 50%; left: 50%; z-index: 2; transform: translate(-50%, -50%); color: #f5d270; text-shadow: 0 0 7px #000; font-size: 12px; }
+.field-location { display: grid; gap: 4px; min-width: 115px; }
+.field-location small { color: #7f714b; font: 700 7px/1 "Trebuchet MS", sans-serif; letter-spacing: .13em; }
+.field-location strong { color: #e6edef; font: 400 14px/1.2 "Georgia", "Malgun Gothic", serif; }
+.field-location > span { color: #78909d; font-size: 7px; }
+.field-locomotion { color: #b9cfca; font-size: inherit; letter-spacing: .08em; }
+.field-hotbar { position: absolute; z-index: 3; bottom: 19px; left: 50%; display: flex; gap: 4px; transform: translateX(-50%); border: 1px solid rgb(190 169 116 / 24%); padding: 5px; background: rgb(5 15 23 / 76%); box-shadow: 0 12px 35px rgb(0 0 0 / 35%); backdrop-filter: blur(9px); }
+.hotbar-slot,
+.inventory-toggle.hotbar-slot { position: relative; inset: auto; display: grid; width: 54px; height: 54px; place-items: center; border: 1px solid rgb(139 163 176 / 21%); border-radius: 1px; padding: 0; color: #b9c8ce; background: linear-gradient(145deg, #152b3a, #0b1b27); cursor: default; backdrop-filter: none; }
+.hotbar-slot.is-active { border-color: rgb(208 176 107 / 52%); box-shadow: inset 0 0 10px rgb(208 176 107 / 11%); }
+.hotbar-slot kbd { position: absolute; top: 3px; left: 4px; min-width: 0; margin: 0; border: 0; padding: 0; color: #8aa0ae; background: transparent; font: 700 7px/1 sans-serif; }
+.hotbar-slot b { color: #d6c38e; font-size: 18px; }
+.hotbar-slot small { position: absolute; right: 3px; bottom: 3px; color: #607988; font-size: 6px; }
+.inventory-toggle.hotbar-slot { cursor: pointer; }
+.inventory-toggle.hotbar-slot:hover { transform: none; border-color: rgb(208 176 107 / 58%); background: linear-gradient(145deg, #244254, #102534); }
+.field-hint { right: auto; bottom: 20px; left: 22px; transform: none; border-radius: 1px; padding: 8px 11px; color: rgb(220 231 233 / 68%); background: rgb(4 14 21 / 58%); font-size: 8px; }
+.field-exit { top: 22px; right: 228px; bottom: auto; border-radius: 1px; padding: 8px 11px; color: #aebfc6; background: rgb(5 16 24 / 66%); font-size: 9px; }
+.field-exit span { margin-right: 7px; color: #a58f5c; font-size: 7px; }
+.inventory-panel { border-radius: 2px; border-color: rgb(208 176 107 / 31%); background: linear-gradient(145deg, rgb(7 18 29 / 98%), rgb(11 26 39 / 98%)); }
+.inventory-header { border-bottom-color: rgb(208 176 107 / 18%); }
+.inventory-header h2 { font-family: "Georgia", "Malgun Gothic", serif; font-weight: 400; }
+.inventory-item { border-radius: 2px; }
+
+@media (max-width: 980px) {
+  .character-select-shell,
+  .character-creation-shell { overflow: auto; }
+  .game-brand { top: 28px; left: 28px; }
+  .character-stage { inset: 0 250px 110px 0; }
+  .lobby-command-panel { right: 22px; width: 270px; }
+  .character-slots { left: 24px; bottom: 24px; }
+  .lobby-footer { display: none; }
+  .character-creation-layout { grid-template: auto auto auto 78px / 1fr; height: auto; min-height: calc(100vh - 82px); padding: 18px; }
+  .creation-topbar { height: 82px; padding: 0 20px; }
+  .creation-step { display: none; }
+  .creation-control-panel { align-self: stretch; min-height: auto; }
+  .creation-character-stage { grid-row: 1; min-height: 620px; }
+  .class-select-panel { grid-row: 2; }
+  .appearance-panel { grid-row: 3; }
+  .creation-command-bar { grid-row: 4; }
+  .character-creation-shell .class-options { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 680px) {
+  .character-select-shell { min-height: 900px; }
+  .game-brand { left: 20px; }
+  .character-stage { inset: 90px 0 360px; min-height: 420px; }
+  .stage-nameplate { bottom: 10px; min-width: 270px; }
+  .lobby-command-panel { top: auto; right: 16px; bottom: 86px; left: 16px; width: auto; transform: none; }
+  .lobby-command-panel .character-specs { grid-template-columns: 1fr 1fr; column-gap: 15px; }
+  .class-flavor { display: none; }
+  .character-slots { right: 16px; bottom: 16px; left: 16px; }
+  .character-slot { width: 50%; }
+  .creation-topbar { grid-template-columns: 1fr 1fr; }
+  .creation-topbar > div { text-align: right; }
+  .character-creation-shell .class-options { grid-template-columns: 1fr; }
+  .creation-command-bar { flex-direction: column; align-items: stretch; height: auto; }
+  .creation-command-bar > div { display: grid; grid-template-columns: 1fr 1fr; }
+  .field-hud--identity { width: 250px; }
+  .field-hud--status { display: none; }
+  .field-exit { top: 104px; right: 12px; }
+  .field-hint { display: none; }
+}

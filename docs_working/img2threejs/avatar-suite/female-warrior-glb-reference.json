@@ -1,0 +1,4686 @@
+{
+  "schemaVersion": 1,
+  "kind": "glb-reference",
+  "path": "C:\\github_dev\\img2threejs-mmo_client\\public\\assets\\characters\\female-warrior.glb",
+  "sha256": "e8ff95758b8f6a94f255417c40adfcd1acb5f01082842e08d4288ed732d716d0",
+  "bytes": 2453480,
+  "binary": {
+    "version": 2,
+    "declaredLength": 2453480,
+    "jsonChunkBytes": 80154,
+    "binChunkBytes": 2373296,
+    "chunks": [
+      {
+        "type": "JSON",
+        "bytes": 80156
+      },
+      {
+        "type": "BIN\u0000",
+        "bytes": 2373296
+      }
+    ]
+  },
+  "asset": {
+    "version": "2.0",
+    "generator": "Khronos glTF Blender I/O v5.2.39"
+  },
+  "scene": {
+    "defaultScene": 0,
+    "sceneCount": 1,
+    "nodeCount": 90,
+    "meshCount": 66,
+    "primitiveCount": 66,
+    "materialCount": 17,
+    "skinCount": 1,
+    "animationCount": 0
+  },
+  "nodes": [
+    {
+      "index": 0,
+      "name": "socket.hand.L",
+      "mesh": null,
+      "skin": null,
+      "children": []
+    },
+    {
+      "index": 1,
+      "name": "hand.L",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        0
+      ]
+    },
+    {
+      "index": 2,
+      "name": "arm.L.lower",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        1
+      ]
+    },
+    {
+      "index": 3,
+      "name": "arm.L.upper",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        2
+      ]
+    },
+    {
+      "index": 4,
+      "name": "socket.hand.R",
+      "mesh": null,
+      "skin": null,
+      "children": []
+    },
+    {
+      "index": 5,
+      "name": "hand.R",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        4
+      ]
+    },
+    {
+      "index": 6,
+      "name": "arm.R.lower",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        5
+      ]
+    },
+    {
+      "index": 7,
+      "name": "arm.R.upper",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        6
+      ]
+    },
+    {
+      "index": 8,
+      "name": "socket.back",
+      "mesh": null,
+      "skin": null,
+      "children": []
+    },
+    {
+      "index": 9,
+      "name": "back",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        8
+      ]
+    },
+    {
+      "index": 10,
+      "name": "socket.head",
+      "mesh": null,
+      "skin": null,
+      "children": []
+    },
+    {
+      "index": 11,
+      "name": "head",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        10
+      ]
+    },
+    {
+      "index": 12,
+      "name": "neck",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        11
+      ]
+    },
+    {
+      "index": 13,
+      "name": "chest",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        3,
+        7,
+        9,
+        12
+      ]
+    },
+    {
+      "index": 14,
+      "name": "ankle.L",
+      "mesh": null,
+      "skin": null,
+      "children": []
+    },
+    {
+      "index": 15,
+      "name": "leg.L.lower",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        14
+      ]
+    },
+    {
+      "index": 16,
+      "name": "leg.L.upper",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        15
+      ]
+    },
+    {
+      "index": 17,
+      "name": "ankle.R",
+      "mesh": null,
+      "skin": null,
+      "children": []
+    },
+    {
+      "index": 18,
+      "name": "leg.R.lower",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        17
+      ]
+    },
+    {
+      "index": 19,
+      "name": "leg.R.upper",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        18
+      ]
+    },
+    {
+      "index": 20,
+      "name": "pelvis",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        13,
+        16,
+        19
+      ]
+    },
+    {
+      "index": 21,
+      "name": "root.bone",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        20
+      ]
+    },
+    {
+      "index": 22,
+      "name": "body.continuous",
+      "mesh": 0,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 23,
+      "name": "body.hand.L",
+      "mesh": 1,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 24,
+      "name": "body.hand.R",
+      "mesh": 2,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 25,
+      "name": "body.head",
+      "mesh": 3,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 26,
+      "name": "boot.L.cuff",
+      "mesh": 4,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 27,
+      "name": "boot.L.foot",
+      "mesh": 5,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 28,
+      "name": "boot.L.shaft",
+      "mesh": 6,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 29,
+      "name": "boot.R.cuff",
+      "mesh": 7,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 30,
+      "name": "boot.R.foot",
+      "mesh": 8,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 31,
+      "name": "boot.R.shaft",
+      "mesh": 9,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 32,
+      "name": "face.brow.L",
+      "mesh": 10,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 33,
+      "name": "face.brow.R",
+      "mesh": 11,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 34,
+      "name": "face.cheek.L",
+      "mesh": 12,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 35,
+      "name": "face.cheek.R",
+      "mesh": 13,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 36,
+      "name": "face.eye.L.catchlight",
+      "mesh": 14,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 37,
+      "name": "face.eye.L.iris",
+      "mesh": 15,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 38,
+      "name": "face.eye.L.pupil",
+      "mesh": 16,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 39,
+      "name": "face.eye.L.upper-lid",
+      "mesh": 17,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 40,
+      "name": "face.eye.L.white",
+      "mesh": 18,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 41,
+      "name": "face.eye.R.catchlight",
+      "mesh": 19,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 42,
+      "name": "face.eye.R.iris",
+      "mesh": 20,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 43,
+      "name": "face.eye.R.pupil",
+      "mesh": 21,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 44,
+      "name": "face.eye.R.upper-lid",
+      "mesh": 22,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 45,
+      "name": "face.eye.R.white",
+      "mesh": 23,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 46,
+      "name": "face.mouth",
+      "mesh": 24,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 47,
+      "name": "face.nose",
+      "mesh": 25,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 48,
+      "name": "hair.bang.1",
+      "mesh": 26,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 49,
+      "name": "hair.bang.2",
+      "mesh": 27,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 50,
+      "name": "hair.bang.3",
+      "mesh": 28,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 51,
+      "name": "hair.bang.4",
+      "mesh": 29,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 52,
+      "name": "hair.bang.5",
+      "mesh": 30,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 53,
+      "name": "hair.bang.6",
+      "mesh": 31,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 54,
+      "name": "hair.crown-mass",
+      "mesh": 32,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 55,
+      "name": "hair.ponytail.1",
+      "mesh": 33,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 56,
+      "name": "hair.ponytail.2",
+      "mesh": 34,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 57,
+      "name": "hair.ponytail.3",
+      "mesh": 35,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 58,
+      "name": "hair.ponytail.4",
+      "mesh": 36,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 59,
+      "name": "hair.ponytail.5",
+      "mesh": 37,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 60,
+      "name": "hair.ponytail.6",
+      "mesh": 38,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 61,
+      "name": "hair.ponytail.7",
+      "mesh": 39,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 62,
+      "name": "hair.ponytail.tie",
+      "mesh": 40,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 63,
+      "name": "hair.rear-mass",
+      "mesh": 41,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 64,
+      "name": "hair.temple.L",
+      "mesh": 42,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 65,
+      "name": "hair.temple.R",
+      "mesh": 43,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 66,
+      "name": "outfit.glb.warrior-starter",
+      "mesh": null,
+      "skin": null,
+      "children": []
+    },
+    {
+      "index": 67,
+      "name": "outfit.traveler.coat",
+      "mesh": 44,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 68,
+      "name": "outfit.warrior.belt",
+      "mesh": 45,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 69,
+      "name": "outfit.warrior.buckle",
+      "mesh": 46,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 70,
+      "name": "outfit.warrior.collar.L",
+      "mesh": 47,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 71,
+      "name": "outfit.warrior.collar.R",
+      "mesh": 48,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 72,
+      "name": "outfit.warrior.glove.L",
+      "mesh": 49,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 73,
+      "name": "outfit.warrior.glove.R",
+      "mesh": 50,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 74,
+      "name": "outfit.warrior.inset",
+      "mesh": 51,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 75,
+      "name": "outfit.warrior.pauldron",
+      "mesh": 52,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 76,
+      "name": "outfit.warrior.pouch",
+      "mesh": 53,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 77,
+      "name": "outfit.warrior.short-sleeve.L",
+      "mesh": 54,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 78,
+      "name": "outfit.warrior.short-sleeve.R",
+      "mesh": 55,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 79,
+      "name": "outfit.warrior.shorts.L",
+      "mesh": 56,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 80,
+      "name": "outfit.warrior.shorts.R",
+      "mesh": 57,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 81,
+      "name": "outfit.warrior.skirt-border.L",
+      "mesh": 58,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 82,
+      "name": "outfit.warrior.skirt-border.R",
+      "mesh": 59,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 83,
+      "name": "outfit.warrior.skirt.L",
+      "mesh": 60,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 84,
+      "name": "outfit.warrior.skirt.R",
+      "mesh": 61,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 85,
+      "name": "outfit.warrior.sleeve-cuff.L",
+      "mesh": 62,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 86,
+      "name": "outfit.warrior.sleeve-cuff.R",
+      "mesh": 63,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 87,
+      "name": "outfit.warrior.strap",
+      "mesh": 64,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 88,
+      "name": "outfit.warrior.tunic",
+      "mesh": 65,
+      "skin": 0,
+      "children": []
+    },
+    {
+      "index": 89,
+      "name": "Armature",
+      "mesh": null,
+      "skin": null,
+      "children": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        21
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "index": 0,
+      "name": "Sphere",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 0,
+          "positionBounds": {
+            "min": [
+              -0.7901824712753296,
+              0.021402359008789062,
+              -0.33786541223526
+            ],
+            "max": [
+              0.7901824712753296,
+              4.166043281555176,
+              0.4943862557411194
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.7901824712753296,
+          0.021402359008789062,
+          -0.33786541223526
+        ],
+        "max": [
+          0.7901824712753296,
+          4.166043281555176,
+          0.4943862557411194
+        ],
+        "size": [
+          1.5803649425506592,
+          4.144640922546387,
+          0.8322516679763794
+        ],
+        "center": [
+          0.0,
+          2.0937228202819824,
+          0.07826042175292969
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "name": "Sphere.008",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 0,
+          "positionBounds": {
+            "min": [
+              0.5342721939086914,
+              1.8212783336639404,
+              -0.022410139441490173
+            ],
+            "max": [
+              0.8188211917877197,
+              2.2638628482818604,
+              0.13241013884544373
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.5342721939086914,
+          1.8212783336639404,
+          -0.022410139441490173
+        ],
+        "max": [
+          0.8188211917877197,
+          2.2638628482818604,
+          0.13241013884544373
+        ],
+        "size": [
+          0.2845489978790283,
+          0.4425845146179199,
+          0.1548202782869339
+        ],
+        "center": [
+          0.6765466928482056,
+          2.0425705909729004,
+          0.054999999701976776
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "name": "Sphere.021",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 0,
+          "positionBounds": {
+            "min": [
+              -0.818821132183075,
+              1.8212783336639404,
+              -0.022410139441490173
+            ],
+            "max": [
+              -0.5342721939086914,
+              2.2638628482818604,
+              0.13241013884544373
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.818821132183075,
+          1.8212783336639404,
+          -0.022410139441490173
+        ],
+        "max": [
+          -0.5342721939086914,
+          2.2638628482818604,
+          0.13241013884544373
+        ],
+        "size": [
+          0.28454893827438354,
+          0.4425845146179199,
+          0.1548202782869339
+        ],
+        "center": [
+          -0.6765466630458832,
+          2.0425705909729004,
+          0.054999999701976776
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "name": "Sphere.031",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 0,
+          "positionBounds": {
+            "min": [
+              -0.42532938718795776,
+              3.8000001907348633,
+              -0.34499987959861755
+            ],
+            "max": [
+              0.42532938718795776,
+              4.800000190734863,
+              0.3694390058517456
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.42532938718795776,
+          3.8000001907348633,
+          -0.34499987959861755
+        ],
+        "max": [
+          0.42532938718795776,
+          4.800000190734863,
+          0.3694390058517456
+        ],
+        "size": [
+          0.8506587743759155,
+          1.0,
+          0.7144388854503632
+        ],
+        "center": [
+          0.0,
+          4.300000190734863,
+          0.012219563126564026
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "name": "Cone.025",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 1,
+          "positionBounds": {
+            "min": [
+              0.034999996423721313,
+              1.0399999618530273,
+              -0.22500000894069672
+            ],
+            "max": [
+              0.48499998450279236,
+              1.2300000190734863,
+              0.22499997913837433
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.034999996423721313,
+          1.0399999618530273,
+          -0.22500000894069672
+        ],
+        "max": [
+          0.48499998450279236,
+          1.2300000190734863,
+          0.22499997913837433
+        ],
+        "size": [
+          0.44999998807907104,
+          0.19000005722045898,
+          0.44999998807907104
+        ],
+        "center": [
+          0.25999999046325684,
+          1.1349999904632568,
+          -1.4901161193847656e-08
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "name": "Sphere.032",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 2,
+          "positionBounds": {
+            "min": [
+              0.050000086426734924,
+              0.0,
+              -0.17999985814094543
+            ],
+            "max": [
+              0.46999993920326233,
+              0.36000001430511475,
+              0.5399999022483826
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.050000086426734924,
+          0.0,
+          -0.17999985814094543
+        ],
+        "max": [
+          0.46999993920326233,
+          0.36000001430511475,
+          0.5399999022483826
+        ],
+        "size": [
+          0.4199998527765274,
+          0.36000001430511475,
+          0.719999760389328
+        ],
+        "center": [
+          0.2600000128149986,
+          0.18000000715255737,
+          0.18000002205371857
+        ]
+      }
+    },
+    {
+      "index": 6,
+      "name": "Cone.024",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 2,
+          "positionBounds": {
+            "min": [
+              0.07499998807907104,
+              0.36000001430511475,
+              -0.18500003218650818
+            ],
+            "max": [
+              0.4449999928474426,
+              1.1799999475479126,
+              0.1849999725818634
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.07499998807907104,
+          0.36000001430511475,
+          -0.18500003218650818
+        ],
+        "max": [
+          0.4449999928474426,
+          1.1799999475479126,
+          0.1849999725818634
+        ],
+        "size": [
+          0.3700000047683716,
+          0.8199999332427979,
+          0.3700000047683716
+        ],
+        "center": [
+          0.25999999046325684,
+          0.7699999809265137,
+          -2.9802322387695312e-08
+        ]
+      }
+    },
+    {
+      "index": 7,
+      "name": "Cone.030",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 1,
+          "positionBounds": {
+            "min": [
+              -0.48499998450279236,
+              1.0399999618530273,
+              -0.22500000894069672
+            ],
+            "max": [
+              -0.034999996423721313,
+              1.2300000190734863,
+              0.22499997913837433
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.48499998450279236,
+          1.0399999618530273,
+          -0.22500000894069672
+        ],
+        "max": [
+          -0.034999996423721313,
+          1.2300000190734863,
+          0.22499997913837433
+        ],
+        "size": [
+          0.44999998807907104,
+          0.19000005722045898,
+          0.44999998807907104
+        ],
+        "center": [
+          -0.25999999046325684,
+          1.1349999904632568,
+          -1.4901161193847656e-08
+        ]
+      }
+    },
+    {
+      "index": 8,
+      "name": "Sphere.033",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 2,
+          "positionBounds": {
+            "min": [
+              -0.46999990940093994,
+              0.0,
+              -0.17999985814094543
+            ],
+            "max": [
+              -0.05000004172325134,
+              0.36000001430511475,
+              0.5399999022483826
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.46999990940093994,
+          0.0,
+          -0.17999985814094543
+        ],
+        "max": [
+          -0.05000004172325134,
+          0.36000001430511475,
+          0.5399999022483826
+        ],
+        "size": [
+          0.4199998676776886,
+          0.36000001430511475,
+          0.719999760389328
+        ],
+        "center": [
+          -0.25999997556209564,
+          0.18000000715255737,
+          0.18000002205371857
+        ]
+      }
+    },
+    {
+      "index": 9,
+      "name": "Cone.029",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 2,
+          "positionBounds": {
+            "min": [
+              -0.4449999928474426,
+              0.36000001430511475,
+              -0.18500003218650818
+            ],
+            "max": [
+              -0.07499998807907104,
+              1.1799999475479126,
+              0.1849999725818634
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.4449999928474426,
+          0.36000001430511475,
+          -0.18500003218650818
+        ],
+        "max": [
+          -0.07499998807907104,
+          1.1799999475479126,
+          0.1849999725818634
+        ],
+        "size": [
+          0.3700000047683716,
+          0.8199999332427979,
+          0.3700000047683716
+        ],
+        "center": [
+          -0.25999999046325684,
+          0.7699999809265137,
+          -2.9802322387695312e-08
+        ]
+      }
+    },
+    {
+      "index": 10,
+      "name": "face.brow.L.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              0.06752355396747589,
+              4.456848621368408,
+              0.3791097104549408
+            ],
+            "max": [
+              0.22308571636676788,
+              4.498596668243408,
+              0.408996045589447
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.06752355396747589,
+          4.456848621368408,
+          0.3791097104549408
+        ],
+        "max": [
+          0.22308571636676788,
+          4.498596668243408,
+          0.408996045589447
+        ],
+        "size": [
+          0.155562162399292,
+          0.041748046875,
+          0.029886335134506226
+        ],
+        "center": [
+          0.1453046351671219,
+          4.477722644805908,
+          0.3940528780221939
+        ]
+      }
+    },
+    {
+      "index": 11,
+      "name": "face.brow.R.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              -0.22247645258903503,
+              4.456848621368408,
+              0.3791097104549408
+            ],
+            "max": [
+              -0.06691427528858185,
+              4.498596668243408,
+              0.408996045589447
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.22247645258903503,
+          4.456848621368408,
+          0.3791097104549408
+        ],
+        "max": [
+          -0.06691427528858185,
+          4.498596668243408,
+          0.408996045589447
+        ],
+        "size": [
+          0.15556217730045319,
+          0.041748046875,
+          0.029886335134506226
+        ],
+        "center": [
+          -0.14469536393880844,
+          4.477722644805908,
+          0.3940528780221939
+        ]
+      }
+    },
+    {
+      "index": 12,
+      "name": "Sphere.038",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 4,
+          "positionBounds": {
+            "min": [
+              0.1899999976158142,
+              4.201999664306641,
+              0.3799999952316284
+            ],
+            "max": [
+              0.2800000011920929,
+              4.23799991607666,
+              0.3920000195503235
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.1899999976158142,
+          4.201999664306641,
+          0.3799999952316284
+        ],
+        "max": [
+          0.2800000011920929,
+          4.23799991607666,
+          0.3920000195503235
+        ],
+        "size": [
+          0.09000000357627869,
+          0.03600025177001953,
+          0.012000024318695068
+        ],
+        "center": [
+          0.23499999940395355,
+          4.21999979019165,
+          0.38600000739097595
+        ]
+      }
+    },
+    {
+      "index": 13,
+      "name": "Sphere.042",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 4,
+          "positionBounds": {
+            "min": [
+              -0.2800000011920929,
+              4.201999664306641,
+              0.3799999952316284
+            ],
+            "max": [
+              -0.1899999976158142,
+              4.23799991607666,
+              0.3920000195503235
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.2800000011920929,
+          4.201999664306641,
+          0.3799999952316284
+        ],
+        "max": [
+          -0.1899999976158142,
+          4.23799991607666,
+          0.3920000195503235
+        ],
+        "size": [
+          0.09000000357627869,
+          0.03600025177001953,
+          0.012000024318695068
+        ],
+        "center": [
+          -0.23499999940395355,
+          4.21999979019165,
+          0.38600000739097595
+        ]
+      }
+    },
+    {
+      "index": 14,
+      "name": "Sphere.037",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 5,
+          "positionBounds": {
+            "min": [
+              0.12600000202655792,
+              4.347999572753906,
+              0.414000004529953
+            ],
+            "max": [
+              0.14000000059604645,
+              4.368000030517578,
+              0.41999998688697815
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.12600000202655792,
+          4.347999572753906,
+          0.414000004529953
+        ],
+        "max": [
+          0.14000000059604645,
+          4.368000030517578,
+          0.41999998688697815
+        ],
+        "size": [
+          0.013999998569488525,
+          0.020000457763671875,
+          0.0059999823570251465
+        ],
+        "center": [
+          0.13300000131130219,
+          4.357999801635742,
+          0.4169999957084656
+        ]
+      }
+    },
+    {
+      "index": 15,
+      "name": "Sphere.035",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 6,
+          "positionBounds": {
+            "min": [
+              0.10900001227855682,
+              4.293999671936035,
+              0.39400002360343933
+            ],
+            "max": [
+              0.1809999942779541,
+              4.381999969482422,
+              0.4099999964237213
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.10900001227855682,
+          4.293999671936035,
+          0.39400002360343933
+        ],
+        "max": [
+          0.1809999942779541,
+          4.381999969482422,
+          0.4099999964237213
+        ],
+        "size": [
+          0.07199998199939728,
+          0.08800029754638672,
+          0.015999972820281982
+        ],
+        "center": [
+          0.14500000327825546,
+          4.3379998207092285,
+          0.4020000100135803
+        ]
+      }
+    },
+    {
+      "index": 16,
+      "name": "Sphere.036",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 7,
+          "positionBounds": {
+            "min": [
+              0.13099998235702515,
+              4.312999725341797,
+              0.40700000524520874
+            ],
+            "max": [
+              0.1589999943971634,
+              4.36299991607666,
+              0.4150000214576721
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.13099998235702515,
+          4.312999725341797,
+          0.40700000524520874
+        ],
+        "max": [
+          0.1589999943971634,
+          4.36299991607666,
+          0.4150000214576721
+        ],
+        "size": [
+          0.028000012040138245,
+          0.05000019073486328,
+          0.008000016212463379
+        ],
+        "center": [
+          0.14499998837709427,
+          4.3379998207092285,
+          0.41100001335144043
+        ]
+      }
+    },
+    {
+      "index": 17,
+      "name": "face.eye.L.upper-lid.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              0.046196576207876205,
+              4.343289852142334,
+              0.3970356583595276
+            ],
+            "max": [
+              0.24322542548179626,
+              4.408663272857666,
+              0.4219972789287567
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.046196576207876205,
+          4.343289852142334,
+          0.3970356583595276
+        ],
+        "max": [
+          0.24322542548179626,
+          4.408663272857666,
+          0.4219972789287567
+        ],
+        "size": [
+          0.19702884927392006,
+          0.06537342071533203,
+          0.024961620569229126
+        ],
+        "center": [
+          0.14471100084483624,
+          4.3759765625,
+          0.40951646864414215
+        ]
+      }
+    },
+    {
+      "index": 18,
+      "name": "face.eye.L.white.mesh",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "WEIGHTS_0"
+          ],
+          "material": 5,
+          "positionBounds": {
+            "min": [
+              0.03453707695007324,
+              4.283952236175537,
+              0.3790000081062317
+            ],
+            "max": [
+              0.2556419372558594,
+              4.403108596801758,
+              0.3930000066757202
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.03453707695007324,
+          4.283952236175537,
+          0.3790000081062317
+        ],
+        "max": [
+          0.2556419372558594,
+          4.403108596801758,
+          0.3930000066757202
+        ],
+        "size": [
+          0.22110486030578613,
+          0.1191563606262207,
+          0.013999998569488525
+        ],
+        "center": [
+          0.1450895071029663,
+          4.3435304164886475,
+          0.38600000739097595
+        ]
+      }
+    },
+    {
+      "index": 19,
+      "name": "Sphere.041",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 5,
+          "positionBounds": {
+            "min": [
+              -0.14000000059604645,
+              4.347999572753906,
+              0.414000004529953
+            ],
+            "max": [
+              -0.12600000202655792,
+              4.368000030517578,
+              0.41999998688697815
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.14000000059604645,
+          4.347999572753906,
+          0.414000004529953
+        ],
+        "max": [
+          -0.12600000202655792,
+          4.368000030517578,
+          0.41999998688697815
+        ],
+        "size": [
+          0.013999998569488525,
+          0.020000457763671875,
+          0.0059999823570251465
+        ],
+        "center": [
+          -0.13300000131130219,
+          4.357999801635742,
+          0.4169999957084656
+        ]
+      }
+    },
+    {
+      "index": 20,
+      "name": "Sphere.039",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 6,
+          "positionBounds": {
+            "min": [
+              -0.1809999793767929,
+              4.293999671936035,
+              0.39400002360343933
+            ],
+            "max": [
+              -0.10900000482797623,
+              4.381999969482422,
+              0.4099999964237213
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.1809999793767929,
+          4.293999671936035,
+          0.39400002360343933
+        ],
+        "max": [
+          -0.10900000482797623,
+          4.381999969482422,
+          0.4099999964237213
+        ],
+        "size": [
+          0.07199997454881668,
+          0.08800029754638672,
+          0.015999972820281982
+        ],
+        "center": [
+          -0.14499999210238457,
+          4.3379998207092285,
+          0.4020000100135803
+        ]
+      }
+    },
+    {
+      "index": 21,
+      "name": "Sphere.040",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 7,
+          "positionBounds": {
+            "min": [
+              -0.15900000929832458,
+              4.312999725341797,
+              0.40700000524520874
+            ],
+            "max": [
+              -0.13099999725818634,
+              4.36299991607666,
+              0.4150000214576721
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.15900000929832458,
+          4.312999725341797,
+          0.40700000524520874
+        ],
+        "max": [
+          -0.13099999725818634,
+          4.36299991607666,
+          0.4150000214576721
+        ],
+        "size": [
+          0.028000012040138245,
+          0.05000019073486328,
+          0.008000016212463379
+        ],
+        "center": [
+          -0.14500000327825546,
+          4.3379998207092285,
+          0.41100001335144043
+        ]
+      }
+    },
+    {
+      "index": 22,
+      "name": "face.eye.R.upper-lid.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              -0.24380341172218323,
+              4.343289852142334,
+              0.3970356583595276
+            ],
+            "max": [
+              -0.04677456244826317,
+              4.408663272857666,
+              0.4219972789287567
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.24380341172218323,
+          4.343289852142334,
+          0.3970356583595276
+        ],
+        "max": [
+          -0.04677456244826317,
+          4.408663272857666,
+          0.4219972789287567
+        ],
+        "size": [
+          0.19702884927392006,
+          0.06537342071533203,
+          0.024961620569229126
+        ],
+        "center": [
+          -0.1452889870852232,
+          4.3759765625,
+          0.40951646864414215
+        ]
+      }
+    },
+    {
+      "index": 23,
+      "name": "face.eye.R.white.mesh",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "WEIGHTS_0"
+          ],
+          "material": 5,
+          "positionBounds": {
+            "min": [
+              -0.2554629147052765,
+              4.283952236175537,
+              0.3790000081062317
+            ],
+            "max": [
+              -0.03435806930065155,
+              4.403108596801758,
+              0.3930000066757202
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.2554629147052765,
+          4.283952236175537,
+          0.3790000081062317
+        ],
+        "max": [
+          -0.03435806930065155,
+          4.403108596801758,
+          0.3930000066757202
+        ],
+        "size": [
+          0.22110484540462494,
+          0.1191563606262207,
+          0.013999998569488525
+        ],
+        "center": [
+          -0.14491049200296402,
+          4.3435304164886475,
+          0.38600000739097595
+        ]
+      }
+    },
+    {
+      "index": 24,
+      "name": "face.mouth.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 4,
+          "positionBounds": {
+            "min": [
+              -0.06216686964035034,
+              4.105301856994629,
+              0.3900614082813263
+            ],
+            "max": [
+              0.06216686964035034,
+              4.136381149291992,
+              0.4119986891746521
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.06216686964035034,
+          4.105301856994629,
+          0.3900614082813263
+        ],
+        "max": [
+          0.06216686964035034,
+          4.136381149291992,
+          0.4119986891746521
+        ],
+        "size": [
+          0.12433373928070068,
+          0.03107929229736328,
+          0.021937280893325806
+        ],
+        "center": [
+          0.0,
+          4.1208415031433105,
+          0.4010300487279892
+        ]
+      }
+    },
+    {
+      "index": 25,
+      "name": "Sphere.043",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 8,
+          "positionBounds": {
+            "min": [
+              -0.01799999736249447,
+              4.207000255584717,
+              0.3880000114440918
+            ],
+            "max": [
+              0.017999999225139618,
+              4.263000011444092,
+              0.4039999842643738
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.01799999736249447,
+          4.207000255584717,
+          0.3880000114440918
+        ],
+        "max": [
+          0.017999999225139618,
+          4.263000011444092,
+          0.4039999842643738
+        ],
+        "size": [
+          0.03599999658763409,
+          0.055999755859375,
+          0.015999972820281982
+        ],
+        "center": [
+          9.313225746154785e-10,
+          4.235000133514404,
+          0.3959999978542328
+        ]
+      }
+    },
+    {
+      "index": 26,
+      "name": "hair.bang.1.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              -0.35135605931282043,
+              4.338505268096924,
+              0.26112666726112366
+            ],
+            "max": [
+              -0.1768827885389328,
+              4.724488735198975,
+              0.43781453371047974
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.35135605931282043,
+          4.338505268096924,
+          0.26112666726112366
+        ],
+        "max": [
+          -0.1768827885389328,
+          4.724488735198975,
+          0.43781453371047974
+        ],
+        "size": [
+          0.17447327077388763,
+          0.3859834671020508,
+          0.17668786644935608
+        ],
+        "center": [
+          -0.2641194239258766,
+          4.531497001647949,
+          0.3494706004858017
+        ]
+      }
+    },
+    {
+      "index": 27,
+      "name": "hair.bang.2.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 9,
+          "positionBounds": {
+            "min": [
+              -0.23372258245944977,
+              4.387699604034424,
+              0.2635503113269806
+            ],
+            "max": [
+              -0.08461008965969086,
+              4.720753192901611,
+              0.4356987774372101
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.23372258245944977,
+          4.387699604034424,
+          0.2635503113269806
+        ],
+        "max": [
+          -0.08461008965969086,
+          4.720753192901611,
+          0.4356987774372101
+        ],
+        "size": [
+          0.1491124927997589,
+          0.3330535888671875,
+          0.1721484661102295
+        ],
+        "center": [
+          -0.1591663360595703,
+          4.554226398468018,
+          0.34962454438209534
+        ]
+      }
+    },
+    {
+      "index": 28,
+      "name": "hair.bang.3.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              -0.11092634499073029,
+              4.311936855316162,
+              0.2616993486881256
+            ],
+            "max": [
+              0.021527372300624847,
+              4.718276500701904,
+              0.4392727017402649
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.11092634499073029,
+          4.311936855316162,
+          0.2616993486881256
+        ],
+        "max": [
+          0.021527372300624847,
+          4.718276500701904,
+          0.4392727017402649
+        ],
+        "size": [
+          0.13245371729135513,
+          0.4063396453857422,
+          0.17757335305213928
+        ],
+        "center": [
+          -0.04469948634505272,
+          4.515106678009033,
+          0.35048602521419525
+        ]
+      }
+    },
+    {
+      "index": 29,
+      "name": "hair.bang.4.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              -0.002293739467859268,
+              4.347955703735352,
+              0.26156914234161377
+            ],
+            "max": [
+              0.12057250738143921,
+              4.718400955200195,
+              0.4383234679698944
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.002293739467859268,
+          4.347955703735352,
+          0.26156914234161377
+        ],
+        "max": [
+          0.12057250738143921,
+          4.718400955200195,
+          0.4383234679698944
+        ],
+        "size": [
+          0.12286624684929848,
+          0.37044525146484375,
+          0.17675432562828064
+        ],
+        "center": [
+          0.05913938395678997,
+          4.533178329467773,
+          0.3499463051557541
+        ]
+      }
+    },
+    {
+      "index": 30,
+      "name": "hair.bang.5.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 9,
+          "positionBounds": {
+            "min": [
+              0.09215663373470306,
+              4.386883735656738,
+              0.26348844170570374
+            ],
+            "max": [
+              0.24792245030403137,
+              4.721035003662109,
+              0.43514618277549744
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.09215663373470306,
+          4.386883735656738,
+          0.26348844170570374
+        ],
+        "max": [
+          0.24792245030403137,
+          4.721035003662109,
+          0.43514618277549744
+        ],
+        "size": [
+          0.1557658165693283,
+          0.3341512680053711,
+          0.1716577410697937
+        ],
+        "center": [
+          0.17003954201936722,
+          4.553959369659424,
+          0.3493173122406006
+        ]
+      }
+    },
+    {
+      "index": 31,
+      "name": "hair.bang.6.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              0.1768827736377716,
+              4.308525562286377,
+              0.26112666726112366
+            ],
+            "max": [
+              0.35118094086647034,
+              4.724488735198975,
+              0.4389016032218933
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.1768827736377716,
+          4.308525562286377,
+          0.26112666726112366
+        ],
+        "max": [
+          0.35118094086647034,
+          4.724488735198975,
+          0.4389016032218933
+        ],
+        "size": [
+          0.17429816722869873,
+          0.41596317291259766,
+          0.17777493596076965
+        ],
+        "center": [
+          0.26403185725212097,
+          4.516507148742676,
+          0.3500141352415085
+        ]
+      }
+    },
+    {
+      "index": 32,
+      "name": "Sphere.045",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 9,
+          "positionBounds": {
+            "min": [
+              -0.44999971985816956,
+              4.269999980926514,
+              -0.32500001788139343
+            ],
+            "max": [
+              0.4499998986721039,
+              4.830000400543213,
+              0.354999840259552
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.44999971985816956,
+          4.269999980926514,
+          -0.32500001788139343
+        ],
+        "max": [
+          0.4499998986721039,
+          4.830000400543213,
+          0.354999840259552
+        ],
+        "size": [
+          0.8999996185302734,
+          0.5600004196166992,
+          0.6799998581409454
+        ],
+        "center": [
+          8.940696716308594e-08,
+          4.550000190734863,
+          0.014999911189079285
+        ]
+      }
+    },
+    {
+      "index": 33,
+      "name": "hair.ponytail.1.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              -0.11684653162956238,
+              3.05871844291687,
+              -0.5734133720397949
+            ],
+            "max": [
+              0.15353721380233765,
+              4.518956661224365,
+              -0.21005892753601074
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.11684653162956238,
+          3.05871844291687,
+          -0.5734133720397949
+        ],
+        "max": [
+          0.15353721380233765,
+          4.518956661224365,
+          -0.21005892753601074
+        ],
+        "size": [
+          0.2703837454319,
+          1.4602382183074951,
+          0.3633544445037842
+        ],
+        "center": [
+          0.018345341086387634,
+          3.7888375520706177,
+          -0.39173614978790283
+        ]
+      }
+    },
+    {
+      "index": 34,
+      "name": "hair.ponytail.2.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 9,
+          "positionBounds": {
+            "min": [
+              -0.06693582981824875,
+              2.9774115085601807,
+              -0.5884012579917908
+            ],
+            "max": [
+              0.1692105233669281,
+              4.520399570465088,
+              -0.19410964846611023
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.06693582981824875,
+          2.9774115085601807,
+          -0.5884012579917908
+        ],
+        "max": [
+          0.1692105233669281,
+          4.520399570465088,
+          -0.19410964846611023
+        ],
+        "size": [
+          0.23614635318517685,
+          1.5429880619049072,
+          0.39429160952568054
+        ],
+        "center": [
+          0.051137346774339676,
+          3.7489055395126343,
+          -0.3912554532289505
+        ]
+      }
+    },
+    {
+      "index": 35,
+      "name": "hair.ponytail.3.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              -0.020355746150016785,
+              3.054126024246216,
+              -0.5896720886230469
+            ],
+            "max": [
+              0.20748820900917053,
+              4.520895957946777,
+              -0.19368529319763184
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.020355746150016785,
+          3.054126024246216,
+          -0.5896720886230469
+        ],
+        "max": [
+          0.20748820900917053,
+          4.520895957946777,
+          -0.19368529319763184
+        ],
+        "size": [
+          0.22784395515918732,
+          1.4667699337005615,
+          0.39598679542541504
+        ],
+        "center": [
+          0.09356623142957687,
+          3.7875109910964966,
+          -0.39167869091033936
+        ]
+      }
+    },
+    {
+      "index": 36,
+      "name": "hair.ponytail.4.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              -0.008747994899749756,
+              2.9748685359954834,
+              -0.5859941840171814
+            ],
+            "max": [
+              0.289990097284317,
+              4.524017810821533,
+              -0.1961793601512909
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.008747994899749756,
+          2.9748685359954834,
+          -0.5859941840171814
+        ],
+        "max": [
+          0.289990097284317,
+          4.524017810821533,
+          -0.1961793601512909
+        ],
+        "size": [
+          0.2987380921840668,
+          1.5491492748260498,
+          0.3898148238658905
+        ],
+        "center": [
+          0.14062105119228363,
+          3.7494431734085083,
+          -0.39108677208423615
+        ]
+      }
+    },
+    {
+      "index": 37,
+      "name": "hair.ponytail.5.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 9,
+          "positionBounds": {
+            "min": [
+              -0.005598090589046478,
+              3.047908067703247,
+              -0.5895569324493408
+            ],
+            "max": [
+              0.37626713514328003,
+              4.529321193695068,
+              -0.1935635805130005
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.005598090589046478,
+          3.047908067703247,
+          -0.5895569324493408
+        ],
+        "max": [
+          0.37626713514328003,
+          4.529321193695068,
+          -0.1935635805130005
+        ],
+        "size": [
+          0.3818652257323265,
+          1.4814131259918213,
+          0.39599335193634033
+        ],
+        "center": [
+          0.18533452227711678,
+          3.7886146306991577,
+          -0.39156025648117065
+        ]
+      }
+    },
+    {
+      "index": 38,
+      "name": "hair.ponytail.6.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              -0.0006719604134559631,
+              2.96858811378479,
+              -0.5894790291786194
+            ],
+            "max": [
+              0.45872730016708374,
+              4.5345964431762695,
+              -0.194504514336586
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.0006719604134559631,
+          2.96858811378479,
+          -0.5894790291786194
+        ],
+        "max": [
+          0.45872730016708374,
+          4.5345964431762695,
+          -0.194504514336586
+        ],
+        "size": [
+          0.4593992605805397,
+          1.5660083293914795,
+          0.3949745148420334
+        ],
+        "center": [
+          0.2290276698768139,
+          3.75159227848053,
+          -0.3919917717576027
+        ]
+      }
+    },
+    {
+      "index": 39,
+      "name": "hair.ponytail.7.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              0.013307131826877594,
+              3.0476856231689453,
+              -0.5733977556228638
+            ],
+            "max": [
+              0.5249418020248413,
+              4.533198833465576,
+              -0.21024611592292786
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.013307131826877594,
+          3.0476856231689453,
+          -0.5733977556228638
+        ],
+        "max": [
+          0.5249418020248413,
+          4.533198833465576,
+          -0.21024611592292786
+        ],
+        "size": [
+          0.5116346701979637,
+          1.4855132102966309,
+          0.3631516396999359
+        ],
+        "center": [
+          0.26912446692585945,
+          3.7904422283172607,
+          -0.3918219357728958
+        ]
+      }
+    },
+    {
+      "index": 40,
+      "name": "Torus.004",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 10,
+          "positionBounds": {
+            "min": [
+              -0.056000009179115295,
+              4.411200046539307,
+              -0.44472745060920715
+            ],
+            "max": [
+              0.2160000056028366,
+              4.628799915313721,
+              -0.39527252316474915
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.056000009179115295,
+          4.411200046539307,
+          -0.44472745060920715
+        ],
+        "max": [
+          0.2160000056028366,
+          4.628799915313721,
+          -0.39527252316474915
+        ],
+        "size": [
+          0.2720000147819519,
+          0.21759986877441406,
+          0.04945492744445801
+        ],
+        "center": [
+          0.07999999821186066,
+          4.519999980926514,
+          -0.41999998688697815
+        ]
+      }
+    },
+    {
+      "index": 41,
+      "name": "Sphere.044",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              -0.4599997401237488,
+              3.8400001525878906,
+              -0.5199997425079346
+            ],
+            "max": [
+              0.4599999189376831,
+              4.840000152587891,
+              0.15999984741210938
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.4599997401237488,
+          3.8400001525878906,
+          -0.5199997425079346
+        ],
+        "max": [
+          0.4599999189376831,
+          4.840000152587891,
+          0.15999984741210938
+        ],
+        "size": [
+          0.9199996590614319,
+          1.0,
+          0.679999589920044
+        ],
+        "center": [
+          8.940696716308594e-08,
+          4.340000152587891,
+          -0.1799999475479126
+        ]
+      }
+    },
+    {
+      "index": 42,
+      "name": "hair.temple.L.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              0.27679067850112915,
+              3.94512677192688,
+              0.12063388526439667
+            ],
+            "max": [
+              0.4849885404109955,
+              4.644181728363037,
+              0.3516426384449005
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.27679067850112915,
+          3.94512677192688,
+          0.12063388526439667
+        ],
+        "max": [
+          0.4849885404109955,
+          4.644181728363037,
+          0.3516426384449005
+        ],
+        "size": [
+          0.20819786190986633,
+          0.6990549564361572,
+          0.23100875318050385
+        ],
+        "center": [
+          0.3808896094560623,
+          4.2946542501449585,
+          0.2361382618546486
+        ]
+      }
+    },
+    {
+      "index": 43,
+      "name": "hair.temple.R.curve",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 3,
+          "positionBounds": {
+            "min": [
+              -0.4849885404109955,
+              3.94512677192688,
+              0.12063387781381607
+            ],
+            "max": [
+              -0.27679064869880676,
+              4.644181728363037,
+              0.3516426384449005
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.4849885404109955,
+          3.94512677192688,
+          0.12063387781381607
+        ],
+        "max": [
+          -0.27679064869880676,
+          4.644181728363037,
+          0.3516426384449005
+        ],
+        "size": [
+          0.20819789171218872,
+          0.6990549564361572,
+          0.23100876063108444
+        ],
+        "center": [
+          -0.3808895945549011,
+          4.2946542501449585,
+          0.2361382581293583
+        ]
+      }
+    },
+    {
+      "index": 44,
+      "name": "Cube.004",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 11,
+          "positionBounds": {
+            "min": [
+              -0.47999998927116394,
+              2.5,
+              -0.30000001192092896
+            ],
+            "max": [
+              0.47999998927116394,
+              3.760000228881836,
+              0.30000001192092896
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.47999998927116394,
+          2.5,
+          -0.30000001192092896
+        ],
+        "max": [
+          0.47999998927116394,
+          3.760000228881836,
+          0.30000001192092896
+        ],
+        "size": [
+          0.9599999785423279,
+          1.260000228881836,
+          0.6000000238418579
+        ],
+        "center": [
+          0.0,
+          3.130000114440918,
+          0.0
+        ]
+      }
+    },
+    {
+      "index": 45,
+      "name": "Torus.002",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 2,
+          "positionBounds": {
+            "min": [
+              -0.4750000238418579,
+              2.457202434539795,
+              -0.34675002098083496
+            ],
+            "max": [
+              0.4750000238418579,
+              2.542797565460205,
+              0.34675002098083496
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.4750000238418579,
+          2.457202434539795,
+          -0.34675002098083496
+        ],
+        "max": [
+          0.4750000238418579,
+          2.542797565460205,
+          0.34675002098083496
+        ],
+        "size": [
+          0.9500000476837158,
+          0.08559513092041016,
+          0.6935000419616699
+        ],
+        "center": [
+          0.0,
+          2.5,
+          0.0
+        ]
+      }
+    },
+    {
+      "index": 46,
+      "name": "Torus.003",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 12,
+          "positionBounds": {
+            "min": [
+              -0.11880000680685043,
+              2.429800033569336,
+              0.356304794549942
+            ],
+            "max": [
+              0.11880000680685043,
+              2.570199966430664,
+              0.38369521498680115
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.11880000680685043,
+          2.429800033569336,
+          0.356304794549942
+        ],
+        "max": [
+          0.11880000680685043,
+          2.570199966430664,
+          0.38369521498680115
+        ],
+        "size": [
+          0.23760001361370087,
+          0.14039993286132812,
+          0.02739042043685913
+        ],
+        "center": [
+          0.0,
+          2.5,
+          0.3700000047683716
+        ]
+      }
+    },
+    {
+      "index": 47,
+      "name": "Cube",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 13,
+          "positionBounds": {
+            "min": [
+              -0.02813984453678131,
+              3.263108015060425,
+              0.3799999952316284
+            ],
+            "max": [
+              0.24813984334468842,
+              3.7768919467926025,
+              0.4300000071525574
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.02813984453678131,
+          3.263108015060425,
+          0.3799999952316284
+        ],
+        "max": [
+          0.24813984334468842,
+          3.7768919467926025,
+          0.4300000071525574
+        ],
+        "size": [
+          0.2762796878814697,
+          0.5137839317321777,
+          0.050000011920928955
+        ],
+        "center": [
+          0.10999999940395355,
+          3.5199999809265137,
+          0.4050000011920929
+        ]
+      }
+    },
+    {
+      "index": 48,
+      "name": "Cube.001",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 13,
+          "positionBounds": {
+            "min": [
+              -0.24813984334468842,
+              3.263108015060425,
+              0.3799999952316284
+            ],
+            "max": [
+              0.02813984453678131,
+              3.7768919467926025,
+              0.4300000071525574
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.24813984334468842,
+          3.263108015060425,
+          0.3799999952316284
+        ],
+        "max": [
+          0.02813984453678131,
+          3.7768919467926025,
+          0.4300000071525574
+        ],
+        "size": [
+          0.2762796878814697,
+          0.5137839317321777,
+          0.050000011920928955
+        ],
+        "center": [
+          -0.10999999940395355,
+          3.5199999809265137,
+          0.4050000011920929
+        ]
+      }
+    },
+    {
+      "index": 49,
+      "name": "Cone.026",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 2,
+          "positionBounds": {
+            "min": [
+              0.5600000023841858,
+              2.0679593086242676,
+              -0.12934914231300354
+            ],
+            "max": [
+              0.8399999737739563,
+              2.4034857749938965,
+              0.16441887617111206
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.5600000023841858,
+          2.0679593086242676,
+          -0.12934914231300354
+        ],
+        "max": [
+          0.8399999737739563,
+          2.4034857749938965,
+          0.16441887617111206
+        ],
+        "size": [
+          0.2799999713897705,
+          0.3355264663696289,
+          0.2937680184841156
+        ],
+        "center": [
+          0.699999988079071,
+          2.235722541809082,
+          0.01753486692905426
+        ]
+      }
+    },
+    {
+      "index": 50,
+      "name": "Cone.031",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 2,
+          "positionBounds": {
+            "min": [
+              -0.8399999737739563,
+              2.0679593086242676,
+              -0.12934914231300354
+            ],
+            "max": [
+              -0.5600000023841858,
+              2.4034857749938965,
+              0.16441887617111206
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.8399999737739563,
+          2.0679593086242676,
+          -0.12934914231300354
+        ],
+        "max": [
+          -0.5600000023841858,
+          2.4034857749938965,
+          0.16441887617111206
+        ],
+        "size": [
+          0.2799999713897705,
+          0.3355264663696289,
+          0.2937680184841156
+        ],
+        "center": [
+          -0.699999988079071,
+          2.235722541809082,
+          0.01753486692905426
+        ]
+      }
+    },
+    {
+      "index": 51,
+      "name": "outfit.warrior.inset.mesh",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "WEIGHTS_0"
+          ],
+          "material": 10,
+          "positionBounds": {
+            "min": [
+              -0.14787229895591736,
+              2.5452511310577393,
+              0.3725000023841858
+            ],
+            "max": [
+              0.14787229895591736,
+              3.6475000381469727,
+              0.4074999988079071
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.14787229895591736,
+          2.5452511310577393,
+          0.3725000023841858
+        ],
+        "max": [
+          0.14787229895591736,
+          3.6475000381469727,
+          0.4074999988079071
+        ],
+        "size": [
+          0.2957445979118347,
+          1.1022489070892334,
+          0.034999996423721313
+        ],
+        "center": [
+          0.0,
+          3.096375584602356,
+          0.39000000059604645
+        ]
+      }
+    },
+    {
+      "index": 52,
+      "name": "Sphere.034",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 14,
+          "positionBounds": {
+            "min": [
+              0.22000032663345337,
+              3.4099998474121094,
+              -0.2849999964237213
+            ],
+            "max": [
+              0.8999999165534973,
+              3.75,
+              0.2949998080730438
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.22000032663345337,
+          3.4099998474121094,
+          -0.2849999964237213
+        ],
+        "max": [
+          0.8999999165534973,
+          3.75,
+          0.2949998080730438
+        ],
+        "size": [
+          0.679999589920044,
+          0.3400001525878906,
+          0.5799998044967651
+        ],
+        "center": [
+          0.5600001215934753,
+          3.5799999237060547,
+          0.004999905824661255
+        ]
+      }
+    },
+    {
+      "index": 53,
+      "name": "Cube.003",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 1,
+          "positionBounds": {
+            "min": [
+              0.32999998331069946,
+              2.069999933242798,
+              0.17000000178813934
+            ],
+            "max": [
+              0.6700000166893005,
+              2.5299999713897705,
+              0.38999998569488525
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.32999998331069946,
+          2.069999933242798,
+          0.17000000178813934
+        ],
+        "max": [
+          0.6700000166893005,
+          2.5299999713897705,
+          0.38999998569488525
+        ],
+        "size": [
+          0.3400000333786011,
+          0.46000003814697266,
+          0.2199999839067459
+        ],
+        "center": [
+          0.5,
+          2.299999952316284,
+          0.2799999937415123
+        ]
+      }
+    },
+    {
+      "index": 54,
+      "name": "Cone.022",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 15,
+          "positionBounds": {
+            "min": [
+              0.29150310158729553,
+              3.2175207138061523,
+              -0.20500002801418304
+            ],
+            "max": [
+              0.7346071004867554,
+              3.621224880218506,
+              0.20500002801418304
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.29150310158729553,
+          3.2175207138061523,
+          -0.20500002801418304
+        ],
+        "max": [
+          0.7346071004867554,
+          3.621224880218506,
+          0.20500002801418304
+        ],
+        "size": [
+          0.44310399889945984,
+          0.4037041664123535,
+          0.4100000560283661
+        ],
+        "center": [
+          0.5130551010370255,
+          3.419372797012329,
+          0.0
+        ]
+      }
+    },
+    {
+      "index": 55,
+      "name": "Cone.027",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 15,
+          "positionBounds": {
+            "min": [
+              -0.7346071004867554,
+              3.2175207138061523,
+              -0.20500002801418304
+            ],
+            "max": [
+              -0.29150310158729553,
+              3.621224880218506,
+              0.20500002801418304
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.7346071004867554,
+          3.2175207138061523,
+          -0.20500002801418304
+        ],
+        "max": [
+          -0.29150310158729553,
+          3.621224880218506,
+          0.20500002801418304
+        ],
+        "size": [
+          0.44310399889945984,
+          0.4037041664123535,
+          0.4100000560283661
+        ],
+        "center": [
+          -0.5130551010370255,
+          3.419372797012329,
+          0.0
+        ]
+      }
+    },
+    {
+      "index": 56,
+      "name": "Cone.023",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 16,
+          "positionBounds": {
+            "min": [
+              0.025018468499183655,
+              1.8573079109191895,
+              -0.22499944269657135
+            ],
+            "max": [
+              0.47498154640197754,
+              2.2528843879699707,
+              0.22500060498714447
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.025018468499183655,
+          1.8573079109191895,
+          -0.22499944269657135
+        ],
+        "max": [
+          0.47498154640197754,
+          2.2528843879699707,
+          0.22500060498714447
+        ],
+        "size": [
+          0.4499630779027939,
+          0.39557647705078125,
+          0.4500000476837158
+        ],
+        "center": [
+          0.2500000074505806,
+          2.05509614944458,
+          5.811452865600586e-07
+        ]
+      }
+    },
+    {
+      "index": 57,
+      "name": "Cone.028",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 16,
+          "positionBounds": {
+            "min": [
+              -0.47498154640197754,
+              1.8573079109191895,
+              -0.22499944269657135
+            ],
+            "max": [
+              -0.025018468499183655,
+              2.2528843879699707,
+              0.22500060498714447
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.47498154640197754,
+          1.8573079109191895,
+          -0.22499944269657135
+        ],
+        "max": [
+          -0.025018468499183655,
+          2.2528843879699707,
+          0.22500060498714447
+        ],
+        "size": [
+          0.4499630779027939,
+          0.39557647705078125,
+          0.4500000476837158
+        ],
+        "center": [
+          -0.2500000074505806,
+          2.05509614944458,
+          5.811452865600586e-07
+        ]
+      }
+    },
+    {
+      "index": 58,
+      "name": "outfit.warrior.skirt-border.L.mesh",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "WEIGHTS_0"
+          ],
+          "material": 13,
+          "positionBounds": {
+            "min": [
+              5.952781066298485e-06,
+              1.5980719327926636,
+              0.042500000447034836
+            ],
+            "max": [
+              0.5887125730514526,
+              2.661806583404541,
+              0.11749999970197678
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          5.952781066298485e-06,
+          1.5980719327926636,
+          0.042500000447034836
+        ],
+        "max": [
+          0.5887125730514526,
+          2.661806583404541,
+          0.11749999970197678
+        ],
+        "size": [
+          0.5887066202703863,
+          1.0637346506118774,
+          0.07499999925494194
+        ],
+        "center": [
+          0.29435926291625947,
+          2.1299392580986023,
+          0.0800000000745058
+        ]
+      }
+    },
+    {
+      "index": 59,
+      "name": "outfit.warrior.skirt-border.R.mesh",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "WEIGHTS_0"
+          ],
+          "material": 13,
+          "positionBounds": {
+            "min": [
+              -0.5887125730514526,
+              1.5980719327926636,
+              0.042500000447034836
+            ],
+            "max": [
+              -5.952781066298485e-06,
+              2.661806583404541,
+              0.11749999970197678
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.5887125730514526,
+          1.5980719327926636,
+          0.042500000447034836
+        ],
+        "max": [
+          -5.952781066298485e-06,
+          2.661806583404541,
+          0.11749999970197678
+        ],
+        "size": [
+          0.5887066202703863,
+          1.0637346506118774,
+          0.07499999925494194
+        ],
+        "center": [
+          -0.29435926291625947,
+          2.1299392580986023,
+          0.0800000000745058
+        ]
+      }
+    },
+    {
+      "index": 60,
+      "name": "outfit.warrior.skirt.L.mesh",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "WEIGHTS_0"
+          ],
+          "material": 15,
+          "positionBounds": {
+            "min": [
+              0.029674332588911057,
+              1.6770906448364258,
+              0.08749999850988388
+            ],
+            "max": [
+              0.5285916328430176,
+              2.6120903491973877,
+              0.17249999940395355
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.029674332588911057,
+          1.6770906448364258,
+          0.08749999850988388
+        ],
+        "max": [
+          0.5285916328430176,
+          2.6120903491973877,
+          0.17249999940395355
+        ],
+        "size": [
+          0.4989173002541065,
+          0.9349997043609619,
+          0.08500000089406967
+        ],
+        "center": [
+          0.2791329827159643,
+          2.1445904970169067,
+          0.12999999895691872
+        ]
+      }
+    },
+    {
+      "index": 61,
+      "name": "outfit.warrior.skirt.R.mesh",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "WEIGHTS_0"
+          ],
+          "material": 15,
+          "positionBounds": {
+            "min": [
+              -0.5285916328430176,
+              1.6770906448364258,
+              0.08749999850988388
+            ],
+            "max": [
+              -0.029674332588911057,
+              2.6120903491973877,
+              0.17249999940395355
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.5285916328430176,
+          1.6770906448364258,
+          0.08749999850988388
+        ],
+        "max": [
+          -0.029674332588911057,
+          2.6120903491973877,
+          0.17249999940395355
+        ],
+        "size": [
+          0.4989173002541065,
+          0.9349997043609619,
+          0.08500000089406967
+        ],
+        "center": [
+          -0.2791329827159643,
+          2.1445904970169067,
+          0.12999999895691872
+        ]
+      }
+    },
+    {
+      "index": 62,
+      "name": "Torus",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 13,
+          "positionBounds": {
+            "min": [
+              0.3779999911785126,
+              3.229076862335205,
+              -0.14975999295711517
+            ],
+            "max": [
+              0.7619999647140503,
+              3.270923137664795,
+              0.14975999295711517
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          0.3779999911785126,
+          3.229076862335205,
+          -0.14975999295711517
+        ],
+        "max": [
+          0.7619999647140503,
+          3.270923137664795,
+          0.14975999295711517
+        ],
+        "size": [
+          0.3839999735355377,
+          0.041846275329589844,
+          0.29951998591423035
+        ],
+        "center": [
+          0.5699999779462814,
+          3.25,
+          0.0
+        ]
+      }
+    },
+    {
+      "index": 63,
+      "name": "Torus.001",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 13,
+          "positionBounds": {
+            "min": [
+              -0.7619999647140503,
+              3.229076862335205,
+              -0.14975999295711517
+            ],
+            "max": [
+              -0.3779999911785126,
+              3.270923137664795,
+              0.14975999295711517
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.7619999647140503,
+          3.229076862335205,
+          -0.14975999295711517
+        ],
+        "max": [
+          -0.3779999911785126,
+          3.270923137664795,
+          0.14975999295711517
+        ],
+        "size": [
+          0.3839999735355377,
+          0.041846275329589844,
+          0.29951998591423035
+        ],
+        "center": [
+          -0.5699999779462814,
+          3.25,
+          0.0
+        ]
+      }
+    },
+    {
+      "index": 64,
+      "name": "Cube.002",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 2,
+          "positionBounds": {
+            "min": [
+              -0.43992891907691956,
+              2.472593307495117,
+              0.3799999952316284
+            ],
+            "max": [
+              0.43992891907691956,
+              3.9274067878723145,
+              0.4300000071525574
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.43992891907691956,
+          2.472593307495117,
+          0.3799999952316284
+        ],
+        "max": [
+          0.43992891907691956,
+          3.9274067878723145,
+          0.4300000071525574
+        ],
+        "size": [
+          0.8798578381538391,
+          1.4548134803771973,
+          0.050000011920928955
+        ],
+        "center": [
+          0.0,
+          3.200000047683716,
+          0.4050000011920929
+        ]
+      }
+    },
+    {
+      "index": 65,
+      "name": "Cone.021",
+      "primitiveCount": 1,
+      "primitives": [
+        {
+          "index": 0,
+          "mode": 4,
+          "attributes": [
+            "JOINTS_0",
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0",
+            "WEIGHTS_0"
+          ],
+          "material": 15,
+          "positionBounds": {
+            "min": [
+              -0.5199999809265137,
+              2.5500001907348633,
+              -0.3951999843120575
+            ],
+            "max": [
+              0.5199999809265137,
+              3.75,
+              0.3951999843120575
+            ]
+          }
+        }
+      ],
+      "bounds": {
+        "space": "mesh-local-untransformed",
+        "min": [
+          -0.5199999809265137,
+          2.5500001907348633,
+          -0.3951999843120575
+        ],
+        "max": [
+          0.5199999809265137,
+          3.75,
+          0.3951999843120575
+        ],
+        "size": [
+          1.0399999618530273,
+          1.1999998092651367,
+          0.790399968624115
+        ],
+        "center": [
+          0.0,
+          3.1500000953674316,
+          0.0
+        ]
+      }
+    }
+  ],
+  "materials": [
+    {
+      "index": 0,
+      "name": "skin.warm",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 1,
+      "name": "leather.light",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 2,
+      "name": "leather.dark",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 3,
+      "name": "hair.chestnut",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 4,
+      "name": "face.blush",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 5,
+      "name": "eye.white",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 6,
+      "name": "eye.green",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 7,
+      "name": "eye.dark",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 8,
+      "name": "skin.shadow",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 9,
+      "name": "hair.highlight",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 10,
+      "name": "cloth.warrior.shadow",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 11,
+      "name": "cloth.traveler",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 12,
+      "name": "metal.brass",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 13,
+      "name": "cloth.trim.cream",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 14,
+      "name": "metal.steel",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 15,
+      "name": "cloth.warrior.blue",
+      "alphaMode": "OPAQUE"
+    },
+    {
+      "index": 16,
+      "name": "cloth.shorts",
+      "alphaMode": "OPAQUE"
+    }
+  ],
+  "skins": [
+    {
+      "index": 0,
+      "name": "Armature",
+      "jointCount": 18
+    }
+  ],
+  "bounds": {
+    "space": "mesh-local-untransformed",
+    "min": [
+      -0.8399999737739563,
+      0.0,
+      -0.5896720886230469
+    ],
+    "max": [
+      0.8999999165534973,
+      4.840000152587891,
+      0.5399999022483826
+    ],
+    "size": [
+      1.7399998903274536,
+      4.840000152587891,
+      1.1296719908714294
+    ],
+    "center": [
+      0.029999971389770508,
+      2.4200000762939453,
+      -0.024836093187332153
+    ]
+  },
+  "semanticDecomposition": {
+    "schemaVersion": 1,
+    "status": "rich",
+    "reliableSemanticBoundary": "named-node-or-mesh",
+    "reason": "Multiple named scene/mesh entities provide an explicit semantic starting point.",
+    "metadataEvidence": {
+      "nodeCount": 90,
+      "meshCount": 66,
+      "primitiveCount": 66,
+      "materialCount": 17,
+      "textureCount": 0,
+      "namedNodes": [
+        "socket.hand.L",
+        "hand.L",
+        "arm.L.lower",
+        "arm.L.upper",
+        "socket.hand.R",
+        "hand.R",
+        "arm.R.lower",
+        "arm.R.upper",
+        "socket.back",
+        "back",
+        "socket.head",
+        "head",
+        "neck",
+        "chest",
+        "ankle.L",
+        "leg.L.lower",
+        "leg.L.upper",
+        "ankle.R",
+        "leg.R.lower",
+        "leg.R.upper",
+        "pelvis",
+        "root.bone",
+        "body.continuous",
+        "body.hand.L",
+        "body.hand.R",
+        "body.head",
+        "boot.L.cuff",
+        "boot.L.foot",
+        "boot.L.shaft",
+        "boot.R.cuff",
+        "boot.R.foot",
+        "boot.R.shaft",
+        "face.brow.L",
+        "face.brow.R",
+        "face.cheek.L",
+        "face.cheek.R",
+        "face.eye.L.catchlight",
+        "face.eye.L.iris",
+        "face.eye.L.pupil",
+        "face.eye.L.upper-lid",
+        "face.eye.L.white",
+        "face.eye.R.catchlight",
+        "face.eye.R.iris",
+        "face.eye.R.pupil",
+        "face.eye.R.upper-lid",
+        "face.eye.R.white",
+        "face.mouth",
+        "face.nose",
+        "hair.bang.1",
+        "hair.bang.2",
+        "hair.bang.3",
+        "hair.bang.4",
+        "hair.bang.5",
+        "hair.bang.6",
+        "hair.crown-mass",
+        "hair.ponytail.1",
+        "hair.ponytail.2",
+        "hair.ponytail.3",
+        "hair.ponytail.4",
+        "hair.ponytail.5",
+        "hair.ponytail.6",
+        "hair.ponytail.7",
+        "hair.ponytail.tie",
+        "hair.rear-mass",
+        "hair.temple.L",
+        "hair.temple.R",
+        "outfit.glb.warrior-starter",
+        "outfit.traveler.coat",
+        "outfit.warrior.belt",
+        "outfit.warrior.buckle",
+        "outfit.warrior.collar.L",
+        "outfit.warrior.collar.R",
+        "outfit.warrior.glove.L",
+        "outfit.warrior.glove.R",
+        "outfit.warrior.inset",
+        "outfit.warrior.pauldron",
+        "outfit.warrior.pouch",
+        "outfit.warrior.short-sleeve.L",
+        "outfit.warrior.short-sleeve.R",
+        "outfit.warrior.shorts.L",
+        "outfit.warrior.shorts.R",
+        "outfit.warrior.skirt-border.L",
+        "outfit.warrior.skirt-border.R",
+        "outfit.warrior.skirt.L",
+        "outfit.warrior.skirt.R",
+        "outfit.warrior.sleeve-cuff.L",
+        "outfit.warrior.sleeve-cuff.R",
+        "outfit.warrior.strap",
+        "outfit.warrior.tunic",
+        "Armature"
+      ],
+      "namedMeshes": [
+        "Sphere",
+        "Sphere.008",
+        "Sphere.021",
+        "Sphere.031",
+        "Cone.025",
+        "Sphere.032",
+        "Cone.024",
+        "Cone.030",
+        "Sphere.033",
+        "Cone.029",
+        "face.brow.L.curve",
+        "face.brow.R.curve",
+        "Sphere.038",
+        "Sphere.042",
+        "Sphere.037",
+        "Sphere.035",
+        "Sphere.036",
+        "face.eye.L.upper-lid.curve",
+        "face.eye.L.white.mesh",
+        "Sphere.041",
+        "Sphere.039",
+        "Sphere.040",
+        "face.eye.R.upper-lid.curve",
+        "face.eye.R.white.mesh",
+        "face.mouth.curve",
+        "Sphere.043",
+        "hair.bang.1.curve",
+        "hair.bang.2.curve",
+        "hair.bang.3.curve",
+        "hair.bang.4.curve",
+        "hair.bang.5.curve",
+        "hair.bang.6.curve",
+        "Sphere.045",
+        "hair.ponytail.1.curve",
+        "hair.ponytail.2.curve",
+        "hair.ponytail.3.curve",
+        "hair.ponytail.4.curve",
+        "hair.ponytail.5.curve",
+        "hair.ponytail.6.curve",
+        "hair.ponytail.7.curve",
+        "Torus.004",
+        "Sphere.044",
+        "hair.temple.L.curve",
+        "hair.temple.R.curve",
+        "Cube.004",
+        "Torus.002",
+        "Torus.003",
+        "Cube",
+        "Cube.001",
+        "Cone.026",
+        "Cone.031",
+        "outfit.warrior.inset.mesh",
+        "Sphere.034",
+        "Cube.003",
+        "Cone.022",
+        "Cone.027",
+        "Cone.023",
+        "Cone.028",
+        "outfit.warrior.skirt-border.L.mesh",
+        "outfit.warrior.skirt-border.R.mesh",
+        "outfit.warrior.skirt.L.mesh",
+        "outfit.warrior.skirt.R.mesh",
+        "Torus",
+        "Torus.001",
+        "Cube.002",
+        "Cone.021"
+      ],
+      "namedMaterials": [
+        "skin.warm",
+        "leather.light",
+        "leather.dark",
+        "hair.chestnut",
+        "face.blush",
+        "eye.white",
+        "eye.green",
+        "eye.dark",
+        "skin.shadow",
+        "hair.highlight",
+        "cloth.warrior.shadow",
+        "cloth.traveler",
+        "metal.brass",
+        "cloth.trim.cream",
+        "metal.steel",
+        "cloth.warrior.blue",
+        "cloth.shorts"
+      ]
+    },
+    "strategies": [
+      {
+        "id": "named-node",
+        "status": "available"
+      },
+      {
+        "id": "primitive-material-boundary",
+        "status": "available"
+      },
+      {
+        "id": "uv-texture-boundary",
+        "status": "not-proven"
+      },
+      {
+        "id": "connected-component-hypothesis",
+        "status": "candidate-only"
+      },
+      {
+        "id": "curvature-normal-region-growing-hypothesis",
+        "status": "candidate-only"
+      },
+      {
+        "id": "multiview-id-mask",
+        "status": "required-for-runtime-region-evidence"
+      },
+      {
+        "id": "multipart-glb",
+        "status": "recommended"
+      }
+    ],
+    "claimsAllowed": [
+      "scene and drawable inventory",
+      "material/primitive boundaries explicitly present in the GLB",
+      "browser-rendered ID-mask evidence when captured"
+    ],
+    "claimsForbiddenUntilEvidence": [
+      "exact semantic labels inferred from a merged mesh",
+      "per-region material equality without region crops or ID masks",
+      "multipart topology reconstructed from metadata alone"
+    ]
+  },
+  "referenceReadiness": "pass",
+  "warnings": [],
+  "note": "Metadata only. Render the GLB through the target Three.js route before using it as a visual baseline; do not copy its topology into a procedural factory."
+}

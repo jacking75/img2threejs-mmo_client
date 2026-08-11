@@ -1,0 +1,37 @@
+[
+  {
+    "id": "anime-face-readability",
+    "score": 0.64,
+    "threshold": 0.70,
+    "status": "below-threshold",
+    "notes": "이전 돌출 안구와 과도한 얼굴 음영은 완화됐지만, 눈·코·입의 형태 언어와 얼굴 평면이 컨셉보다 단순하다."
+  },
+  {
+    "id": "hair-silhouette",
+    "score": 0.56,
+    "threshold": 0.70,
+    "status": "below-threshold",
+    "notes": "앞머리가 테이퍼된 머리카락 다발이 아니라 굵은 튜브처럼 보이고 측면 두상과 연결이 약하다."
+  },
+  {
+    "id": "hand-anatomy",
+    "score": 0.46,
+    "threshold": 0.65,
+    "status": "below-threshold",
+    "notes": "손가락 분리와 손바닥·손목 전이가 없어 장갑형 덩어리로 읽힌다."
+  },
+  {
+    "id": "warrior-outfit-identity",
+    "score": 0.72,
+    "threshold": 0.70,
+    "status": "pass",
+    "notes": "파란 튜닉, 흰 테두리, 갈색 벨트·파우치, 한쪽 견갑과 검으로 여성 전사 정체성이 유지된다."
+  },
+  {
+    "id": "animation-ready-rig",
+    "score": 0.78,
+    "threshold": 0.70,
+    "status": "pass",
+    "notes": "단일 스킨과 18개 관절, 명시적 장비 소켓이 유지되며 런타임 포즈와 장비 부착이 동작한다."
+  }
+]

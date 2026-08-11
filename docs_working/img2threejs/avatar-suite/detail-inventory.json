@@ -1,0 +1,211 @@
+{
+    "sourceImage":  "C:\\github_dev\\img2threejs-mmo_client\\docs_working\\img2threejs\\avatar-suite\\admitted\\front-female-warrior-turnaround-v1.png",
+    "zonesDir":  "C:\\github_dev\\img2threejs-mmo_client\\docs_working\\img2threejs\\avatar-suite\\detail-zones",
+    "detailInventory":  {
+                            "scanMethod":  "component-zones",
+                            "targetMinDetails":  10,
+                            "details":  [
+                                            {
+                                                "id":  "hair",
+                                                "kind":  "silhouette-cluster",
+                                                "description":  "High ponytail with layered front bangs, embedded crown mass, and long tapered rear locks.",
+                                                "region":  {
+                                                               "x":  0.38,
+                                                               "y":  0.0,
+                                                               "width":  0.46,
+                                                               "height":  0.23,
+                                                               "units":  "normalized"
+                                                           },
+                                                "scale":  "macro-to-meso",
+                                                "affects":  "head silhouette and rear orbit coverage",
+                                                "mapsTo":  {
+                                                               "type":  "component.localFeatures",
+                                                               "ref":  "hair-warrior-ponytail"
+                                                           },
+                                                "evidenceRef":  "C:\\github_dev\\img2threejs-mmo_client\\docs_working\\img2threejs\\avatar-suite\\detail-zones\\hair.png",
+                                                "confidence":  0.94
+                                            },
+                                            {
+                                                "id":  "face",
+                                                "kind":  "facial-landmark-material",
+                                                "description":  "Large green anime eyes with dark outline, colored iris, black pupil, and compact catchlight; small nose and mouth marks.",
+                                                "region":  {
+                                                               "x":  0.43,
+                                                               "y":  0.08,
+                                                               "width":  0.33,
+                                                               "height":  0.18,
+                                                               "units":  "normalized"
+                                                           },
+                                                "scale":  "meso-to-micro",
+                                                "affects":  "face readability and character expression",
+                                                "mapsTo":  {
+                                                               "type":  "component.localFeatures",
+                                                               "ref":  "face-features"
+                                                           },
+                                                "evidenceRef":  "C:\\github_dev\\img2threejs-mmo_client\\docs_working\\img2threejs\\avatar-suite\\detail-zones\\face.png",
+                                                "confidence":  0.95
+                                            },
+                                            {
+                                                "id":  "torso",
+                                                "kind":  "garment-panel-and-trim",
+                                                "description":  "Vivid blue short-sleeve tunic with raised collar, white inset neckline, white sleeve/hem trim, and a split front skirt panel.",
+                                                "region":  {
+                                                               "x":  0.31,
+                                                               "y":  0.2,
+                                                               "width":  0.55,
+                                                               "height":  0.31,
+                                                               "units":  "normalized"
+                                                           },
+                                                "scale":  "macro-to-meso",
+                                                "affects":  "warrior class identity and torso silhouette",
+                                                "mapsTo":  {
+                                                               "type":  "component.localFeatures",
+                                                               "ref":  "outfit-warrior-tunic"
+                                                           },
+                                                "evidenceRef":  "C:\\github_dev\\img2threejs-mmo_client\\docs_working\\img2threejs\\avatar-suite\\detail-zones\\torso.png",
+                                                "confidence":  0.96
+                                            },
+                                            {
+                                                "id":  "pauldron",
+                                                "kind":  "metal-hardware",
+                                                "description":  "Single domed left shoulder pauldron with stepped rim, two visible rivets, and separate highlight band.",
+                                                "region":  {
+                                                               "x":  0.65,
+                                                               "y":  0.18,
+                                                               "width":  0.24,
+                                                               "height":  0.16,
+                                                               "units":  "normalized"
+                                                           },
+                                                "scale":  "meso-to-micro",
+                                                "affects":  "asymmetric warrior silhouette and metallic response",
+                                                "mapsTo":  {
+                                                               "type":  "component.localFeatures",
+                                                               "ref":  "warrior-pauldron"
+                                                           },
+                                                "evidenceRef":  "C:\\github_dev\\img2threejs-mmo_client\\docs_working\\img2threejs\\avatar-suite\\detail-zones\\pauldron.png",
+                                                "confidence":  0.97
+                                            },
+                                            {
+                                                "id":  "belt-pouch",
+                                                "kind":  "accessory-cluster",
+                                                "description":  "Brown belt with rectangular brass buckle, diagonal chest strap, and right-hip pouch with flap and round fastener.",
+                                                "region":  {
+                                                               "x":  0.38,
+                                                               "y":  0.36,
+                                                               "width":  0.5,
+                                                               "height":  0.17,
+                                                               "units":  "normalized"
+                                                           },
+                                                "scale":  "meso-to-micro",
+                                                "affects":  "waist break, asymmetry, and leather material zones",
+                                                "mapsTo":  {
+                                                               "type":  "component.localFeatures",
+                                                               "ref":  "belt-strap-pouch"
+                                                           },
+                                                "evidenceRef":  "C:\\github_dev\\img2threejs-mmo_client\\docs_working\\img2threejs\\avatar-suite\\detail-zones\\belt-pouch.png",
+                                                "confidence":  0.96
+                                            },
+                                            {
+                                                "id":  "gloves",
+                                                "kind":  "garment-boundary",
+                                                "description":  "Dark brown fingerless gloves with raised wrist cuffs and exposed fingertips.",
+                                                "region":  {
+                                                               "x":  0.24,
+                                                               "y":  0.35,
+                                                               "width":  0.66,
+                                                               "height":  0.2,
+                                                               "units":  "normalized"
+                                                           },
+                                                "scale":  "meso",
+                                                "affects":  "hand silhouette and grip readability",
+                                                "mapsTo":  {
+                                                               "type":  "component.localFeatures",
+                                                               "ref":  "gloves"
+                                                           },
+                                                "evidenceRef":  "C:\\github_dev\\img2threejs-mmo_client\\docs_working\\img2threejs\\avatar-suite\\detail-zones\\gloves.png",
+                                                "confidence":  0.91
+                                            },
+                                            {
+                                                "id":  "legs",
+                                                "kind":  "proportion-and-color-block",
+                                                "description":  "Compact thighs under dark fitted shorts with a clear skin break before tall boot cuffs.",
+                                                "region":  {
+                                                               "x":  0.31,
+                                                               "y":  0.51,
+                                                               "width":  0.49,
+                                                               "height":  0.25,
+                                                               "units":  "normalized"
+                                                           },
+                                                "scale":  "macro",
+                                                "affects":  "five-head silhouette and leg proportion",
+                                                "mapsTo":  {
+                                                               "type":  "component.localFeatures",
+                                                               "ref":  "leg-pair"
+                                                           },
+                                                "evidenceRef":  "C:\\github_dev\\img2threejs-mmo_client\\docs_working\\img2threejs\\avatar-suite\\detail-zones\\legs.png",
+                                                "confidence":  0.9
+                                            },
+                                            {
+                                                "id":  "boots",
+                                                "kind":  "layered-footwear",
+                                                "description":  "Tall brown leather boots with folded cuffs, vertical front panels, ankle straps, brass buckles, and low heels.",
+                                                "region":  {
+                                                               "x":  0.25,
+                                                               "y":  0.67,
+                                                               "width":  0.62,
+                                                               "height":  0.31,
+                                                               "units":  "normalized"
+                                                           },
+                                                "scale":  "meso-to-micro",
+                                                "affects":  "lower-leg silhouette and ground contact",
+                                                "mapsTo":  {
+                                                               "type":  "component.localFeatures",
+                                                               "ref":  "boot-pair"
+                                                           },
+                                                "evidenceRef":  "C:\\github_dev\\img2threejs-mmo_client\\docs_working\\img2threejs\\avatar-suite\\detail-zones\\boots.png",
+                                                "confidence":  0.94
+                                            },
+                                            {
+                                                "id":  "sword",
+                                                "kind":  "hard-surface-profile",
+                                                "description":  "Straight single-handed sword with faceted point, central fuller, oval brass guard, wrapped dark grip, and round pommel.",
+                                                "region":  {
+                                                               "x":  0.0,
+                                                               "y":  0.45,
+                                                               "width":  0.43,
+                                                               "height":  0.37,
+                                                               "units":  "normalized"
+                                                           },
+                                                "scale":  "macro-to-micro",
+                                                "affects":  "weapon silhouette and hand.R attachment",
+                                                "mapsTo":  {
+                                                               "type":  "component.localFeatures",
+                                                               "ref":  "training-sword"
+                                                           },
+                                                "evidenceRef":  "C:\\github_dev\\img2threejs-mmo_client\\docs_working\\img2threejs\\avatar-suite\\detail-zones\\sword.png",
+                                                "confidence":  0.95
+                                            },
+                                            {
+                                                "id":  "silhouette",
+                                                "kind":  "proportion-scaffold",
+                                                "description":  "Approximately five-head stylized humanoid with oversized head, compact torso, short limbs, and enlarged boots.",
+                                                "region":  {
+                                                               "x":  0.05,
+                                                               "y":  0.0,
+                                                               "width":  0.9,
+                                                               "height":  0.96,
+                                                               "units":  "normalized"
+                                                           },
+                                                "scale":  "global",
+                                                "affects":  "overall silhouette and gameplay-camera readability",
+                                                "mapsTo":  {
+                                                               "type":  "component.localFeatures",
+                                                               "ref":  "avatar-root"
+                                                           },
+                                                "evidenceRef":  "C:\\github_dev\\img2threejs-mmo_client\\docs_working\\img2threejs\\avatar-suite\\detail-zones\\silhouette.png",
+                                                "confidence":  0.92
+                                            }
+                                        ]
+                        },
+    "authoringInstruction":  "Open each zone crop under zonesDir and replace every detail stub\u0027s kind, description, scale, affects, mapsTo, and confidence with what is actually observed. Add more detail entries per zone if a single zone contains multiple distinct marks; do not leave stubs unfilled or unlinked (mapsTo must reference a real component.localFeatures or material.localOverrides entry)."
+}

@@ -7,7 +7,7 @@
 클래스를 선택한 뒤 3인칭 필드에 입장한다. 필드에서 이동하고, 인벤토리에서
 장비를 교체하고, 근접 공격 애니메이션을 실행할 수 있어야 한다.
 
-정식 요구 사항과 구현 순서는 [`docs/IMPLEMENTATION_PLAN.md`](docs/IMPLEMENTATION_PLAN.md)를
+정식 요구 사항과 구현 순서는 [`docs_working/IMPLEMENTATION_PLAN.md`](docs_working/IMPLEMENTATION_PLAN.md)를
 우선으로 한다. 행동을 바꾸기 전에 반드시 이 문서를 읽는다. `README.md`는
 개발자를 위한 설치·실행·조작 안내서다.
 
@@ -85,7 +85,7 @@ TypeScript 컴파일만으로 시각 동작이 맞다고 주장하지 않는다.
   요청과 관계없는 작업을 reset하거나 폐기하지 않는다.
 - 조작, 명령, 프로젝트 구조가 바뀌면 `README.md`를 갱신한다.
 - 실제 완료, 새 제약 발견, 명시적으로 합의한 결정 변경 때만
-  `docs/IMPLEMENTATION_PLAN.md`를 갱신한다. 범위를 몰래 바꾸지 않는다.
+  `docs_working/IMPLEMENTATION_PLAN.md`를 갱신한다. 범위를 몰래 바꾸지 않는다.
 
 ## 이번 마일스톤의 완료 조건
 
