@@ -1,6 +1,14 @@
 import { Box3, Vector3 } from "three";
 import { describe, expect, it } from "vitest";
-import { assetCatalog, avatarAssets, equipmentAssets, fieldAssets } from "../../src/assets/catalog";
+import {
+  assetCatalog,
+  avatarAssets,
+  equipmentAssets,
+  fieldAssets,
+  legacyEquipmentAssets,
+  npcAssets,
+  playerItemAssets,
+} from "../../src/assets/catalog";
 import { createMoonSword, createTrainingSword } from "../../src/assets/equipment/createSword";
 
 describe("equipment factories", () => {
@@ -24,8 +32,12 @@ describe("equipment factories", () => {
 describe("asset catalog", () => {
   it("contains every planned preview resource without duplicate ids", () => {
     expect(avatarAssets).toHaveLength(6);
-    expect(equipmentAssets).toHaveLength(5);
+    expect(legacyEquipmentAssets).toHaveLength(5);
+    expect(npcAssets).toHaveLength(72);
+    expect(playerItemAssets).toHaveLength(168);
+    expect(equipmentAssets).toHaveLength(173);
     expect(fieldAssets).toHaveLength(4);
+    expect(assetCatalog).toHaveLength(255);
     expect(new Set(assetCatalog.map(({ id }) => id)).size).toBe(assetCatalog.length);
   });
 });

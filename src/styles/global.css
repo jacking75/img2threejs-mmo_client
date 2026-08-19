@@ -61,10 +61,14 @@ body::before {
 .asset-badge strong { font-size: clamp(22px, 3vw, 34px); letter-spacing: -.04em; }
 
 .catalog-panel { display: flex; flex-direction: column; border-radius: 24px; padding: 16px; }
-.tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 5px; border-radius: 14px; background: #0b1322; }
+.tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 5px; border-radius: 14px; background: #0b1322; }
 .tab { border: 0; border-radius: 10px; padding: 11px 6px; color: #718394; background: transparent; cursor: pointer; font-size: 12px; }
 .tab small { color: #566677; font: 500 9px/1 "Trebuchet MS", sans-serif; }
 .tab.is-active { color: #f4f8f9; background: #243248; box-shadow: 0 5px 16px rgb(0 0 0 / 22%); }
+
+.catalog-search { display: grid; gap: 7px; padding: 16px 2px 0; color: #718596; font-size: 10px; }
+.catalog-search input { width: 100%; border: 1px solid rgb(127 195 208 / 18%); border-radius: 11px; outline: none; padding: 11px 12px; color: #edf5f7; background: #0b1424; }
+.catalog-search input:focus { border-color: rgb(127 195 208 / 55%); box-shadow: 0 0 0 3px rgb(110 182 197 / 9%); }
 
 .asset-list { display: grid; align-content: start; gap: 7px; padding: 18px 0; overflow: auto; }
 .asset-list button { display: grid; grid-template-columns: 32px 1fr auto; align-items: center; gap: 10px; width: 100%; border: 1px solid transparent; border-radius: 13px; padding: 14px 13px; color: #9dafbd; background: transparent; text-align: left; cursor: pointer; transition: .18s ease; }
@@ -73,6 +77,7 @@ body::before {
 .asset-list span { color: #627585; font: 600 10px/1 "Trebuchet MS", sans-serif; }
 .asset-list strong { font-size: 13px; }
 .asset-list em { color: #6f9fa9; font: normal 600 9px/1 "Trebuchet MS", sans-serif; letter-spacing: .12em; }
+.asset-list-empty { margin: 24px 8px; color: #718596; font-size: 12px; text-align: center; }
 
 .catalog-panel footer { display: flex; gap: 14px; margin-top: auto; padding: 15px 8px 3px; border-top: 1px solid rgb(131 160 178 / 12%); color: #667989; font: 600 9px/1 "Trebuchet MS", sans-serif; letter-spacing: .1em; }
 .dot { display: inline-block; width: 6px; height: 6px; margin-right: 3px; border-radius: 50%; }

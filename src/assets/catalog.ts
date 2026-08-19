@@ -4,6 +4,8 @@ import { createQuiver } from "./equipment/createQuiver";
 import { createRangerBow } from "./equipment/createRangerBow";
 import { createMoonSword, createTrainingSword } from "./equipment/createSword";
 import { createFantasyTree, createGrassTuft, createRockCluster, createWaystone } from "./field/createFieldProps";
+import { NPC_RESOURCE_CATALOG } from "./npc";
+import { playerItemResources } from "./player-items";
 import type { AssetDefinition, BodyPresentation, CharacterClass } from "./types";
 
 const bodyLabels: Record<BodyPresentation, string> = { feminine: "여성형", masculine: "남성형" };
@@ -18,13 +20,19 @@ export const avatarAssets: readonly AssetDefinition[] = (["feminine", "masculine
   })),
 );
 
-export const equipmentAssets: readonly AssetDefinition[] = [
+export const legacyEquipmentAssets: readonly AssetDefinition[] = [
   { id: "weapon.training-sword", label: "연습용 검", category: "weapon", create: createTrainingSword },
   { id: "weapon.moon-sword", label: "월광검", category: "weapon", create: createMoonSword },
   { id: "weapon.mage-staff", label: "수정 지팡이", category: "weapon", create: createMageStaff },
   { id: "weapon.ranger-bow", label: "리커브 보우", category: "weapon", create: createRangerBow },
   { id: "equipment.quiver", label: "가죽 화살통", category: "equipment", create: createQuiver },
 ];
+
+export const npcAssets: readonly AssetDefinition[] = NPC_RESOURCE_CATALOG;
+
+export const playerItemAssets: readonly AssetDefinition[] = playerItemResources;
+
+export const equipmentAssets: readonly AssetDefinition[] = [...legacyEquipmentAssets, ...playerItemAssets];
 
 export const fieldAssets: readonly AssetDefinition[] = [
   { id: "field.fantasy-tree", label: "판타지 나무", category: "field", create: createFantasyTree },
@@ -33,4 +41,4 @@ export const fieldAssets: readonly AssetDefinition[] = [
   { id: "field.waystone", label: "룬 이정표", category: "field", create: createWaystone },
 ];
 
-export const assetCatalog: readonly AssetDefinition[] = [...avatarAssets, ...equipmentAssets, ...fieldAssets];
+export const assetCatalog: readonly AssetDefinition[] = [...avatarAssets, ...npcAssets, ...equipmentAssets, ...fieldAssets];
