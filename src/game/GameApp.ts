@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import { CLASS_CATALOG, getItemDefinition } from "../domain/catalog";
 import type { CharacterProfile } from "../domain/character";
 import { equipOwnedItem } from "../domain/equipment";
 import {
@@ -20,6 +19,7 @@ import type { FieldRuntime } from "../render/createField";
 import { createRenderer } from "../render/createRenderer";
 import { EquipmentRenderer } from "../render/EquipmentRenderer";
 import { ThirdPersonCamera } from "../render/ThirdPersonCamera";
+import { Hud } from "../ui/Hud";
 import { InventoryPanel } from "../ui/InventoryPanel";
 
 export const FIELD_AVATAR_SCALE = 0.36;
@@ -56,8 +56,7 @@ export class GameApp {
   private animationFrameId: number | null = null;
   private clock: THREE.Clock | null = null;
   private fieldShell: HTMLElement | null = null;
-  private locomotionElement: HTMLElement | null = null;
-  private weaponElement: HTMLElement | null = null;
+  private hud: Hud | null = null;
   private animationState: AnimationState = "idle";
   private attackTimeline: AttackTimeline = createAttackTimeline();
   private attackCount = 0;
@@ -72,45 +71,14 @@ export class GameApp {
   }
 
   public start(): void {
-    const classDefinition = CLASS_CATALOG[this.profile.classId];
     this.root.innerHTML = `
       <main class="field-shell">
         <div class="field-viewport">
           <canvas class="field-canvas" aria-label="별빛 초원 3D 필드"></canvas>
         </div>
-        <header class="field-hud field-hud--identity">
-          <div class="field-portrait" aria-hidden="true">${classDefinition.label.slice(0, 1)}</div>
-          <div class="field-character-copy">
-            <p>ADVENTURER</p>
-            <strong></strong>
-            <span class="field-class-label"></span>
-            <div class="field-resource-bar field-resource-bar--hp"><i></i><small>HP</small></div>
-            <div class="field-resource-bar field-resource-bar--sp"><i></i><small>SP</small></div>
-            <span class="field-weapon-label"></span>
-          </div>
-        </header>
-        <aside class="field-hud field-hud--status" aria-label="필드 상태">
-          <div class="field-minimap" aria-hidden="true"><i></i><span>◆</span></div>
-          <div class="field-location"><small>CURRENT AREA</small><strong>별빛 초원</strong><span>LOCAL EXPEDITION · <b class="field-locomotion">IDLE</b></span></div>
-        </aside>
-        <div class="field-hint">WASD 이동 · Shift 달리기 · 좌클릭/F 공격 · 마우스 드래그 카메라</div>
-        <div class="field-hotbar" aria-label="게임 단축키 바">
-          <span class="hotbar-slot is-active"><kbd>1</kbd><b>⚔</b><small>검</small></span>
-          <span class="hotbar-slot"><kbd>2</kbd><b>✦</b><small>기술</small></span>
-          <button class="hotbar-slot inventory-toggle" type="button" aria-controls="inventory-overlay" aria-expanded="false"><kbd>I</kbd><b>▦</b><small>가방</small></button>
-          <span class="hotbar-slot"><kbd>F</kbd><b>◆</b><small>공격</small></span>
-        </div>
-        <button class="field-exit" type="button"><span>ESC</span> 캐릭터 선택</button>
         <div class="inventory-overlay" id="inventory-overlay" hidden aria-hidden="true"></div>
       </main>
     `;
-
-    const name = this.requiredElement<HTMLElement>(".field-character-copy > strong");
-    const classLabel = this.requiredElement<HTMLElement>(".field-class-label");
-    name.textContent = this.profile.name;
-    classLabel.textContent = classDefinition.label;
-    this.weaponElement = this.requiredElement<HTMLElement>(".field-weapon-label");
-    this.updateEquipmentHud();
 
     const canvas = this.requiredElement<HTMLCanvasElement>(".field-canvas");
     this.fieldShell = this.requiredElement<HTMLElement>(".field-shell");
@@ -124,8 +92,8 @@ export class GameApp {
     this.fieldShell.dataset.avatarScale = String(FIELD_AVATAR_SCALE);
     this.fieldShell.dataset.cameraFov = String(FIELD_CAMERA_FOV);
     this.viewport = this.requiredElement<HTMLElement>(".field-viewport");
-    this.locomotionElement = this.requiredElement<HTMLElement>(".field-locomotion");
-    this.requiredElement<HTMLButtonElement>(".field-exit").addEventListener("click", this.onExit);
+    this.hud = new Hud({ root: this.fieldShell, profile: this.profile, onExit: this.onExit });
+    this.hud.start();
 
     this.renderer = createRenderer(canvas);
     this.field = createField();
@@ -169,8 +137,8 @@ export class GameApp {
     window.removeEventListener("resize", this.handleResize);
     this.viewport = null;
     this.fieldShell = null;
-    this.locomotionElement = null;
-    this.weaponElement = null;
+    this.hud?.dispose();
+    this.hud = null;
     this.viewportWidth = 0;
     this.viewportHeight = 0;
     this.cameraController?.dispose();
@@ -244,7 +212,7 @@ export class GameApp {
     );
     if (state !== this.animationState) {
       this.animationState = state;
-      if (this.locomotionElement) this.locomotionElement.textContent = state.toUpperCase();
+      this.hud?.setLocomotion(state);
       if (this.fieldShell) {
         this.fieldShell.dataset.locomotion = state === "attack_1" ? "attack" : state;
         this.fieldShell.dataset.animation = state;
@@ -264,7 +232,7 @@ export class GameApp {
     this.profile = result.profile;
     this.equipmentRenderer?.sync(this.profile);
     this.inventoryPanel?.updateProfile(this.profile);
-    this.updateEquipmentHud();
+    this.hud?.updateProfile(this.profile);
     return true;
   };
 
@@ -275,13 +243,6 @@ export class GameApp {
     this.fieldShell?.classList.toggle("is-inventory-open", open);
     if (this.fieldShell) this.fieldShell.dataset.inventoryOpen = String(open);
   };
-
-  private updateEquipmentHud(): void {
-    if (!this.weaponElement) return;
-    const weaponId = this.profile.equipped.weapon;
-    const weapon = weaponId ? getItemDefinition(weaponId) : undefined;
-    this.weaponElement.textContent = `장착 검 · ${weapon?.label ?? "없음"}`;
-  }
 
   private readonly handleResize = (): void => {
     this.resizeRenderer();

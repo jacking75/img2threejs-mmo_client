@@ -15,7 +15,7 @@ test("전사 생성부터 장비 교체, 공격, 저장 복원까지 이어진�
   await page.reload();
 
   await page.locator(".lobby-actions [data-action='create']").click();
-  await page.locator("[data-body='masculine']").click();
+  await page.locator("[data-body='feminine']").click();
   await page.locator("[data-class-id='warrior']").click();
   await page.locator("input[name='characterName']").fill("검증전사");
   await page.locator("button[type='submit']").click();
@@ -39,8 +39,10 @@ test("전사 생성부터 장비 교체, 공격, 저장 복원까지 이어진�
   await expect(page.locator(".inventory-overlay")).toBeVisible();
   await page.locator("[data-item-id='weapon.moon-sword']").click();
   await page.locator("[data-item-id='outfit.traveler']").click();
+  await page.locator("[data-item-id='head.starter-cap']").click();
   await expect(page.locator("[data-item-id='weapon.moon-sword']")).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator("[data-item-id='outfit.traveler']")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("[data-item-id='head.starter-cap']")).toHaveAttribute("aria-pressed", "true");
   await page.keyboard.press("Escape");
 
   await page.keyboard.down("KeyW");
@@ -58,6 +60,7 @@ test("전사 생성부터 장비 교체, 공격, 저장 복원까지 이어진�
   await page.keyboard.press("KeyI");
   await expect(page.locator("[data-item-id='weapon.moon-sword']")).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator("[data-item-id='outfit.traveler']")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("[data-item-id='head.starter-cap']")).toHaveAttribute("aria-pressed", "true");
 
   expect(consoleErrors).toEqual([]);
   expect(pageErrors).toEqual([]);

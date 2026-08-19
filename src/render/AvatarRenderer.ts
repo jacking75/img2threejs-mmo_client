@@ -13,6 +13,7 @@ const OUTFIT_IDS = new Set<AvatarOutfitId>([
 
 export interface AvatarRendererOptions {
   readonly visualScale?: number;
+  readonly createAvatar?: typeof createRuntimeAvatar;
 }
 
 export class AvatarRenderer {
@@ -49,7 +50,7 @@ export class AvatarRenderer {
     options: AvatarRendererOptions = {},
   ) {
     this.visualScale = options.visualScale ?? 1;
-    this.avatar = createRuntimeAvatar({
+    this.avatar = (options.createAvatar ?? createRuntimeAvatar)({
       body: profile.body,
       classId: profile.classId,
       outfitId: getAvatarOutfitId(profile.equipped.outfit),
@@ -105,6 +106,14 @@ export class AvatarRenderer {
     state: AnimationState,
     attackProgress = 0,
   ): void {
+    if (!this.avatar.visible) {
+      this.updateAttackEffect(0);
+      return;
+    }
+    if (this.avatar.userData.animationRuntime?.update(state, deltaSeconds) === true) {
+      this.updateAttackEffect(state === "attack_1" ? attackProgress : 0);
+      return;
+    }
     if (state === "attack_1") {
       this.updateAttack(deltaSeconds, attackProgress);
       return;
@@ -194,6 +203,8 @@ export class AvatarRenderer {
   public dispose(): void {
     this.disposed = true;
     this.avatar.userData.disposed = true;
+    this.avatar.userData.animationRuntime?.dispose();
+    this.avatar.userData.animationRuntime = undefined;
     this.avatar.removeFromParent();
     this.attackEffect.removeFromParent();
     this.attackEffect.traverse((child) => {

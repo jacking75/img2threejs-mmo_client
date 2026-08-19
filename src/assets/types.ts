@@ -22,6 +22,12 @@ export interface SculptRuntime {
   readonly destructionGroups: Readonly<Record<string, readonly string[]>>;
 }
 
+export interface AvatarAnimationRuntime {
+  readonly clipNames: readonly string[];
+  update(state: "idle" | "run" | "sprint" | "attack_1", deltaSeconds: number): boolean;
+  dispose(): void;
+}
+
 export interface AssetDefinition {
   readonly id: string;
   readonly label: string;
@@ -34,7 +40,10 @@ export type AvatarGroup = THREE.Group & {
     sculptRuntime: SculptRuntime;
     avatarOptions: AvatarOptions;
     assetSource?: "procedural" | "blender-glb";
+    assetStatus?: "ready" | "loading" | "fallback";
     assetReady?: Promise<void>;
+    assetError?: unknown;
+    animationRuntime?: AvatarAnimationRuntime;
     disposed?: boolean;
     img2threejs: Readonly<Record<string, unknown>>;
   };

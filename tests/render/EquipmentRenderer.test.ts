@@ -82,4 +82,28 @@ describe("EquipmentRenderer", () => {
     expect(avatar.getObjectByName("head.starter-cap.crown")).toBeUndefined();
     expect(renderer.getActiveItemId("head")).toBe("head.none");
   });
+
+  it("does not rebind equipment sockets after disposal while an asset is pending", async () => {
+    let resolveReady!: () => void;
+    const assetReady = new Promise<void>((resolve) => {
+      resolveReady = resolve;
+    });
+    const profile = createDefaultProfile({ name: "장비 수명주기", body: "feminine", classId: "warrior" });
+    const avatar = createAnimeAvatar({ body: profile.body, classId: profile.classId });
+    avatar.userData.assetReady = assetReady;
+    const renderer = new EquipmentRenderer(avatar);
+    renderer.dispose();
+    avatar.userData.sculptRuntime = {
+      nodes: {},
+      sockets: avatar.userData.sculptRuntime.sockets,
+      colliders: [],
+      destructionGroups: {},
+    };
+
+    resolveReady();
+    await assetReady;
+    await Promise.resolve();
+
+    expect(renderer.getActiveItemId("outfit")).toBeNull();
+  });
 });

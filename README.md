@@ -203,17 +203,23 @@ codex "AGENTS.md와 docs_working/IMPLEMENTATION_PLAN.md를 읽어라. Phase 1만
 
 - 현재 패키지 버전은 `0.1.0`이다.
 - 클라이언트 전용 로컬 프로토타입이며 적, 피해량, 사운드, 네트워킹은 없다.
-- 여성 전사 GLB는 비동기 로딩 전에 절차형 대체 아바타가 잠깐 보일 수 있다.
+- 여성 전사 GLB가 준비될 때까지 아바타를 숨기며, 로딩 또는 리그 검증 실패 때만 온전한
+  절차형 아바타를 표시한다. 절차형 외형이 먼저 보였다가 GLB로 바뀌는 현상은 해소했다.
+- GLB에 포함된 스키닝 `outfit.traveler.coat`를 직접 전환하며, 초보자 모자는 GLB 머리
+  소켓에 맞춘 위치와 배율을 사용한다.
 - 여성 전사 GLB의 마지막 시각 점수는 0.69로 승인 기준 0.70 미만이다. 얼굴·앞머리·
-  골반/무릎 연결과 GLB 전용 여행자 의상·초보자 모자는 후속 수동 미술 보정 대상이다.
-- 프로덕션 번들은 현재 600 kB 권고치를 넘는 단일 청크 경고가 남아 있다.
+  골반/무릎 연결은 새 img2threejs 승인 단계와 Blender 수동 보정이 필요한 후속 작업이다.
+- 프로덕션 번들은 앱 모드, Three.js 코어, Three.js 애드온 청크로 분리했다. 최대 청크는
+  586.61 kB이며 600 kB 권고치 경고는 없다.
 
 ## 여성 전사 Blender GLB
 
 여성형 전사는 Blender로 생성한 스키닝 GLB를 우선 사용한다. 런타임은
-`public/assets/characters/female-warrior.glb`를 비동기로 불러오며, 로딩 전이나 로딩 실패 시에는
-기존 절차형 아바타가 화면을 유지한다. GLB에는 `hand.R`, `hand.L`, `head`, `back` 계약에 대응하는
-18개 관절 리그와 장비 소켓이 들어 있다.
+`public/assets/characters/female-warrior.glb`를 비동기로 불러오며, 준비 전에는 캐릭터를 숨기고
+실패 때만 절차형 아바타로 복구한다. 범용 `AvatarAdapter`는 외부 본 이름 별칭을 canonical
+`hand.R`, `hand.L`, `head`, `back` 계약으로 매핑할 수 있다. 현재 GLB에는 애니메이션 클립이 없어
+idle/run/sprint/attack 절차 애니메이션을 사용하며, 이후 GLTF 클립이 추가되면 동일 상태 이름으로
+`AnimationMixer`에 연결된다.
 
 Blender 5.2가 기본 경로에 설치된 Windows에서는 다음 명령으로 원본 `.blend`와 GLB를 다시 만든다.
 

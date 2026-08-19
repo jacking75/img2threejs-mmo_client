@@ -51,12 +51,15 @@ export class EquipmentRenderer {
   private outfitChestMount!: THREE.Object3D;
   private readonly activeVisuals: Partial<Record<"weapon" | "head", THREE.Group>> = {};
   private readonly activeItemIds: Partial<Record<EquipmentSlot, string | null>> = {};
+  private disposed = false;
 
   public constructor(private readonly avatar: AvatarGroup) {
     this.bindRuntime();
     this.activeItemIds.outfit = avatar.userData.avatarOptions.outfitId
       ?? getDefaultAvatarOutfitId(avatar.userData.avatarOptions.classId);
-    void avatar.userData.assetReady?.then(() => this.bindRuntime());
+    void avatar.userData.assetReady?.then(() => {
+      if (!this.disposed) this.bindRuntime();
+    });
   }
 
   public sync(profile: CharacterProfile): void {
@@ -74,6 +77,7 @@ export class EquipmentRenderer {
   }
 
   public dispose(): void {
+    this.disposed = true;
     this.clearAttachedVisual("weapon");
     this.clearAttachedVisual("head");
     clearMount(this.outfitRootMount);
@@ -98,6 +102,10 @@ export class EquipmentRenderer {
     if (slot === "weapon") {
       visual.rotation.set(0.08, 0, this.avatar.userData.assetSource === "blender-glb" ? 0 : Math.PI);
       visual.position.set(0, -0.15, 0.08);
+    } else if (itemId === "head.starter-cap" && this.avatar.userData.assetSource === "blender-glb") {
+      // GLB의 head 소켓은 절차형 머리보다 위에 있으므로 낮고 약간 작게 맞춘다.
+      visual.position.set(0, -0.3, 0);
+      visual.scale.setScalar(0.9);
     }
     socket.add(visual);
     this.activeVisuals[slot] = visual;

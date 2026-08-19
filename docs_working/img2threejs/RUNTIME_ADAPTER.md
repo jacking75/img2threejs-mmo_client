@@ -10,14 +10,17 @@ GLB의 마지막 수동 검수 점수는 0.69이므로, 이를 승인 기준 0.7
 
 ## 아바타 어댑터
 
-- `createRuntimeAvatar`는 즉시 사용할 수 있는 절차형 `AvatarGroup`을 만들고 여성형 전사에
-  한해 원본 Blender GLB를 비동기로 교체한다.
+- `createRuntimeAvatar`는 절차형 `AvatarGroup`을 안전한 fallback으로 보존하되 여성형 전사는
+  GLB 로딩과 리그 검증이 끝날 때까지 숨긴다. 실패하면 보존한 절차형 외형을 다시 표시한다.
 - 절차형/GLB 경로 모두 `root`, `head`, `hand.R`, `hand.L`, `back`과 이름 있는 사지 피벗을
   `avatar.userData.sculptRuntime`으로 노출한다.
+- `AvatarAdapter`는 외부 DCC 본 이름 별칭을 canonical 노드에 매핑하고, 선택적 GLTF
+  idle/run/sprint/attack 클립을 `AnimationMixer`에 연결한다. 현재 여성 전사 GLB는 클립이 없어
+  절차 애니메이션 fallback을 유지한다.
 - `AvatarRenderer`는 상태에 따라 피벗만 애니메이션하고, `EquipmentRenderer`만 직렬화된
   장비 ID를 시각 팩토리와 연결한다. GLB나 팩토리가 게임 상태·카메라·루프를 소유하지 않는다.
-- GLB가 준비되면 소켓 부착물을 새 리그 소켓으로 옮긴다. 여성 전사의 비동기 외형 전환과
-  여행자 의상/초보자 모자의 낮은 GLB 전용 품질은 알려진 한계다.
+- GLB가 준비되면 소켓 부착물을 새 리그 소켓으로 옮긴다. 여행자 의상은 GLB의 전용 스키닝
+  메시를 사용하고 초보자 모자는 GLB 머리 소켓에 맞춘 위치와 배율을 사용한다.
 
 ## 강체 장비 어댑터
 

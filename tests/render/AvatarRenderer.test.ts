@@ -1,5 +1,6 @@
 import { Box3, Group, Vector3 } from "three";
 import { describe, expect, it } from "vitest";
+import { createAnimeAvatar } from "../../src/assets/avatar/createAnimeAvatar";
 import { createDefaultProfile } from "../../src/domain/character";
 import { AvatarRenderer } from "../../src/render/AvatarRenderer";
 
@@ -42,5 +43,34 @@ describe("AvatarRenderer", () => {
     expect(height).toBeLessThan(2.4);
 
     renderer.dispose();
+  });
+
+  it("does not rebind runtime nodes after disposal while an asset is pending", async () => {
+    let resolveReady!: () => void;
+    const assetReady = new Promise<void>((resolve) => {
+      resolveReady = resolve;
+    });
+    const parent = new Group();
+    const profile = createDefaultProfile({ name: "수명주기", body: "feminine", classId: "warrior" });
+    const renderer = new AvatarRenderer(parent, profile, {
+      createAvatar: (options) => {
+        const avatar = createAnimeAvatar(options);
+        avatar.userData.assetReady = assetReady;
+        return avatar;
+      },
+    });
+    renderer.dispose();
+    renderer.avatar.userData.sculptRuntime = {
+      nodes: {},
+      sockets: renderer.avatar.userData.sculptRuntime.sockets,
+      colliders: [],
+      destructionGroups: {},
+    };
+
+    resolveReady();
+    await assetReady;
+    await Promise.resolve();
+
+    expect(parent.children).not.toContain(renderer.avatar);
   });
 });

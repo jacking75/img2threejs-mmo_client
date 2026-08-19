@@ -1,17 +1,37 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { collectNamedNodes } from "../geometry";
+import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
 import type { AvatarGroup, AvatarOptions, SculptRuntime } from "../types";
+import { adaptImportedAvatar } from "./AvatarAdapter";
 import { createAnimeAvatar } from "./createAnimeAvatar";
 
 const FEMALE_WARRIOR_GLB = "/assets/characters/female-warrior.glb";
 
-export function createRuntimeAvatar(options: AvatarOptions): AvatarGroup {
+type ImportedAvatarLoader = () => Promise<Pick<GLTF, "scene" | "animations">>;
+
+export function createRuntimeAvatar(
+  options: AvatarOptions,
+  loadImportedAvatar: ImportedAvatarLoader = loadFemaleWarriorGlb,
+): AvatarGroup {
   const avatar = createAnimeAvatar(options);
   avatar.userData.assetSource = "procedural";
-  if (!isFemaleWarrior(options) || typeof window === "undefined") return avatar;
+  avatar.userData.assetStatus = "ready";
+  if (!isFemaleWarrior(options) || (typeof window === "undefined" && loadImportedAvatar === loadFemaleWarriorGlb)) {
+    return avatar;
+  }
 
-  avatar.userData.assetReady = upgradeToFemaleWarriorGlb(avatar, options);
+  avatar.visible = false;
+  avatar.userData.assetStatus = "loading";
+  avatar.userData.assetReady = upgradeToFemaleWarriorGlb(avatar, loadImportedAvatar)
+    .then(() => {
+      avatar.userData.assetStatus = "ready";
+      avatar.visible = !avatar.userData.disposed;
+    })
+    .catch((error: unknown) => {
+      avatar.userData.assetError = error;
+      avatar.userData.assetStatus = "fallback";
+      avatar.visible = !avatar.userData.disposed;
+    });
   return avatar;
 }
 
@@ -19,20 +39,31 @@ export function applyImportedOutfit(avatar: AvatarGroup, outfitId: string): bool
   if (avatar.userData.assetSource !== "blender-glb") return false;
   let matched = false;
   avatar.traverse((node) => {
-    const nodeOutfitId = node.userData.outfitId;
-    if (typeof nodeOutfitId !== "string") return;
+    const nodeOutfitId = getImportedOutfitId(node);
+    if (!nodeOutfitId) return;
     node.visible = nodeOutfitId === outfitId;
     matched ||= node.visible;
   });
   return matched;
 }
 
-async function upgradeToFemaleWarriorGlb(avatar: AvatarGroup, options: AvatarOptions): Promise<void> {
-  const loader = new GLTFLoader();
-  const gltf = await loader.loadAsync(FEMALE_WARRIOR_GLB);
+async function upgradeToFemaleWarriorGlb(
+  avatar: AvatarGroup,
+  loadImportedAvatar: ImportedAvatarLoader,
+): Promise<void> {
+  const gltf = await loadImportedAvatar();
   if (avatar.userData.disposed === true) {
     disposeObject(gltf.scene);
     return;
+  }
+
+  gltf.scene.name = "female-warrior.glb";
+  let adapted;
+  try {
+    adapted = adaptImportedAvatar(gltf.scene, gltf.animations);
+  } catch (error: unknown) {
+    disposeObject(gltf.scene);
+    throw error;
   }
 
   const previousRuntime = avatar.userData.sculptRuntime;
@@ -43,7 +74,6 @@ async function upgradeToFemaleWarriorGlb(avatar: AvatarGroup, options: AvatarOpt
     disposeObject(child);
   }
 
-  gltf.scene.name = "female-warrior.glb";
   gltf.scene.traverse((node) => {
     if (!(node instanceof THREE.Mesh)) return;
     const normalizedName = node.name.toLowerCase().replaceAll(".", "").replaceAll("_", "");
@@ -54,43 +84,20 @@ async function upgradeToFemaleWarriorGlb(avatar: AvatarGroup, options: AvatarOpt
     node.frustumCulled = false;
   });
   avatar.add(gltf.scene);
-
-  const nodes = collectNamedNodes(avatar);
-  const chest = requiredImportedNode(nodes, "chest");
-  const outfitRootMount = new THREE.Group();
-  outfitRootMount.name = "outfit.mount.root";
-  avatar.add(outfitRootMount);
-  const outfitChestMount = new THREE.Group();
-  outfitChestMount.name = "outfit.mount.chest";
-  chest.add(outfitChestMount);
-
-  const sockets = {
-    "hand.R": createImportedSocket(requiredImportedNode(nodes, "hand.R"), "socket.hand.R", [0, 0.16, 0]),
-    "hand.L": createImportedSocket(requiredImportedNode(nodes, "hand.L"), "socket.hand.L", [0, 0.16, 0]),
-    head: createImportedSocket(requiredImportedNode(nodes, "head"), "socket.head", [0, 0.36, 0]),
-    back: createImportedSocket(requiredImportedNode(nodes, "back"), "socket.back", [0, 0, 0]),
-  };
   attachments.forEach(({ socket, object }) => {
     if (socket === "hand.R" && object.name.startsWith("weapon.")) {
       object.rotation.set(0.08, 0, 0);
       object.position.set(0, -0.15, 0.08);
     }
-    sockets[socket].add(object);
+    if (socket === "head" && object.name === "head.starter-cap") {
+      object.position.set(0, -0.3, 0);
+      object.scale.setScalar(0.9);
+    }
+    adapted.runtime.sockets[socket].add(object);
   });
 
-  const canonicalNodes = withCanonicalRigNames(collectNamedNodes(avatar));
-  avatar.userData.sculptRuntime = {
-    nodes: canonicalNodes,
-    sockets,
-    colliders: [requiredImportedNode(nodes, "body.continuous")],
-    destructionGroups: {
-      body: ["body.continuous", "head", "chest", "pelvis"],
-      limbs: ["arm.L.upper", "arm.R.upper", "leg.L.upper", "leg.R.upper"],
-      equipment: ["socket.hand.R", "socket.back"],
-      hair: ["hair.crown-mass", "hair.rear-mass", "hair.ponytail.1"],
-      outfit: ["outfit.mount.root", "outfit.mount.chest", "outfit.warrior.tunic"],
-    },
-  } satisfies SculptRuntime;
+  avatar.userData.sculptRuntime = adapted.runtime;
+  avatar.userData.animationRuntime = adapted.animation;
   avatar.userData.assetSource = "blender-glb";
   avatar.userData.img2threejs = {
     pipeline: "blender-external-asset",
@@ -98,7 +105,14 @@ async function upgradeToFemaleWarriorGlb(avatar: AvatarGroup, options: AvatarOpt
     reference: "docs_working/reference/concepts/female-warrior-turnaround-v1.png",
     headUnits: 5,
   };
-  applyImportedOutfit(avatar, options.outfitId ?? "outfit.warrior-starter");
+  applyImportedOutfit(
+    avatar,
+    avatar.userData.avatarOptions.outfitId ?? "outfit.warrior-starter",
+  );
+}
+
+function loadFemaleWarriorGlb(): Promise<Pick<GLTF, "scene" | "animations">> {
+  return new GLTFLoader().loadAsync(FEMALE_WARRIOR_GLB);
 }
 
 function collectSocketAttachments(
@@ -115,57 +129,15 @@ function collectSocketAttachments(
   return attachments;
 }
 
-function requiredImportedNode(
-  nodes: Readonly<Record<string, THREE.Object3D>>,
-  canonicalName: string,
-): THREE.Object3D {
-  const node = nodes[canonicalName]
-    ?? nodes[canonicalName.replaceAll(".", "_")]
-    ?? nodes[canonicalName.replaceAll(".", "")];
-  if (!node) {
-    throw new Error(`Imported female warrior node is missing: ${canonicalName}`);
-  }
-  return node;
-}
-
-function createImportedSocket(
-  parent: THREE.Object3D,
-  name: string,
-  position: readonly [number, number, number],
-): THREE.Group {
-  const socket = new THREE.Group();
-  socket.name = name;
-  socket.position.fromArray(position);
-  parent.add(socket);
-  return socket;
-}
-
-function withCanonicalRigNames(
-  nodes: Readonly<Record<string, THREE.Object3D>>,
-): Readonly<Record<string, THREE.Object3D>> {
-  const canonical = { ...nodes };
-  for (const name of [
-    "arm.L.upper",
-    "arm.L.lower",
-    "hand.L",
-    "arm.R.upper",
-    "arm.R.lower",
-    "hand.R",
-    "leg.L.upper",
-    "leg.L.lower",
-    "ankle.L",
-    "leg.R.upper",
-    "leg.R.lower",
-    "ankle.R",
-    "body.continuous",
-  ]) {
-    canonical[name] = requiredImportedNode(nodes, name);
-  }
-  return canonical;
-}
-
 function isFemaleWarrior(options: AvatarOptions): boolean {
   return options.body === "feminine" && options.classId === "warrior";
+}
+
+function getImportedOutfitId(node: THREE.Object3D): string | null {
+  if (typeof node.userData.outfitId === "string") return node.userData.outfitId;
+  if (node.name === "outfit.traveler.coat") return "outfit.traveler";
+  if (node.name.startsWith("outfit.warrior.")) return "outfit.warrior-starter";
+  return null;
 }
 
 function disposeObject(object: THREE.Object3D): void {
