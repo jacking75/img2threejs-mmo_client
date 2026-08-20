@@ -61,7 +61,7 @@ body::before {
 .asset-badge strong { font-size: clamp(22px, 3vw, 34px); letter-spacing: -.04em; }
 
 .catalog-panel { display: flex; flex-direction: column; border-radius: 24px; padding: 16px; }
-.tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 5px; border-radius: 14px; background: #0b1322; }
+.tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 5px; border-radius: 14px; background: #0b1322; }
 .tab { border: 0; border-radius: 10px; padding: 11px 6px; color: #718394; background: transparent; cursor: pointer; font-size: 12px; }
 .tab small { color: #566677; font: 500 9px/1 "Trebuchet MS", sans-serif; }
 .tab.is-active { color: #f4f8f9; background: #243248; box-shadow: 0 5px 16px rgb(0 0 0 / 22%); }

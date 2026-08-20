@@ -31,7 +31,18 @@ export interface AvatarAnimationRuntime {
 export interface AssetDefinition {
   readonly id: string;
   readonly label: string;
-  readonly category: "avatar" | "npc" | "weapon" | "outfit" | "head" | "accessory" | "equipment" | "field";
+  readonly category:
+    | "avatar"
+    | "npc"
+    | "weapon"
+    | "outfit"
+    | "head"
+    | "accessory"
+    | "equipment"
+    | "fauna"
+    | "creature"
+    | "world"
+    | "field";
   readonly tags?: readonly string[];
   readonly create: () => THREE.Group;
 }

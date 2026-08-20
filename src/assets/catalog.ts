@@ -1,4 +1,5 @@
 import { createRuntimeAvatar } from "./avatar/createRuntimeAvatar";
+import { CREATURE_RESOURCE_CATALOG } from "./creatures";
 import { createMageStaff } from "./equipment/createMageStaff";
 import { createQuiver } from "./equipment/createQuiver";
 import { createRangerBow } from "./equipment/createRangerBow";
@@ -7,6 +8,8 @@ import { createFantasyTree, createGrassTuft, createRockCluster, createWaystone }
 import { NPC_RESOURCE_CATALOG } from "./npc";
 import { playerItemResources } from "./player-items";
 import type { AssetDefinition, BodyPresentation, CharacterClass } from "./types";
+import { FAUNA_RESOURCE_CATALOG } from "./fauna";
+import { WORLD_PROP_RESOURCE_CATALOG } from "./world-props";
 
 const bodyLabels: Record<BodyPresentation, string> = { feminine: "여성형", masculine: "남성형" };
 const classLabels: Record<CharacterClass, string> = { warrior: "전사", mage: "마법사", ranger: "레인저" };
@@ -32,6 +35,12 @@ export const npcAssets: readonly AssetDefinition[] = NPC_RESOURCE_CATALOG;
 
 export const playerItemAssets: readonly AssetDefinition[] = playerItemResources;
 
+export const faunaAssets: readonly AssetDefinition[] = FAUNA_RESOURCE_CATALOG;
+
+export const creatureAssets: readonly AssetDefinition[] = CREATURE_RESOURCE_CATALOG;
+
+export const worldPropAssets: readonly AssetDefinition[] = WORLD_PROP_RESOURCE_CATALOG;
+
 export const equipmentAssets: readonly AssetDefinition[] = [...legacyEquipmentAssets, ...playerItemAssets];
 
 export const fieldAssets: readonly AssetDefinition[] = [
@@ -41,4 +50,12 @@ export const fieldAssets: readonly AssetDefinition[] = [
   { id: "field.waystone", label: "룬 이정표", category: "field", create: createWaystone },
 ];
 
-export const assetCatalog: readonly AssetDefinition[] = [...avatarAssets, ...npcAssets, ...equipmentAssets, ...fieldAssets];
+export const assetCatalog: readonly AssetDefinition[] = [
+  ...avatarAssets,
+  ...npcAssets,
+  ...faunaAssets,
+  ...creatureAssets,
+  ...equipmentAssets,
+  ...worldPropAssets,
+  ...fieldAssets,
+];

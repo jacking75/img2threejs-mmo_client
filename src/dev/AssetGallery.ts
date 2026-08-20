@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { assetCatalog, avatarAssets, equipmentAssets, fieldAssets, npcAssets } from "../assets/catalog";
+import { assetCatalog, avatarAssets, creatureAssets, equipmentAssets, faunaAssets, fieldAssets, npcAssets, worldPropAssets } from "../assets/catalog";
 import type { AssetDefinition, AvatarGroup } from "../assets/types";
 import { attachClassEquipmentPreview } from "./attachClassEquipmentPreview";
 
@@ -49,7 +49,7 @@ export function startAssetGallery(): void {
       <header class="brand">
         <p class="eyebrow">IMG2THREEJS · ASSET ATELIER</p>
         <h1>대륙 리소스 도감</h1>
-        <p>NPC 72종과 플레이어 장비 168종을 포함한 절차형 MMORPG 리소스 255종이다.</p>
+        <p>동물 208종, 몬스터 96종, 월드 소품 96종을 포함한 절차형 MMORPG 리소스 655종이다.</p>
       </header>
       <div class="viewport-wrap">
         <canvas class="viewport" aria-label="선택한 3D 리소스 미리보기"></canvas>
@@ -60,8 +60,10 @@ export function startAssetGallery(): void {
         <div class="tabs" role="tablist" aria-label="리소스 종류">
           <button class="tab is-active" data-category="avatar" type="button">캐릭터 <small>${String(avatarAssets.length).padStart(2, "0")}</small></button>
           <button class="tab" data-category="npc" type="button">NPC <small>${String(npcAssets.length).padStart(2, "0")}</small></button>
+          <button class="tab" data-category="fauna" type="button">동물 <small>${faunaAssets.length}</small></button>
+          <button class="tab" data-category="creature" type="button">몬스터 <small>${creatureAssets.length}</small></button>
           <button class="tab" data-category="equipment" type="button">아이템 <small>${equipmentAssets.length}</small></button>
-          <button class="tab" data-category="field" type="button">필드 <small>${String(fieldAssets.length).padStart(2, "0")}</small></button>
+          <button class="tab" data-category="world" type="button">월드 <small>${worldPropAssets.length + fieldAssets.length}</small></button>
         </div>
         <label class="catalog-search">
           <span>리소스 검색</span>
@@ -204,11 +206,17 @@ export function startAssetGallery(): void {
       currentAsset.scale.setScalar(1.25);
     } else if (definition.category === "field") {
       currentAsset.scale.setScalar(definition.id === "field.grass-tuft" ? 2 : 1.15);
+    } else if (definition.category === "fauna" || definition.category === "creature" || definition.category === "world") {
+      currentAsset.scale.setScalar(1.08);
     }
     scene.add(currentAsset);
     frameAsset(currentAsset);
     assetName.textContent = definition.label;
-    assetKind.textContent = isCharacterAsset(definition) ? definition.category.toUpperCase() : definition.category === "field" ? "FIELD" : `ITEM · ${definition.category.toUpperCase()}`;
+    assetKind.textContent = isCharacterAsset(definition)
+      ? definition.category.toUpperCase()
+      : ITEM_CATEGORIES.has(definition.category)
+        ? `ITEM · ${definition.category.toUpperCase()}`
+        : definition.category.toUpperCase();
     list.querySelectorAll("button").forEach((button) => button.classList.toggle("is-active", button.getAttribute("data-id") === definition.id));
   }
 
@@ -232,7 +240,14 @@ export function startAssetGallery(): void {
     showAsset(definitions[0] as AssetDefinition);
   }
 
-  const categoryMap = { avatar: avatarAssets, npc: npcAssets, equipment: equipmentAssets, field: fieldAssets } as const;
+  const categoryMap = {
+    avatar: avatarAssets,
+    npc: npcAssets,
+    fauna: faunaAssets,
+    creature: creatureAssets,
+    equipment: equipmentAssets,
+    world: [...worldPropAssets, ...fieldAssets],
+  } as const;
   let activeCategory: keyof typeof categoryMap = "avatar";
 
   function filterActiveCategory(): void {
@@ -289,5 +304,5 @@ export function startAssetGallery(): void {
     renderer.dispose();
   });
 
-  if (assetCatalog.length !== 255) throw new Error("Asset catalog count is out of sync");
+  if (assetCatalog.length !== 655) throw new Error("Asset catalog count is out of sync");
 }

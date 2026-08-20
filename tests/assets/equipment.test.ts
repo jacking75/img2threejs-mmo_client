@@ -3,11 +3,14 @@ import { describe, expect, it } from "vitest";
 import {
   assetCatalog,
   avatarAssets,
+  creatureAssets,
   equipmentAssets,
+  faunaAssets,
   fieldAssets,
   legacyEquipmentAssets,
   npcAssets,
   playerItemAssets,
+  worldPropAssets,
 } from "../../src/assets/catalog";
 import { createMoonSword, createTrainingSword } from "../../src/assets/equipment/createSword";
 
@@ -36,8 +39,11 @@ describe("asset catalog", () => {
     expect(npcAssets).toHaveLength(72);
     expect(playerItemAssets).toHaveLength(168);
     expect(equipmentAssets).toHaveLength(173);
+    expect(faunaAssets).toHaveLength(208);
+    expect(creatureAssets).toHaveLength(96);
+    expect(worldPropAssets).toHaveLength(96);
     expect(fieldAssets).toHaveLength(4);
-    expect(assetCatalog).toHaveLength(255);
+    expect(assetCatalog).toHaveLength(655);
     expect(new Set(assetCatalog.map(({ id }) => id)).size).toBe(assetCatalog.length);
   });
 });
