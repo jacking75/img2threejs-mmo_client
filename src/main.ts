@@ -1,10 +1,12 @@
 import "./styles/global.css";
 
-const appMode = new URLSearchParams(window.location.search).get("mode") === "gallery"
-  ? "asset-gallery"
-  : "creation";
+const mode = new URLSearchParams(window.location.search).get("mode");
+const appMode = mode === "editor" ? "resource-editor" : mode === "gallery" ? "asset-gallery" : "creation";
 
-if (appMode === "asset-gallery") {
+if (appMode === "resource-editor") {
+  const { startResourceEditor } = await import("./dev/resource-editor/startResourceEditor");
+  startResourceEditor();
+} else if (appMode === "asset-gallery") {
   const { startAssetGallery } = await import("./dev/AssetGallery");
   startAssetGallery();
 } else {

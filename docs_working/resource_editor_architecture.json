@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "리소스 편집툴 · ACP 협업 아키텍처",
+    "subtitle": "브라우저 기반 Three.js 편집 화면과 로컬 ACP 호스트를 분리한 개발 전용 구조",
+    "output": "resource_editor_architecture.html",
+    "animation": "none",
+    "visual_preset": "editorial",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/jacking75/img2threejs-mmo_client",
+      "revision": "c7184f95c3941f378437d2f101f698db467edf19"
+    },
+    "views": [
+      {
+        "id": "edit-loop",
+        "label": "리소스 편집 루프",
+        "focus": ["operator", "editor_ui", "editor_state", "workspace", "vite_hmr"],
+        "note": "리소스 선택과 부품 지정부터 소스 갱신, HMR 재렌더까지의 주 경로다."
+      },
+      {
+        "id": "acp-conversation",
+        "label": "ACP 대화 경로",
+        "focus": ["editor_ui", "local_host", "acp_client", "codex_acp", "codex_server"],
+        "note": "브라우저 대신 로컬 호스트가 stdio ACP 클라이언트 역할을 맡는다."
+      },
+      {
+        "id": "safety-validation",
+        "label": "승인과 검증",
+        "focus": ["approval_gate", "workspace", "quality_gate", "editor_ui"],
+        "note": "쓰기 권한 승인과 diff 검토, lint·test·build·E2E 증거를 분리한다."
+      }
+    ],
+    "viewBox": [1500, 760]
+  },
+  "layout": {
+    "mode": "grid",
+    "origin": [60, 90],
+    "cols": 6,
+    "gapX": 55,
+    "gapY": 82,
+    "cellW": 180,
+    "cellH": 78
+  },
+  "components": [
+    {
+      "id": "operator",
+      "type": "external",
+      "label": "아티스트 / 개발자",
+      "sublabel": "선택 · 지시 · 승인",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "id": "editor_ui",
+      "type": "frontend",
+      "label": "리소스 편집 UI",
+      "sublabel": "DOM + Three.js",
+      "tag": "mode=editor",
+      "sources": [
+        { "path": "src/dev/AssetGallery.ts", "line": 1, "label": "현재 갤러리" },
+        { "path": "src/main.ts", "line": 1, "label": "모드 진입점" }
+      ],
+      "row": 1,
+      "col": 1
+    },
+    {
+      "id": "editor_state",
+      "type": "frontend",
+      "label": "편집 세션 상태",
+      "sublabel": "선택 · 카메라 · 요청",
+      "tag": "직렬화 가능",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "id": "local_host",
+      "type": "backend",
+      "label": "로컬 편집 호스트",
+      "sublabel": "Node HTTP/SSE + stdio",
+      "tag": "127.0.0.1 only",
+      "sources": [
+        { "path": "vite.config.ts", "line": 1, "label": "개발 서버 확장점" }
+      ],
+      "row": 1,
+      "col": 2
+    },
+    {
+      "id": "acp_client",
+      "type": "backend",
+      "label": "ACP 클라이언트",
+      "sublabel": "@agentclientprotocol/sdk",
+      "tag": "ACP v1",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "id": "codex_acp",
+      "type": "external",
+      "label": "codex-acp",
+      "sublabel": "ACP ↔ Codex 변환",
+      "tag": "stdio agent",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "id": "codex_server",
+      "type": "external",
+      "label": "Codex App Server",
+      "sublabel": "대화 · 도구 · 승인 이벤트",
+      "tag": "JSON-RPC",
+      "row": 1,
+      "col": 5
+    },
+    {
+      "id": "approval_gate",
+      "type": "security",
+      "label": "사용자 승인 게이트",
+      "sublabel": "쓰기 · 명령 · 권한 요청",
+      "tag": "기본 거부",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "id": "workspace",
+      "type": "database",
+      "label": "프로젝트 워크스페이스",
+      "sublabel": "절차형 팩토리 · 카탈로그",
+      "tag": "src/assets/**",
+      "size": [180, 70],
+      "sources": [
+        { "path": "src/assets/catalog.ts", "line": 1, "label": "655종 카탈로그" },
+        { "path": "src/assets/types.ts", "line": 1, "label": "리소스 계약" }
+      ],
+      "row": 3,
+      "col": 3
+    },
+    {
+      "id": "vite_hmr",
+      "type": "backend",
+      "label": "Vite HMR",
+      "sublabel": "변경 감지 · 미리보기 갱신",
+      "tag": "개발 전용",
+      "sources": [
+        { "path": "vite.config.ts", "line": 1, "label": "현재 Vite 설정" }
+      ],
+      "row": 3,
+      "col": 1
+    },
+    {
+      "id": "quality_gate",
+      "type": "backend",
+      "label": "검증 파이프라인",
+      "sublabel": "lint · test · build · E2E",
+      "tag": "증거 수집",
+      "sources": [
+        { "path": "package.json", "line": 1, "label": "검증 명령" },
+        { "path": "playwright.config.ts", "line": 1, "label": "브라우저 검증" }
+      ],
+      "row": 3,
+      "col": 5
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "브라우저 프로세스",
+      "wraps": ["editor_ui", "editor_state"],
+      "pad": 28
+    },
+    {
+      "kind": "region",
+      "label": "로컬 개발 환경 · 외부 공개 금지",
+      "wraps": ["local_host", "acp_client", "codex_acp", "codex_server", "approval_gate", "workspace", "vite_hmr", "quality_gate"],
+      "pad": 34
+    }
+  ],
+  "connections": [
+    {
+      "id": "operator_to_ui",
+      "from": "operator",
+      "to": "editor_ui",
+      "label": "선택 · 지시",
+      "variant": "emphasis"
+    },
+    {
+      "id": "state_to_ui",
+      "from": "editor_state",
+      "to": "editor_ui"
+    },
+    {
+      "id": "ui_to_host",
+      "from": "editor_ui",
+      "to": "local_host",
+      "variant": "emphasis"
+    },
+    {
+      "id": "host_to_acp",
+      "from": "local_host",
+      "to": "acp_client"
+    },
+    {
+      "id": "acp_to_adapter",
+      "from": "acp_client",
+      "to": "codex_acp",
+      "label": "ACP / stdio",
+      "variant": "emphasis"
+    },
+    {
+      "id": "adapter_to_codex",
+      "from": "codex_acp",
+      "to": "codex_server"
+    },
+    {
+      "id": "approval_to_host",
+      "from": "approval_gate",
+      "to": "local_host",
+      "label": "허용 / 거부",
+      "variant": "security"
+    },
+    {
+      "id": "codex_to_workspace",
+      "from": "codex_server",
+      "to": "workspace",
+      "label": "승인된 파일 변경",
+      "variant": "security"
+    },
+    {
+      "id": "workspace_to_hmr",
+      "from": "workspace",
+      "to": "vite_hmr"
+    },
+    {
+      "id": "hmr_to_ui",
+      "from": "vite_hmr",
+      "to": "editor_ui",
+      "label": "재렌더",
+      "variant": "dashed"
+    },
+    {
+      "id": "workspace_to_quality",
+      "from": "workspace",
+      "to": "quality_gate"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "편집 경험",
+      "items": [
+        "카탈로그 · 3D 뷰포트 · 부품 트리 · 속성 패널 · ACP 대화를 한 화면에 둔다.",
+        "선택한 assetId, node path, 카메라와 캡처를 에이전트 컨텍스트로 보낸다."
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "ACP 통합",
+      "items": [
+        "브라우저는 stdio를 직접 다루지 않고 로컬 Node 호스트가 ACP 클라이언트가 된다.",
+        "codex-acp가 표준 ACP 메시지를 Codex App Server의 thread, turn, item 이벤트로 변환한다."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "안전 경계",
+      "items": [
+        "127.0.0.1에만 바인딩하고 비밀·토큰을 브라우저에 전달하지 않는다.",
+        "소스 변경과 명령 실행은 사용자 승인 뒤 수행하며 자동 commit·push는 금지한다."
+      ]
+    }
+  ]
+}

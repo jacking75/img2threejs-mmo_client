@@ -1,6 +1,10 @@
 import { defineConfig } from "vitest/config";
+import { resourceEditorPlugin } from "./tools/resource-editor/vitePlugin";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
+  plugins: mode === "editor" || mode === "editor-test"
+    ? [resourceEditorPlugin({ fakeAgent: mode === "editor-test" })]
+    : [],
   server: { host: "127.0.0.1", port: 4173 },
   preview: { host: "127.0.0.1", port: 4173 },
   build: {
@@ -18,4 +22,4 @@ export default defineConfig({
     },
   },
   test: { exclude: ["tests/e2e/**", "node_modules/**", "dist/**"] },
-});
+}));

@@ -127,6 +127,42 @@ npm run test:e2e
 npm run build
 ```
 
+## 로컬 Resource Editor
+
+655종 절차형 리소스를 검색하고 이름 있는 부품을 선택해 Codex와 계획·승인·적용
+흐름으로 협업하는 개발용 편집기를 제공한다. 다음 명령은 루프백 주소에만 로컬
+호스트를 열고 `?mode=editor` 화면을 시작한다.
+
+```powershell
+npm run dev:editor
+```
+
+편집기는 카탈로그, 공용 Three.js 뷰포트, 명명된 Scene Outliner, 읽기 전용 소유권·
+Transform 인스펙터, ACP 이벤트 타임라인을 한 화면에 표시한다. 선택한 `assetId`,
+`partKey`, 소유 소스 파일, 카메라·오버레이·PNG 캡처가 요청 문맥에 포함된다.
+`계획 요청`은 읽기 전용이며, 결과를 검토한 뒤 `계획 승인·적용`과 요청별 일회성
+승인을 거쳐야 소스 수정이나 등록된 검증 명령을 허용한다. 자동 커밋·자동 롤백은
+수행하지 않는다.
+
+브라우저에는 Codex API 키나 ACP 프로세스 권한을 전달하지 않는다. 로컬 Node 호스트가
+ACP v1 어댑터를 실행하고, 동일 출처 세션 토큰·SSE로 상태만 전달한다. 적용 범위는
+현재 리소스의 소유 파일과 허용 쓰기 루트로 제한되며 삭제·이동·네트워크 접근·임의
+셸 명령은 거부한다. 세부 결정은
+[`docs_working/RESOURCE_EDITOR_ADR.md`](docs_working/RESOURCE_EDITOR_ADR.md)에 있다.
+
+결정적인 UI 검증에는 실제 Codex 호출 대신 fake ACP 흐름을 사용한다.
+
+```powershell
+npm run dev:editor:test
+npm run test:e2e
+npm run smoke:acp
+```
+
+`smoke:acp`는 설치된 `codex-acp`와 ACP v1 초기화 핸드셰이크를 검사한다. `test:e2e`는
+설치된 Chrome으로 편집기·기존 에셋 갤러리·플레이어 흐름을 함께 검증한다. 생성되는
+캡처는 Git에서 제외한 `.resource-editor-cache/`에 저장된다. 현재 편집 대상은 저장소의
+절차형 TypeScript 팩토리이며 GLB는 구조 확인용 읽기 전용 대상으로 취급한다.
+
 ## 현재 구현 조작법
 
 | 조작 | 기능 |

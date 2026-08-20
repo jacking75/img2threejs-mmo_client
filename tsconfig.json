@@ -11,9 +11,10 @@
     "moduleDetection": "force",
     "noEmit": true,
     "strict": true,
+    "types": ["node", "vite/client"],
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "tests", "vite.config.ts", "eslint.config.js"]
+  "include": ["src", "tools/resource-editor", "tests", "vite.config.ts", "eslint.config.js"]
 }
